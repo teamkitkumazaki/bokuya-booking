@@ -1,0 +1,31 @@
+.comp-form-wrap{
+  .form_item{
+    padding: 30px 6vw;
+    box-sizing: border-box;
+    border-bottom: 1px solid $keyColor;
+  }
+  .submit_wrap{
+    padding: 30px 6vw;
+    box-sizing: border-box;
+  }
+  .form_item{
+    .form_ttl{
+      display: block;
+      font-size: 2.0rem;
+      margin-bottom: 20px;
+      .small{
+        display: inline-block;
+        padding-left: 5px;
+        font-size: 1.4rem;
+      }
+    }
+    .label_desc{
+      font-size: 1.4rem;
+      margin-bottom: 25px;
+    }
+    &.item01{
+      @include flexSet;
+      justify-content: space-between;
+    }
+  }
+}

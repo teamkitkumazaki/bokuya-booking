@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 50</title>
+    <g id="RESERVATION" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="bokuya-booking-sp-form" transform="translate(-328.000000, -19.000000)">
+            <g id="Group-50" transform="translate(342.842105, 34.000000) scale(-1, 1) translate(-342.842105, -34.000000) translate(328.000000, 19.000000)">
+                <rect id="Rectangle" fill="#FFFFFF" opacity="0" x="0" y="0" width="29.6842105" height="30" rx="14.8421053"></rect>
+                <g id="Group-5" transform="translate(9.743975, 9.666552)" stroke="#363636">
+                    <polyline id="Stroke-1" transform="translate(2.666552, 5.000000) scale(-1, -1) rotate(90.000000) translate(-2.666552, -5.000000) " points="-2.33344833 2.33344833 2.66635974 7.66655167 7.66655167 2.33344833"></polyline>
+                    <polyline id="Stroke-1" transform="translate(7.666552, 5.000000) scale(1, -1) rotate(90.000000) translate(-7.666552, -5.000000) " points="2.66655167 2.33344833 7.66635974 7.66655167 12.6665517 2.33344833"></polyline>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

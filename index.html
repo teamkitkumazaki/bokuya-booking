@@ -198,8 +198,103 @@
 					</div><!-- section_inner -->
 				</section>
 			</div><!-- contents_detail -->
+			<div class="contents_booking">
+				<div class="form_inner">
+					<div class="title_wrap">
+						<h2 class="booking_ttl">レストランを予約する</h2>
+						<div id="bookingClose" class="close_button">
+							<button></button>
+						</div>
+					</div>
+					<section class="section-form">
+						<form class="comp-form-wrap">
+							<div class="form_item item01">
+								<label class="form_ttl"><span>来店人数</span></label>
+								<div class="form_wrap">
+									<div class="comp-number-input margin">
+										<span class="title">大人</span>
+										<div class="number_wrap">
+											<button type="button" class="button minus"></button>
+											<input type="number" name="[大人の人数:]" value="0">
+											<button type="button" class="button plus"></button>
+										</div>
+									</div><!-- comp-number-input -->
+									<div class="comp-number-input">
+										<span class="title">子供</span>
+										<div class="number_wrap">
+											<button type="button" class="button minus"></button>
+											<input type="number" name="[子供の人数:]" value="0">
+											<button type="button" class="button plus"></button>
+										</div>
+									</div><!-- comp-number-input -->
+								</div>
+							</div><!-- form_item -->
+							<div class="form_item item02">
+								<label class="form_ttl"><span>カフェメニュー</span><span class="small">(代金事前決済)</span></label>
+								<p class="label_desc">来店人数分のお食事を選択してください。</p>
+								<div class="form_wrap">
+										<div class="comp-menu-list">
+											<div class="menu_item">
+												<div class="img_wrap">
+													<img src="assets/img/booking/menu_curry.jpg">
+												</div>
+												<div class="txt_wrap">
+													<h3 class="menu_name">カレーセット</h3>
+													<p class="menu_desc">カレー・サラダ・デザートとドリンクのセット</p>
+													<p class="price">2,500円(税込)</p>
+													<div class="comp-number-input">
+														<div class="number_wrap">
+															<button type="button" class="button minus"></button>
+															<input type="number" name="[カレーセット:]" value="0">
+															<button type="button" class="button plus"></button>
+														</div>
+													</div><!-- comp-number-input -->
+												</div>
+											</div>
+											<div class="menu_item">
+												<div class="img_wrap">
+													<img src="assets/img/booking/menu_stew.jpg">
+												</div>
+												<div class="txt_wrap">
+													<h3 class="menu_name">シチューセット</h3>
+													<p class="menu_desc">シチュー・サラダ・デザートとドリンクのセット</p>
+													<p class="price">2,500円(税込)</p>
+													<div class="comp-number-input">
+														<div class="number_wrap">
+															<button type="button" class="button minus"></button>
+															<input type="number" name="[シチューセット:]" value="0">
+															<button type="button" class="button plus"></button>
+														</div>
+													</div><!-- comp-number-input -->
+												</div>
+											</div>
+										</div><!-- comp-menu-list -->
+									</div><!-- form_wrap -->
+							</div><!-- form_item -->
+							<div class="form_item item03">
+								<label class="form_ttl"><span>予約の空き状況</span></label>
+								<p class="label_desc">来店希望日を選択してください。</p>
+							</div><!-- form_item -->
+							<div class="submit_wrap">
+								<div class="amount_wrap">
+									<span class="title">小計</span>
+									<p class="price">7,500円(税込)</p>
+								</div>
+								<div class="submit_button">
+									<button>お支払いに進む</button>
+								</div>
+							</div>
+						</form>
+					</section>
+				</div>
+			</div>
 		</div><!-- contents_wrapper -->
 	</article>
+	<!-- <div id="fixedButton" class="comp-fixed-button display">
+  	<div class="cart_inner">
+			<button class="fixed_cart_button"><span>レストランを予約する</span></button>
+		</div>
+	</div> --> <!-- comp-fixed-cart-wrap -->
 	<footer>
 		<div class="footer_inner">
 			<nav class="footer_nav">

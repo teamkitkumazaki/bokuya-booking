@@ -1,0 +1,29 @@
+.comp-menu-list{
+  @include flexSet;
+  justify-content: space-between;
+  .menu_item{
+    width: 100%;
+    margin-bottom: 40px;
+    &:nth-last-of-type(1){
+      margin-bottom: 0;
+    }
+    .img_wrap{
+      margin-bottom: 20px;
+    }
+    .txt_wrap{
+      .menu_name{
+        font-size: 1.8rem;
+        font-weight: inherit;
+        margin-bottom: 15px;
+      }
+      .menu_desc{
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+      }
+      .price{
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

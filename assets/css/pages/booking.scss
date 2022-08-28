@@ -25,5 +25,42 @@
         }
       }
     }
+    .contents_booking{
+      position: fixed;
+      top:0;
+      left:0;
+      right:0;
+      width: 100%;
+      height: 100vh;
+      background: #fff;
+      .form_inner{
+        overflow: scroll;
+        height: 100vh;
+        .title_wrap{
+          @include flexSet;
+          align-items: center;
+          justify-content: space-between;
+          padding: 20px 6vw;
+          box-sizing: border-box;
+          background: $bgGreen;
+          .booking_ttl{
+            font-size: 1.8rem;
+            color: #fff;
+            font-weight: inherit;
+          }
+          .close_button{
+            width: 30px;
+            height: 30px;
+            background: #fff;
+            border-radius: 50%;
+            @include bgSet;
+            background-image: url(../img/common/close.svg);
+          }
+        }
+        .section-form{
+
+        }
+      }
+    }
   }
 }

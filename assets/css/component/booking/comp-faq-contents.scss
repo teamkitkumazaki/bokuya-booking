@@ -72,7 +72,7 @@
       transition: height .3s;
       will-change: height;
       .contents_inner{
-        padding: 20px 20px 20px 45px;
+        padding: 15px 15px 15px 40px;
         position: relative;
         &::before{
           display: block;
@@ -80,8 +80,8 @@
           font-size: 1.6rem;
           position: absolute;
           color: $keyColor;
-          top:26px;
-          left:20px;
+          top:20px;
+          left:17px;
         }
         p{
           font-size: 1.4rem;

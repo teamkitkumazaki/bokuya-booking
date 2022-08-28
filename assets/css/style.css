@@ -505,7 +505,51 @@ footer .footer_inner .footer_nav ul li a {
 .page-booking .contents_wrapper .contents_detail .section-faq .comp-faq-contents {
   margin-top: 40px;
 }
-
+.page-booking .contents_wrapper .contents_booking {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+}
+.page-booking .contents_wrapper .contents_booking .form_inner {
+  overflow: scroll;
+  height: 100vh;
+}
+.page-booking .contents_wrapper .contents_booking .form_inner .title_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px 6vw;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #0b4e2c;
+}
+.page-booking .contents_wrapper .contents_booking .form_inner .title_wrap .booking_ttl {
+  font-size: 1.8rem;
+  color: #fff;
+  font-weight: inherit;
+}
+.page-booking .contents_wrapper .contents_booking .form_inner .title_wrap .close_button {
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  background-image: url(../img/common/close.svg);
+}
 /*########## コンポーネント ##########*/
 .comp-bokking-title {
   font-weight: inherit;
@@ -654,7 +698,7 @@ footer .footer_inner .footer_nav ul li a {
   will-change: height;
 }
 .comp-faq-contents .toggle_item .toggle_contents .contents_inner {
-  padding: 20px 20px 20px 45px;
+  padding: 15px 15px 15px 40px;
   position: relative;
 }
 .comp-faq-contents .toggle_item .toggle_contents .contents_inner::before {
@@ -663,8 +707,8 @@ footer .footer_inner .footer_nav ul li a {
   font-size: 1.6rem;
   position: absolute;
   color: #363636;
-  top: 26px;
-  left: 20px;
+  top: 20px;
+  left: 17px;
 }
 .comp-faq-contents .toggle_item .toggle_contents .contents_inner p {
   font-size: 1.4rem;
@@ -715,4 +759,188 @@ footer .footer_inner .footer_nav ul li a {
   .comp-faq-contents .toggle_item .toggle_button {
     font-size: 1.6rem;
   }
+}
+.comp-fixed-button {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 100;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  background: #fff;
+  -webkit-box-shadow: 0 -2px 6px 0 rgba(216, 216, 216, 0.5);
+          box-shadow: 0 -2px 6px 0 rgba(216, 216, 216, 0.5);
+}
+.comp-fixed-button.display {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+}
+.comp-fixed-button .cart_inner {
+  width: calc(100% - 20px);
+  padding: 10px 0;
+  margin: 0 auto;
+}
+.comp-fixed-button .cart_inner .fixed_cart_button {
+  background: #0b4e2c;
+  border: none;
+  width: 100%;
+  padding: 15px 0;
+  color: #fff;
+  font-weight: bold;
+  font-family: inherit;
+  text-align: center;
+  font-size: 1.6rem;
+  letter-spacing: 0.08em;
+}
+.comp-fixed-button .cart_inner .fixed_cart_button span {
+  position: relative;
+  display: inline-block;
+}
+
+@media screen and (min-width: 720px) {
+  .comp-fixed-button .cart_inner {
+    padding: 20px 0;
+    margin: 0 auto;
+  }
+  .comp-fixed-button .cart_inner .fixed_cart_button {
+    padding: 20px 0;
+    font-size: 1.8rem;
+  }
+  .comp-fixed-button .cart_inner .fixed_cart_button span {
+    padding: 0 0 0 30px;
+  }
+}
+@media screen and (min-width: 980px) {
+  .comp-fixed-button {
+    display: none;
+  }
+}
+.comp-form-wrap .form_item {
+  padding: 30px 6vw;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-bottom: 1px solid #363636;
+}
+.comp-form-wrap .submit_wrap {
+  padding: 30px 6vw;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.comp-form-wrap .form_item .form_ttl {
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.comp-form-wrap .form_item .form_ttl .small {
+  display: inline-block;
+  padding-left: 5px;
+  font-size: 1.4rem;
+}
+.comp-form-wrap .form_item .label_desc {
+  font-size: 1.4rem;
+  margin-bottom: 25px;
+}
+.comp-form-wrap .form_item.item01 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.comp-number-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.comp-number-input.margin {
+  margin-bottom: 20px;
+}
+.comp-number-input .title {
+  font-size: 1.6rem;
+  margin-right: 20px;
+}
+.comp-number-input .number_wrap {
+  width: 110px;
+  height: 25px;
+  position: relative;
+}
+.comp-number-input .number_wrap .button {
+  width: 25px;
+  height: 25px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  background-color: #363636;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+}
+.comp-number-input .number_wrap .button.minus {
+  left: 0;
+  background-image: url(../img/common/minus_button.svg);
+}
+.comp-number-input .number_wrap .button.plus {
+  right: 0;
+  background-image: url(../img/common/plus_button.svg);
+}
+.comp-number-input .number_wrap input[type=number] {
+  display: block;
+  width: 100%;
+  border: none;
+  font-family: inherit;
+  font-size: 1.6rem;
+  color: inherit;
+  font-weight: bold;
+  height: 21px;
+  line-height: 21px;
+  text-align: center;
+}
+
+.comp-menu-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.comp-menu-list .menu_item {
+  width: 100%;
+  margin-bottom: 40px;
+}
+.comp-menu-list .menu_item:nth-last-of-type(1) {
+  margin-bottom: 0;
+}
+.comp-menu-list .menu_item .img_wrap {
+  margin-bottom: 20px;
+}
+.comp-menu-list .menu_item .txt_wrap .menu_name {
+  font-size: 1.8rem;
+  font-weight: inherit;
+  margin-bottom: 15px;
+}
+.comp-menu-list .menu_item .txt_wrap .menu_desc {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+.comp-menu-list .menu_item .txt_wrap .price {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
 }

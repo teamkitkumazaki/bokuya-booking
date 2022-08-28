@@ -22,6 +22,11 @@ $(function() {
         position.style.setProperty('--wHeightPx', window.innerHeight + 'px');
         position.style.setProperty('--scroll', window.scrollY);
         requestAnimationFrame(setProperties);
+        if(window.scrollY > pageHeight - wHeight * 1.5){
+          fixedButton.removeClass('display');
+        }else{
+          fixedButton.addClass('display');
+        }
       }
 
       function setProperties() {
