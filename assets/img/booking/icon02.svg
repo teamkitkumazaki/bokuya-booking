@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 30</title>
+    <g id="RESERVATION" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="bokuya-booking" transform="translate(-121.000000, -999.000000)">
+            <g id="Group-57" transform="translate(119.000000, 123.000000)">
+                <g id="Group-27" transform="translate(0.000000, 522.000000)">
+                    <g id="Group-31" transform="translate(0.000000, -0.000000)">
+                        <g id="Group-41" transform="translate(2.000000, 353.482759)">
+                            <g id="Group-37" transform="translate(1.000000, 0.000000)">
+                                <g id="Group-30" transform="translate(0.000000, 1.517241)">
+                                    <path d="M4.43827972,9.99996793 L5.04794586,9.99996793 L4.43827972,9.99996793 Z" id="Fill-1" fill="#FFFFFF"></path>
+                                    <line x1="4.43827972" y1="10" x2="5.04794586" y2="10" id="Stroke-2" stroke="#000000" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"></line>
+                                    <path d="M10.0000321,5.04781758 L10.0000321,4.43815144 L10.0000321,5.04781758 Z" id="Fill-3" fill="#FFFFFF"></path>
+                                    <line x1="10" y1="5.04788172" x2="10" y2="4.43821558" id="Stroke-4" stroke="#000000" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"></line>
+                                    <path d="M14.9521824,9.99996793 L15.5618486,9.99996793 L14.9521824,9.99996793 Z" id="Fill-5" fill="#FFFFFF"></path>
+                                    <line x1="15.5617203" y1="10" x2="14.9520541" y2="10" id="Stroke-6" stroke="#000000" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"></line>
+                                    <path d="M10.0000321,15.5617203 L10.0000321,14.9520541 L10.0000321,15.5617203 Z" id="Fill-7" fill="#FFFFFF"></path>
+                                    <line x1="10" y1="14.9521183" x2="10" y2="15.5617844" id="Stroke-8" stroke="#000000" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"></line>
+                                    <g id="Group-29">
+                                        <path d="M17.7244476,10 C17.7244476,14.2660595 14.2659312,17.7245759 9.99987172,17.7245759 C5.73381226,17.7245759 2.27561656,14.2660595 2.27561656,10 C2.27561656,5.73394054 5.73381226,2.27574484 9.99987172,2.27574484 C14.2659312,2.27574484 17.7244476,5.73394054 17.7244476,10 Z" id="Stroke-9" stroke="#000000" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <g id="Group-14" transform="translate(8.786857, 9.142170)">
+                                            <path d="M2.07097271,0 C2.54465861,0.473685898 2.54465861,1.24178185 2.07097271,1.71578846 C1.59728681,2.18947436 0.829190853,2.18947436 0.355504955,1.71578846 C-0.118501652,1.24178185 -0.118501652,0.473685898 0.355504955,0" id="Fill-11" fill="#FFFFFF"></path>
+                                            <path d="M2.07097271,0 C2.54465861,0.473685898 2.54465861,1.24178185 2.07097271,1.71578846 C1.59728681,2.18947436 0.829190853,2.18947436 0.355504955,1.71578846 C-0.118501652,1.24178185 -0.118501652,0.473685898 0.355504955,0" id="Stroke-13" stroke="#000000" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </g>
+                                        <g id="Group-18" transform="translate(5.936115, 5.936051)">
+                                            <line x1="0" y1="0" x2="3.20611911" y2="3.20611911" id="Fill-15" fill="#FFFFFF"></line>
+                                            <line x1="0" y1="0" x2="3.20611911" y2="3.20611911" id="Stroke-17" stroke="#000000" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"></line>
+                                        </g>
+                                        <g id="Group-22" transform="translate(10.857766, 6.778872)">
+                                            <line x1="0" y1="2.36329816" x2="2.36329816" y2="0" id="Fill-19" fill="#FFFFFF"></line>
+                                            <line x1="0" y1="2.36329816" x2="2.36329816" y2="0" id="Stroke-21" stroke="#000000" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"></line>
+                                        </g>
+                                        <path d="M20,10 C20,15.5229146 15.5229146,20 10,20 C4.4770854,20 0,15.5229146 0,10 C0,4.4770854 4.4770854,0 10,0 C15.5229146,0 20,4.4770854 20,10 Z" id="Stroke-23" stroke="#000000" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <g id="Group-28" transform="translate(12.195343, 13.817132)">
+                                            <line x1="1.33927712" y1="1.33927712" x2="0" y2="0" id="Fill-25" fill="#FFFFFF"></line>
+                                            <line x1="1.33927712" y1="1.33927712" x2="0" y2="0" id="Stroke-27" stroke="#000000" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"></line>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,20 @@
+/*########## ミックスイン ##########*/
+@import 'mixin.scss';
+
+/*########## 共通レイアウト ##########*/
+@import 'common/reset.scss';
+@import 'common/form.scss';
+@import 'common/common.scss';
+@import 'common/header.scss';
+@import 'common/hummenu.scss';
+@import 'common/footer.scss';
+
+
+/*########## ページ個別レイアウト ##########*/
+@import 'pages/booking.scss';
+
+
+/*########## コンポーネント ##########*/
+@import 'component/booking/comp-booking-title.scss';
+@import 'component/booking/comp-detail-list.scss';
+@import 'component/booking/comp-faq-contents.scss';

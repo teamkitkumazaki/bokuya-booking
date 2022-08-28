@@ -1,0 +1,39 @@
+.comp-detail-list{
+  .list_item{
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px dotted $keyColor;
+    &:nth-last-of-type(1){
+      margin-bottom: 0;
+    }
+    .item_ttl{
+      font-size: 1.8rem;
+      font-weight: inherit;
+      margin-bottom: 15px;
+      &.flex{
+        @include flexSet;
+        align-items: center;
+        .icon{
+          width: 20px;
+          margin-right: 10px;
+        }
+        .txt{
+          width: calc(100% - 30px);
+        }
+      }
+    }
+    .item_detail{
+      @include basicP;
+      p{
+        .small{
+          font-size: 1.2rem;
+          color: #686868;
+        }
+        .red{
+          color: #c42f2f;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+@keyframes fadeIn {
+0% {
+	opacity:0
+}
+to {
+	opacity:1
+}
+}
+
+@function effectSpeed($num) {
+  $seconds: (0.04 * $num) + 0.16;
+  @return $seconds + s;
+}
+
+@mixin textEffect{
+  @for $i from 1 through 70 {
+    &:nth-of-type(#{$i}){
+			filter: blur(0px);
+      animation: fadeIn 1s effectSpeed($i) forwards;
+    }
+  }
+}
+
+.animate-fadeup{
+	/* blur + opacity + transition */
+	opacity: 1;
+	filter: blur(0px) brightness(1);
+	transform: translate3d(0, 0%, 0);
+	transition: opacity .6s, filter .6s cubic-bezier(0.5, 1, 0.89, 1), transform .6s cubic-bezier(0.5, 1, 0.89, 1);
+	will-change: opacity, filter, transform;
+	&.effect{
+		opacity: 0;
+		filter: blur(8px) brightness(1.25);
+		transform: translate3d(0, 100px, 0);
+	}
+}
+.animate-fadeup2{
+	/* opacity + transition */
+	opacity: 1;
+	overflow: hidden;
+	transform: translate3d(0, 0%, 0);
+	transition: opacity .6s, transform .6s cubic-bezier(0.5, 1, 0.89, 1);
+	will-change: opacity, transform;
+	&.effect{
+		opacity: 0;
+		transform: translate3d(0, 100px, 0);
+	}
+}
+.animate-fadeup3{
+	/* opacity */
+	opacity: 1;
+	transition: opacity .6s cubic-bezier(0.5, 1, 0.89, 1);
+	will-change: opacity;
+	&.effect{
+		opacity: 0;
+	}
+}

@@ -1,0 +1,67 @@
+$keyColor: #363636;
+$bgColor: #0b4e2c;
+$bgGreen: #0b4e2c;
+$bgBlack: #363636;
+
+@mixin wrapper{
+  width: 88vw;
+  margin-left: auto;
+  margin-right: auto;
+  @media screen and (min-width: 981px){
+    width: 86vw;
+  }
+  @media screen and (min-width: 1101px){
+    max-width: 1400px;
+    width: 86vw;
+  }
+  @media screen and (min-width: 1700px){
+  }
+}
+
+@mixin fullScreen{
+  width: 94vw;
+  @media screen and (min-width: 1101px){
+    width: 79vw;
+    /*max-width: 1300px;*/
+  }
+  @media screen and (min-width: 1700px){
+    width: 83vw;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-left: 0;
+  }
+}
+
+@mixin flexSet {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+@mixin bgSet{
+  background:{
+    repeat: no-repeat;
+    position: center center;
+    size: contain;
+  }
+}
+
+@mixin basicP{
+  p{
+    font-size: 1.4rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    &:nth-last-of-type(1){
+      margin-bottom: 0;
+    }
+    @media screen and (min-width: 1100px){
+      line-height: 2;
+    }
+  }
+}
+
+@mixin hover{
+  transition: opacity .3s;
+  &:hover{
+    opacity: 0.75;
+  }
+}

@@ -1,0 +1,25 @@
+header{
+  .header_inner{
+    @include wrapper;
+    padding: 20px 0;
+    .back_button{
+      @include flexSet;
+      align-items: center;
+      color: inherit;
+      .caret{
+        display: block;
+        width: 30px;
+        height: 30px;
+        @include bgSet;
+        background-image: url(../img/common/caret_left.svg);
+        background-color: $bgGreen;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+      .text{
+        font-size: 1.4rem;
+        margin-bottom: 2px;
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.page-booking{
+  margin-bottom: 60px;
+  .contents_wrapper{
+    .contents_detail{
+      .section-main{
+        margin-bottom: 60px;
+        .main_desc{
+          @include wrapper;
+          margin-top: 35px;
+        }
+        .desc_wrap{
+          @include basicP;
+          margin-bottom: 30px;
+        }
+      }
+      .section-cancel{
+        margin-bottom: 60px;
+        .comp-detail-list{
+          margin-top: 35px;
+        }
+      }
+      .section-faq{
+        .comp-faq-contents{
+          margin-top: 40px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,150 @@
+.comp-faq-contents{
+  .toggle_item{
+    position: relative;
+    border: 1px solid $bgGreen;
+    height: 66px;
+    transition: height .3s;
+    will-change: height;
+    margin-bottom: 5px;
+    &:nth-last-of-type(1){
+      margin-bottom: 0px;
+    }
+    .toggle_button{
+      width: 100%;
+      padding: 15px;
+      box-sizing: border-box;
+      font-size: 1.6rem;
+      line-height: 1.6;
+      font-weight: 500;
+      text-align: left;
+      color: inherit;
+      @include flexSet;
+      justify-content: space-between;
+      align-items: center;
+      transition: background .3s, color .3s;
+      will-change: background, color;
+      .txt{
+        position: relative;
+        display: block;
+        width: calc(100% - 20px);
+        padding-left: 25px;
+        box-sizing: border-box;
+        color: $keyColor;
+        &::before{
+          display: block;
+          content: "Q.";
+          font-size: 1.6rem;
+          position: absolute;
+          top:0px;
+          left:0;
+          right:0;
+        }
+      }
+      .status{
+        position: relative;
+        display: block;
+        width: 16px;
+        height: 16px;
+        &::before, &::after{
+          display: block;
+          content: "";
+          position: absolute;
+          background: $keyColor;
+          top:0;
+          bottom:0;
+          left:0;
+          right:0;
+          margin: auto;
+        }
+        &::before{
+          width: 1px;
+          height: 100%;
+        }
+        &::after{
+          width: 100%;
+          height: 1px;
+        }
+      }
+    }
+    .toggle_contents{
+      height: 0;
+      overflow: hidden;
+      transition: height .3s;
+      will-change: height;
+      .contents_inner{
+        padding: 20px 20px 20px 45px;
+        position: relative;
+        &::before{
+          display: block;
+          content: "A.";
+          font-size: 1.6rem;
+          position: absolute;
+          color: $keyColor;
+          top:26px;
+          left:20px;
+        }
+        p{
+          font-size: 1.4rem;
+          line-height: 1.8;
+          color: $keyColor;
+        }
+        a{
+          color: inherit;
+          text-decoration: underline;
+        }
+      }
+    }
+    &.active{
+      .toggle_button{
+        background: $bgGreen;
+        color: #fff;
+        .txt{
+          color: #fff;
+        }
+        .status{
+          &::before,&::after{
+            background: #fff;
+          }
+          &::before{
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 720px){
+  .comp-faq-contents{
+    max-width: 75vw;
+    margin: 60px auto 0;
+    .toggle_item{
+      &:nth-last-of-type(1){
+        margin-bottom: 0px;
+      }
+      .toggle_button{
+        font-size: 1.6rem;
+        .txt{
+          br{
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 980px){
+  .comp-faq-contents{
+    max-width: 580px;
+    margin: 60px auto 0;
+    .toggle_item{
+      &:nth-last-of-type(1){
+        margin-bottom: 0px;
+      }
+      .toggle_button{
+        font-size: 1.6rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+footer{
+  border-top: 1px solid $keyColor;
+  .footer_inner{
+    @include wrapper;
+    padding: 40px 0 30px;
+    .footer_nav{
+      margin-bottom: 40px;
+      ul{
+        li{
+          margin-bottom: 25px;
+          &:nth-last-of-type(1){
+            margin-bottom: 0;
+          }
+          a{
+            color: inherit;
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+  }
+}

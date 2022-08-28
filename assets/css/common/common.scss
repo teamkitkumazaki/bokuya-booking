@@ -1,0 +1,67 @@
+html{
+	font-size: 9px;
+	@media screen and (min-width: 351px){
+		font-size: 10px;
+	}
+	@media screen and (min-width: 400px){
+		font-size: 11px;
+	}
+	@media screen and (min-width: 980px){
+		font-size: 9px;
+	}
+	@media screen and (min-width: 1341px){
+		font-size: 10px;
+	}
+	@media screen and (min-width: 1700px){
+		font-size: 11px;
+	}
+}
+body {
+	font-size: 1.4rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+	letter-spacing: 0.07em;
+  color: $keyColor;
+	font-family: noto-sans-cjk-jp, 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	font-weight: 500;
+	letter-spacing: 0.03em;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-size-adjust: 100%;
+	&.fixed{
+		overflow: hidden;
+		@media screen and (min-width: 1100px){
+			overflow: visible;
+		}
+	}
+}
+
+#container{
+	min-height: 120vh;
+}
+button{
+	box-shadow: none;
+	border: none;
+	font-family: inherit;
+	appearance: none;
+	background-color: transparent;
+	cursor: pointer;
+	margin: 0;
+	padding: 0;
+}
+article{
+	position: relative;
+	z-index: 100;
+	transition: opacity .5s;
+	.section_inner{
+		@include wrapper;
+	}
+}
+
+.hum_open{
+	article{
+		opacity: 0;
+		pointer-events: none;
+	}
+}
