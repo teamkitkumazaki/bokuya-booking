@@ -16,6 +16,10 @@
     width: calc(100% - 20px);
     padding: 10px 0;
     margin: 0 auto;
+    @media screen and (min-width: 720px){
+      width: calc(100% - 40px);
+      padding: 15px 0;
+    }
     .fixed_cart_button{
       background: $bgGreen;
       border: none;
@@ -44,7 +48,6 @@
         padding: 20px 0;
         font-size: 1.8rem;
         span{
-          padding: 0 0 0 30px;
         }
       }
     }

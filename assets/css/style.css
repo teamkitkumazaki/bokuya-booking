@@ -372,21 +372,9 @@ article .section_inner {
 }
 
 header .header_inner {
-  width: 88vw;
-  margin-left: auto;
-  margin-right: auto;
+  width: 94vw;
+  margin: 0 auto;
   padding: 20px 0;
-}
-@media screen and (min-width: 981px) {
-  header .header_inner {
-    width: 86vw;
-  }
-}
-@media screen and (min-width: 1101px) {
-  header .header_inner {
-    max-width: 1400px;
-    width: 86vw;
-  }
 }
 header .header_inner .back_button {
   display: -webkit-box;
@@ -450,6 +438,38 @@ footer .footer_inner .footer_nav ul li a {
   font-size: 1.4rem;
 }
 
+@media screen and (min-width: 720px) {
+  footer .footer_inner {
+    padding: 50px 0 30px;
+  }
+  footer .footer_inner .footer_nav {
+    margin-bottom: 40px;
+  }
+  footer .footer_inner .footer_nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  footer .footer_inner .footer_nav ul li {
+    margin-bottom: 0px;
+    margin-right: 15px;
+  }
+  footer .footer_inner .footer_nav ul li:nth-last-of-type(1) {
+    margin-right: 0;
+  }
+  footer .footer_inner .footer_nav ul li a {
+    color: inherit;
+    font-size: 1.4rem;
+  }
+  footer .footer_inner .copyright {
+    text-align: center;
+  }
+}
 /*########## ページ個別レイアウト ##########*/
 .page-booking {
   margin-bottom: 60px;
@@ -607,6 +627,54 @@ footer .footer_inner .footer_nav ul li a {
   color: #fff;
 }
 
+@media screen and (min-width: 720px) {
+  .page-booking {
+    margin-bottom: 90px;
+  }
+  .page-booking .contents_wrapper .contents_detail .section-main {
+    margin-bottom: 90px;
+  }
+  .page-booking .contents_wrapper .contents_detail .section-main .main_desc {
+    margin-top: 50px;
+  }
+  .page-booking .contents_wrapper .contents_detail .section-main .desc_wrap {
+    margin-bottom: 40px;
+  }
+  .page-booking .contents_wrapper .contents_detail .section-cancel {
+    margin-bottom: 90px;
+  }
+  .page-booking .contents_wrapper .contents_detail .section-cancel .comp-detail-list {
+    margin-top: 35px;
+  }
+  .page-booking .contents_wrapper .contents_detail .section-faq .comp-faq-contents {
+    margin-top: 40px;
+  }
+  .page-booking .contents_wrapper .contents_booking .form_inner .title_wrap {
+    padding: 30px 6vw;
+  }
+  .page-booking .contents_wrapper .contents_booking .form_inner .title_wrap .booking_ttl {
+    font-size: 1.8rem;
+  }
+  .page-booking .contents_wrapper .contents_booking .form_inner .section-form .submit_wrap {
+    margin-top: 40px;
+  }
+  .page-booking .contents_wrapper .contents_booking .form_inner .section-form .submit_wrap .amount_wrap {
+    margin-bottom: 40px;
+  }
+  .page-booking .contents_wrapper .contents_booking .form_inner .section-form .submit_wrap .amount_wrap .title {
+    font-size: 1.8rem;
+  }
+  .page-booking .contents_wrapper .contents_booking .form_inner .section-form .submit_wrap .amount_wrap .price {
+    font-size: 1.8rem;
+  }
+  .page-booking .contents_wrapper .contents_booking .form_inner .section-form .submit_wrap .selected_date {
+    padding: 25px;
+  }
+  .page-booking .contents_wrapper .contents_booking .form_inner .section-form .submit_wrap .submit_button .submit_button {
+    padding: 20px 0 22px;
+    font-size: 1.8rem;
+  }
+}
 /*########## コンポーネント ##########*/
 .comp-bokking-title {
   font-weight: inherit;
@@ -684,7 +752,7 @@ footer .footer_inner .footer_nav ul li a {
   padding: 15px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   line-height: 1.6;
   font-weight: 500;
   text-align: left;
@@ -799,7 +867,7 @@ footer .footer_inner .footer_nav ul li a {
     margin-bottom: 0px;
   }
   .comp-faq-contents .toggle_item .toggle_button {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
   .comp-faq-contents .toggle_item .toggle_button .txt br {
     display: none;
@@ -814,7 +882,7 @@ footer .footer_inner .footer_nav ul li a {
     margin-bottom: 0px;
   }
   .comp-faq-contents .toggle_item .toggle_button {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 }
 .comp-fixed-button {
@@ -843,6 +911,12 @@ footer .footer_inner .footer_nav ul li a {
   padding: 10px 0;
   margin: 0 auto;
 }
+@media screen and (min-width: 720px) {
+  .comp-fixed-button .cart_inner {
+    width: calc(100% - 40px);
+    padding: 15px 0;
+  }
+}
 .comp-fixed-button .cart_inner .fixed_cart_button {
   background: #0b4e2c;
   border: none;
@@ -868,9 +942,6 @@ footer .footer_inner .footer_nav ul li a {
   .comp-fixed-button .cart_inner .fixed_cart_button {
     padding: 20px 0;
     font-size: 1.8rem;
-  }
-  .comp-fixed-button .cart_inner .fixed_cart_button span {
-    padding: 0 0 0 30px;
   }
 }
 @media screen and (min-width: 980px) {
@@ -909,6 +980,34 @@ footer .footer_inner .footer_nav ul li a {
           justify-content: space-between;
 }
 
+@media screen and (min-width: 720px) {
+  .comp-form-wrap .form_item {
+    padding: 40px 6vw;
+  }
+  .comp-form-wrap .form_item .form_ttl {
+    display: block;
+    margin-bottom: 25px;
+  }
+  .comp-form-wrap .form_item .form_ttl .small {
+    display: inline-block;
+    padding-left: 5px;
+    font-size: 1.4rem;
+  }
+  .comp-form-wrap .form_item .label_desc {
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+  }
+  .comp-form-wrap .form_item.item01 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
 .comp-number-input {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -925,6 +1024,7 @@ footer .footer_inner .footer_nav ul li a {
 .comp-number-input .title {
   font-size: 1.6rem;
   margin-right: 20px;
+  margin-bottom: 2px;
 }
 .comp-number-input .number_wrap {
   width: 110px;
@@ -968,6 +1068,37 @@ footer .footer_inner .footer_nav ul li a {
           user-select: none;
 }
 
+@media screen and (min-width: 720px) {
+  .comp-number-input {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .comp-number-input.margin {
+    margin-bottom: 20px;
+  }
+  .comp-number-input .title {
+    font-size: 1.6rem;
+    margin-right: 20px;
+  }
+  .comp-number-input .number_wrap {
+    width: 120px;
+    height: 30px;
+  }
+  .comp-number-input .number_wrap .button {
+    width: 30px;
+    height: 30px;
+  }
+  .comp-number-input .number_wrap input[type=text] {
+    height: 25px;
+    line-height: 25px;
+  }
+}
 .comp-menu-list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1002,6 +1133,42 @@ footer .footer_inner .footer_nav ul li a {
   margin-bottom: 20px;
 }
 
+@media screen and (min-width: 720px) {
+  .comp-menu-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-top: 30px;
+  }
+  .comp-menu-list .menu_item {
+    width: 48%;
+    margin-bottom: 0px;
+  }
+  .comp-menu-list .menu_item:nth-last-of-type(1) {
+    margin-bottom: 0;
+  }
+  .comp-menu-list .menu_item .img_wrap {
+    margin-bottom: 30px;
+  }
+  .comp-menu-list .menu_item .txt_wrap .menu_name {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  .comp-menu-list .menu_item .txt_wrap .menu_desc {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  .comp-menu-list .menu_item .txt_wrap .price {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+  }
+}
 .comp-calendar-wrap {
   border: 1px solid #363636;
   padding: 20px 10px 10px;
@@ -1151,6 +1318,68 @@ footer .footer_inner .footer_nav ul li a {
   color: #FEC32D;
 }
 
+@media screen and (min-width: 720px) {
+  .comp-calendar-wrap {
+    padding: 30px 15px 25px;
+    margin-top: 35px;
+  }
+  .comp-calendar-wrap .calendar_header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 0 30px;
+    margin-bottom: 25px;
+  }
+  .comp-calendar-wrap .calendar_header .button .circle {
+    width: 30px;
+    height: 30px;
+  }
+  .comp-calendar-wrap .calendar_header .button .circle.prev {
+    margin-right: 12px;
+  }
+  .comp-calendar-wrap .calendar_header .button .circle.next {
+    margin-left: 12px;
+  }
+  .comp-calendar-wrap .calendar_header .button .txt {
+    margin-bottom: 2px;
+    font-size: 1.6rem;
+  }
+  .comp-calendar-wrap .calendar_header .month_display {
+    font-size: 1.6rem;
+  }
+  .comp-calendar-wrap .calendar_table {
+    height: 410px;
+  }
+  .comp-calendar-wrap .calendar_table .caledar_inner table tr th, .comp-calendar-wrap .calendar_table .caledar_inner table tr td {
+    padding: 10px 0;
+  }
+  .comp-calendar-wrap .calendar_table .caledar_inner table tr th .weekDay, .comp-calendar-wrap .calendar_table .caledar_inner table tr td .weekDay {
+    font-size: 1.3rem;
+  }
+  .comp-calendar-wrap .calendar_table .caledar_inner table tr th p.date, .comp-calendar-wrap .calendar_table .caledar_inner table tr td p.date {
+    font-size: 1.3rem;
+    line-height: 30px;
+  }
+  .comp-calendar-wrap .calendar_table .caledar_inner table tr th button .circle, .comp-calendar-wrap .calendar_table .caledar_inner table tr td button .circle {
+    display: block;
+    width: 30px;
+    height: 30px;
+    font-size: 1.3rem;
+    line-height: 30px;
+    margin: 0 auto 5px;
+  }
+  .comp-calendar-wrap .calendar_table .caledar_inner table tr th button .status, .comp-calendar-wrap .calendar_table .caledar_inner table tr td button .status {
+    font-size: 1.2rem;
+  }
+}
 .comp-main-slider {
   position: relative;
 }
@@ -1194,6 +1423,12 @@ footer .footer_inner .footer_nav ul li a {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
+}
+@media screen and (min-width: 720px) {
+  .comp-main-slider .slide_caret {
+    width: 40px;
+    height: 40px;
+  }
 }
 .comp-main-slider .slide_caret.slide_next {
   right: 3vw;

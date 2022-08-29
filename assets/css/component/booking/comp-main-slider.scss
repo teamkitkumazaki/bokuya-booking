@@ -40,6 +40,10 @@
     margin: auto;
     border: 1px solid #fff;
     @include bgSet;
+    @media screen and (min-width: 720px){
+      width: 40px;
+      height: 40px;
+    }
     &.slide_next{
       right: 3vw;
       background-image: url(../img/common/caret_right.svg);

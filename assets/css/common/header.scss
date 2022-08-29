@@ -1,6 +1,7 @@
 header{
   .header_inner{
-    @include wrapper;
+    width: 94vw;
+    margin: 0 auto;
     padding: 20px 0;
     .back_button{
       @include flexSet;

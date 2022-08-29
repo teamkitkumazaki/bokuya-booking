@@ -25,3 +25,30 @@
     }
   }
 }
+
+@media screen and (min-width: 720px){
+  .comp-form-wrap{
+    .form_item{
+      padding: 40px 6vw;
+    }
+    .form_item{
+      .form_ttl{
+        display: block;
+        margin-bottom: 25px;
+        .small{
+          display: inline-block;
+          padding-left: 5px;
+          font-size: 1.4rem;
+        }
+      }
+      .label_desc{
+        font-size: 1.4rem;
+        margin-bottom: 25px;
+      }
+      &.item01{
+        @include flexSet;
+        justify-content: space-between;
+      }
+    }
+  }
+}

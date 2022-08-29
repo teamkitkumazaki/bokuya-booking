@@ -110,3 +110,66 @@
     }
   }
 }
+
+@media screen and (min-width: 720px){
+  .page-booking{
+    margin-bottom: 90px;
+    .contents_wrapper{
+      .contents_detail{
+        .section-main{
+          margin-bottom: 90px;
+          .main_desc{
+            margin-top: 50px;
+          }
+          .desc_wrap{
+            margin-bottom: 40px;
+          }
+        }
+        .section-cancel{
+          margin-bottom: 90px;
+          .comp-detail-list{
+            margin-top: 35px;
+          }
+        }
+        .section-faq{
+          .comp-faq-contents{
+            margin-top: 40px;
+          }
+        }
+      }
+      .contents_booking{
+        .form_inner{
+          .title_wrap{
+            padding: 30px 6vw;
+            .booking_ttl{
+              font-size: 1.8rem;
+            }
+          }
+          .section-form{
+            .submit_wrap{
+              margin-top: 40px;
+              .amount_wrap{
+                margin-bottom: 40px;
+                .title{
+                  font-size: 1.8rem;
+                }
+                .price{
+                  font-size: 1.8rem;
+                }
+              }
+              .selected_date{
+                padding: 25px;
+              }
+              .submit_button{
+                .submit_button{
+                  padding: 20px 0 22px;
+                  font-size: 1.8rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -7,6 +7,7 @@
   .title{
     font-size: 1.6rem;
     margin-right: 20px;
+    margin-bottom: 2px;
   }
   .number_wrap{
     width: 110px;
@@ -42,6 +43,32 @@
       text-align: center;
       pointer-events: none;
       user-select: none;
+    }
+  }
+}
+
+@media screen and (min-width: 720px){
+  .comp-number-input{
+    @include flexSet;
+    align-items: center;
+    &.margin{
+      margin-bottom: 20px;
+    }
+    .title{
+      font-size: 1.6rem;
+      margin-right: 20px;
+    }
+    .number_wrap{
+      width: 120px;
+      height: 30px;
+      .button{
+        width: 30px;
+        height: 30px;
+      }
+      input[type=text]{
+        height: 25px;
+        line-height: 25px;
+      }
     }
   }
 }

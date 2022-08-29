@@ -27,3 +27,36 @@
     }
   }
 }
+
+@media screen and (min-width: 720px){
+  .comp-menu-list{
+    @include flexSet;
+    justify-content: space-between;
+    margin-top: 30px;
+    .menu_item{
+      width: 48%;
+      margin-bottom: 0px;
+      &:nth-last-of-type(1){
+        margin-bottom: 0;
+      }
+      .img_wrap{
+        margin-bottom: 30px;
+      }
+      .txt_wrap{
+        .menu_name{
+          font-size: 2.0rem;
+          margin-bottom: 20px;
+        }
+        .menu_desc{
+          font-size: 1.6rem;
+          line-height: 1.6;
+          margin-bottom: 20px;
+        }
+        .price{
+          font-size: 1.4rem;
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+}
