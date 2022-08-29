@@ -1,0 +1,91 @@
+.comp-calendar-wrap{
+  border: 1px solid $keyColor;
+  padding: 20px 10px 10px;
+  box-sizing: border-box;
+  .calendar_header{
+    @include flexSet;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    margin-bottom: 15px;
+    .button{
+      @include flexSet;
+      align-items: center;
+      justify-content: space-between;
+      font-family: inherit;
+      .circle{
+        width: 25px;
+        height: 25px;
+        background-color: $keyColor;
+        border-radius: 50%;
+        @include bgSet;
+        &.prev{
+          background-image: url(../img/common/caret_left.svg);
+          margin-right: 7px;
+        }
+        &.next{
+          background-image: url(../img/common/caret_right.svg);
+          margin-left: 7px;
+        }
+      }
+      .txt{
+        margin-bottom: 2px;
+        font-size: 1.4rem;
+      }
+    }
+    .month_display{
+      font-size: 1.6rem;
+    }
+  }
+  .calendar_table{
+    .caledar_inner{
+      thead, tbody, table, tr, td{
+        display: block;
+      }
+      thead, tr{
+        width: 100%;
+      }
+      table{
+        tr{
+          @include flexSet;
+          th, td{
+            width: calc(100% / 7);
+            text-align: center;
+            padding: 7px 0;
+            .weekDay{
+              font-size: 1.2rem;
+            }
+            p.date{
+              font-size: 1.2rem;
+              line-height: 26px;
+              text-decoration: line-through;
+              color: #acacac;
+            }
+            button{
+              .circle{
+                display: block;
+                width: 26px;
+                height: 26px;
+                background-color: $keyColor;
+                border-radius: 50%;
+                font-size: 1.2rem;
+                text-align: center;
+                line-height: 26px;
+                color: #fff;
+                margin: 0 auto 3px;
+              }
+              .status{
+                font-size: 1.0rem;
+              }
+              &.soldout{
+                pointer-events: none;
+                user-select: none;
+                opacity: 0.4;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -550,6 +550,62 @@ footer .footer_inner .footer_nav ul li a {
   background-size: contain;
   background-image: url(../img/common/close.svg);
 }
+.page-booking .contents_wrapper .contents_booking .form_inner .section-form .selected_date {
+  border: 1px solid #363636;
+  border-top: 0px;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.page-booking .contents_wrapper .contents_booking .form_inner .section-form .selected_date .title {
+  font-size: 1.6rem;
+}
+.page-booking .contents_wrapper .contents_booking .form_inner .section-form .selected_date .date {
+  font-size: 1.6rem;
+}
+.page-booking .contents_wrapper .contents_booking .form_inner .section-form .submit_wrap {
+  margin-top: 30px;
+}
+.page-booking .contents_wrapper .contents_booking .form_inner .section-form .submit_wrap .amount_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 30px;
+}
+.page-booking .contents_wrapper .contents_booking .form_inner .section-form .submit_wrap .amount_wrap .title {
+  font-size: 1.8rem;
+}
+.page-booking .contents_wrapper .contents_booking .form_inner .section-form .submit_wrap .amount_wrap .price {
+  font-size: 1.8rem;
+}
+.page-booking .contents_wrapper .contents_booking .form_inner .section-form .submit_wrap .submit_button .submit_button {
+  display: block;
+  width: 100%;
+  background-color: #0b4e2c;
+  padding: 15px 0 17px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-family: inherit;
+  color: #fff;
+}
+
 /*########## コンポーネント ##########*/
 .comp-bokking-title {
   font-weight: inherit;
@@ -827,11 +883,6 @@ footer .footer_inner .footer_nav ul li a {
           box-sizing: border-box;
   border-bottom: 1px solid #363636;
 }
-.comp-form-wrap .submit_wrap {
-  padding: 30px 6vw;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
 .comp-form-wrap .form_item .form_ttl {
   display: block;
   font-size: 2rem;
@@ -943,4 +994,114 @@ footer .footer_inner .footer_nav ul li a {
 .comp-menu-list .menu_item .txt_wrap .price {
   font-size: 1.2rem;
   margin-bottom: 20px;
+}
+
+.comp-calendar-wrap {
+  border: 1px solid #363636;
+  padding: 20px 10px 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.comp-calendar-wrap .calendar_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 10px;
+  margin-bottom: 15px;
+}
+.comp-calendar-wrap .calendar_header .button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-family: inherit;
+}
+.comp-calendar-wrap .calendar_header .button .circle {
+  width: 25px;
+  height: 25px;
+  background-color: #363636;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+.comp-calendar-wrap .calendar_header .button .circle.prev {
+  background-image: url(../img/common/caret_left.svg);
+  margin-right: 7px;
+}
+.comp-calendar-wrap .calendar_header .button .circle.next {
+  background-image: url(../img/common/caret_right.svg);
+  margin-left: 7px;
+}
+.comp-calendar-wrap .calendar_header .button .txt {
+  margin-bottom: 2px;
+  font-size: 1.4rem;
+}
+.comp-calendar-wrap .calendar_header .month_display {
+  font-size: 1.6rem;
+}
+.comp-calendar-wrap .calendar_table .caledar_inner thead, .comp-calendar-wrap .calendar_table .caledar_inner tbody, .comp-calendar-wrap .calendar_table .caledar_inner table, .comp-calendar-wrap .calendar_table .caledar_inner tr, .comp-calendar-wrap .calendar_table .caledar_inner td {
+  display: block;
+}
+.comp-calendar-wrap .calendar_table .caledar_inner thead, .comp-calendar-wrap .calendar_table .caledar_inner tr {
+  width: 100%;
+}
+.comp-calendar-wrap .calendar_table .caledar_inner table tr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.comp-calendar-wrap .calendar_table .caledar_inner table tr th, .comp-calendar-wrap .calendar_table .caledar_inner table tr td {
+  width: 14.2857142857%;
+  text-align: center;
+  padding: 7px 0;
+}
+.comp-calendar-wrap .calendar_table .caledar_inner table tr th .weekDay, .comp-calendar-wrap .calendar_table .caledar_inner table tr td .weekDay {
+  font-size: 1.2rem;
+}
+.comp-calendar-wrap .calendar_table .caledar_inner table tr th p.date, .comp-calendar-wrap .calendar_table .caledar_inner table tr td p.date {
+  font-size: 1.2rem;
+  line-height: 26px;
+  text-decoration: line-through;
+  color: #acacac;
+}
+.comp-calendar-wrap .calendar_table .caledar_inner table tr th button .circle, .comp-calendar-wrap .calendar_table .caledar_inner table tr td button .circle {
+  display: block;
+  width: 26px;
+  height: 26px;
+  background-color: #363636;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 26px;
+  color: #fff;
+  margin: 0 auto 3px;
+}
+.comp-calendar-wrap .calendar_table .caledar_inner table tr th button .status, .comp-calendar-wrap .calendar_table .caledar_inner table tr td button .status {
+  font-size: 1rem;
+}
+.comp-calendar-wrap .calendar_table .caledar_inner table tr th button.soldout, .comp-calendar-wrap .calendar_table .caledar_inner table tr td button.soldout {
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  opacity: 0.4;
 }

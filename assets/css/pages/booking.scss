@@ -58,7 +58,47 @@
           }
         }
         .section-form{
-
+          .selected_date{
+            border: 1px solid $keyColor;
+            border-top: 0px;
+            padding: 20px;
+            @include flexSet;
+            justify-content: space-between;
+            align-items: center;
+            .title{
+              font-size: 1.6rem;
+            }
+            .date{
+              font-size: 1.6rem;
+            }
+          }
+          .submit_wrap{
+            margin-top: 30px;
+            .amount_wrap{
+              @include flexSet;
+              justify-content: space-between;
+              align-items: center;
+              margin-bottom: 30px;
+              .title{
+                font-size: 1.8rem;
+              }
+              .price{
+                font-size: 1.8rem;
+              }
+            }
+            .submit_button{
+              .submit_button{
+                display: block;
+                width: 100%;
+                background-color: $bgGreen;
+                padding: 15px 0 17px;
+                font-size: 1.8rem;
+                font-weight: bold;
+                font-family: inherit;
+                color: #fff;
+              }
+            }
+          }
         }
       }
     }

@@ -274,16 +274,127 @@
 							<div class="form_item item03">
 								<label class="form_ttl"><span>予約の空き状況</span></label>
 								<p class="label_desc">来店希望日を選択してください。</p>
+								<div class="form_wrap">
+									<div class="comp-calendar-wrap">
+										<div class="calendar_header">
+											<button id="prevButton" class="button">
+												<span class="circle prev"></span>
+												<span class="txt">前月</span>
+											</button>
+											<p class="month_display">2022年9月</p>
+											<button id="nextButton" class="button">
+												<span class="txt">翌月</span>
+												<span class="circle next"></span>
+											</button>
+										</div><!-- calendar_header -->
+										<div class="calendar_table">
+											<div id="table202206" class="caledar_inner">
+												<table>
+													<thead>
+	        									<tr>
+	                      			<th><p class="weekDay">月</p></th>
+	                      			<th><p class="weekDay">火</p></th>
+	                      			<th><p class="weekDay">水</p></th>
+	                      			<th><p class="weekDay">木</p></th>
+	                      			<th><p class="weekDay">金</p></th>
+	                      			<th><p class="weekDay" style="color: rgb(0, 50, 159);">土</p></th>
+	                      			<th><p class="weekDay" style="color: rgb(181, 60, 60);">日</p></th>
+	                  				</tr>
+	      									</thead>
+													<tbody>
+														<tr>
+															<td date="20220829"><p class="date strike">29</p></td>
+															<td date="20220830"><p class="date strike">30</p></td>
+															<td date="20220831"><p class="date strike">31</p></td>
+															<td date="20220901"><p class="date strike">1</p></td>
+															<td date="20220902"><p class="date strike">2</p></td>
+															<td date="20220903">
+																<button type="button" class="date"><span class="circle">3</span><span class="status">予約可</span></button>
+															</td>
+															<td date="20220904">
+																<button type="button" class="date"><span class="circle">4</span><span class="status">予約可</span></button>
+															</td>
+														</tr>
+														<tr>
+															<td date="20220905"><p class="date strike">5</p></td>
+															<td date="20220906"><p class="date strike">6</p></td>
+															<td date="20220907"><p class="date strike">7</p></td>
+															<td date="20220908"><p class="date strike">8</p></td>
+															<td date="20220909"><p class="date strike">9</p></td>
+															<td date="20220910">
+																<button type="button" class="date"><span class="circle">10</span><span class="status">予約可</span></button>
+															</td>
+															<td date="20220911">
+																<button type="button" class="date"><span class="circle">11</span><span class="status">予約可</span></button>
+															</td>
+														</tr>
+														<tr>
+															<td date="20220912"><p class="date strike">12</p></td>
+															<td date="20220913"><p class="date strike">13</p></td>
+															<td date="20220914"><p class="date strike">14</p></td>
+															<td date="20220915"><p class="date strike">15</p></td>
+															<td date="20220916"><p class="date strike">16</p></td>
+															<td date="20220917">
+																<button type="button" class="date">
+																	<span class="circle">17</span>
+																	<span class="status">予約可</span>
+																</button>
+															</td>
+															<td date="20220918">
+																<button type="button" class="soldout">
+																	<span class="circle">18</span>
+																	<span class="status">空席なし</span>
+																</button>
+															</td>
+														</tr>
+														<tr>
+															<td date="20220919"><p class="date strike">19</p></td>
+															<td date="20220920">
+																<button type="button" class="soldout"><span class="circle">20</span><span class="status">空席なし</span></button>
+															</td>
+															<td date="20220921"><p class="date strike">21</p></td>
+															<td date="20220922"><p class="date strike">22</p></td>
+															<td date="20220923"><p class="date strike">23</p></td>
+															<td date="20220924">
+																<button type="button"><span class="circle">24</span><span class="status">予約可</span></button>
+															</td>
+															<td date="20220925">
+																<button type="button"><span class="circle">25</span><span class="status">予約可</span></button>
+															</td>
+														</tr>
+														<tr>
+															<td date="20220926"><p class="date strike">26</p></td>
+															<td date="20220927"><p class="date strike">27</p></td>
+															<td date="20220928"><p class="date strike">28</p></td>
+															<td date="20220929"><p class="date strike">29</p></td>
+															<td date="20220930"><p class="date strike">30</p></td>
+															<td date="20220931">
+																<button type="button"><span class="circle">31</span><span class="status">予約可</span></button>
+															</td>
+															<td date="20221001">
+																<button type="button"><span class="circle">1</span><span class="status">予約可</span></button>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div><!-- caledar_inner -->
+										</div><!-- calendar_table -->
+									</div><!-- comp-calendar-wrap -->
+									<div class="selected_date">
+										<span class="title">予約日程</span>
+										<p class="date">2022年9月24日(木)</p>
+									</div>
+									<div class="submit_wrap">
+										<div class="amount_wrap">
+											<span class="title">小計</span>
+											<p class="price">7,500円(税込)</p>
+										</div>
+										<div class="submit_button">
+											<button type="submit" class="submit_button">お支払いに進む</button>
+										</div>
+									</div>
+								</div><!-- form_wrap -->
 							</div><!-- form_item -->
-							<div class="submit_wrap">
-								<div class="amount_wrap">
-									<span class="title">小計</span>
-									<p class="price">7,500円(税込)</p>
-								</div>
-								<div class="submit_button">
-									<button>お支払いに進む</button>
-								</div>
-							</div>
 						</form>
 					</section>
 				</div>
