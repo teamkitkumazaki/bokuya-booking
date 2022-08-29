@@ -13,6 +13,13 @@
       align-items: center;
       justify-content: space-between;
       font-family: inherit;
+      transition: opacity .3s;
+      will-change: opacity;
+      &.disable{
+        opacity: 0.3;
+        pointer-events: none;
+        user-select: none;
+      }
       .circle{
         width: 25px;
         height: 25px;
@@ -38,7 +45,18 @@
     }
   }
   .calendar_table{
+    height: 338px;
+    overflow: hidden;
+    position: relative;
     .caledar_inner{
+      position: absolute;
+      top:0;
+      left:0;
+      right:0;
+      margin: auto;
+      &.disnone{
+        display: none;
+      }
       thead, tbody, table, tr, td{
         display: block;
       }
@@ -69,18 +87,31 @@
                 background-color: $keyColor;
                 border-radius: 50%;
                 font-size: 1.2rem;
+                font-weight: bold;
                 text-align: center;
                 line-height: 26px;
                 color: #fff;
                 margin: 0 auto 3px;
+                transition: background .3s;
+                will-change: background;
               }
               .status{
                 font-size: 1.0rem;
+                transition: color .3s;
+                will-change: color;
               }
               &.soldout{
                 pointer-events: none;
                 user-select: none;
                 opacity: 0.4;
+              }
+              &.selected_date_button{
+                .circle{
+                  background-color: #FEC32D;
+                }
+                .status{
+                  color: #FEC32D;
+                }
               }
             }
           }

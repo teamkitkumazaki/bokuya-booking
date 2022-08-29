@@ -51,9 +51,6 @@ button{
 	padding: 0;
 }
 article{
-	position: relative;
-	z-index: 100;
-	transition: opacity .5s;
 	.section_inner{
 		@include wrapper;
 	}

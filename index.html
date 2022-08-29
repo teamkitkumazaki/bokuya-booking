@@ -198,7 +198,7 @@
 					</div><!-- section_inner -->
 				</section>
 			</div><!-- contents_detail -->
-			<div class="contents_booking">
+			<div id="contentsBooking" class="contents_booking">
 				<div class="form_inner">
 					<div class="title_wrap">
 						<h2 class="booking_ttl">レストランを予約する</h2>
@@ -215,7 +215,7 @@
 										<span class="title">大人</span>
 										<div class="number_wrap">
 											<button type="button" class="button minus"></button>
-											<input type="number" name="[大人の人数:]" value="0">
+											<input id="adlutNum" type="text" name="[大人の人数:]" value="0">
 											<button type="button" class="button plus"></button>
 										</div>
 									</div><!-- comp-number-input -->
@@ -223,7 +223,7 @@
 										<span class="title">子供</span>
 										<div class="number_wrap">
 											<button type="button" class="button minus"></button>
-											<input type="number" name="[子供の人数:]" value="0">
+											<input id="childNum" type="text" name="[子供の人数:]" value="0">
 											<button type="button" class="button plus"></button>
 										</div>
 									</div><!-- comp-number-input -->
@@ -245,7 +245,7 @@
 													<div class="comp-number-input">
 														<div class="number_wrap">
 															<button type="button" class="button minus"></button>
-															<input type="number" name="[カレーセット:]" value="0">
+															<input id="curryNum" type="text" name="[カレーセット:]" value="0">
 															<button type="button" class="button plus"></button>
 														</div>
 													</div><!-- comp-number-input -->
@@ -262,7 +262,7 @@
 													<div class="comp-number-input">
 														<div class="number_wrap">
 															<button type="button" class="button minus"></button>
-															<input type="number" name="[シチューセット:]" value="0">
+															<input id="stewNum" type="text" name="[シチューセット:]" value="0">
 															<button type="button" class="button plus"></button>
 														</div>
 													</div><!-- comp-number-input -->
@@ -277,18 +277,18 @@
 								<div class="form_wrap">
 									<div class="comp-calendar-wrap">
 										<div class="calendar_header">
-											<button id="prevButton" class="button">
+											<button id="prevButton" class="button disable" type="button">
 												<span class="circle prev"></span>
 												<span class="txt">前月</span>
 											</button>
-											<p class="month_display">2022年9月</p>
-											<button id="nextButton" class="button">
+											<p id="monthDisplay" class="month_display">2022年9月</p>
+											<button id="nextButton" class="button" type="button">
 												<span class="txt">翌月</span>
 												<span class="circle next"></span>
 											</button>
 										</div><!-- calendar_header -->
-										<div class="calendar_table">
-											<div id="table202206" class="caledar_inner">
+										<div id="calendarTable" class="calendar_table">
+											<div id="table202209" class="caledar_inner">
 												<table>
 													<thead>
 	        									<tr>
@@ -309,10 +309,16 @@
 															<td date="20220901"><p class="date strike">1</p></td>
 															<td date="20220902"><p class="date strike">2</p></td>
 															<td date="20220903">
-																<button type="button" class="date"><span class="circle">3</span><span class="status">予約可</span></button>
+																<button type="button" class="date" dateY="2022" dateM="09" dateD="03">
+																	<span class="circle">3</span>
+																	<span class="status">予約可</span>
+																</button>
 															</td>
 															<td date="20220904">
-																<button type="button" class="date"><span class="circle">4</span><span class="status">予約可</span></button>
+																<button type="button" class="date" dateY="2022" dateM="09" dateD="04">
+																	<span class="circle">4</span>
+																	<span class="status">予約可</span>
+																</button>
 															</td>
 														</tr>
 														<tr>
@@ -322,10 +328,10 @@
 															<td date="20220908"><p class="date strike">8</p></td>
 															<td date="20220909"><p class="date strike">9</p></td>
 															<td date="20220910">
-																<button type="button" class="date"><span class="circle">10</span><span class="status">予約可</span></button>
+																<button type="button" class="date" dateY="2022" dateM="09" dateD="10"><span class="circle">10</span><span class="status">予約可</span></button>
 															</td>
 															<td date="20220911">
-																<button type="button" class="date"><span class="circle">11</span><span class="status">予約可</span></button>
+																<button type="button" class="date" dateY="2022" dateM="09" dateD="11"><span class="circle">11</span><span class="status">予約可</span></button>
 															</td>
 														</tr>
 														<tr>
@@ -335,13 +341,13 @@
 															<td date="20220915"><p class="date strike">15</p></td>
 															<td date="20220916"><p class="date strike">16</p></td>
 															<td date="20220917">
-																<button type="button" class="date">
+																<button type="button" class="date" dateY="2022" dateM="09" dateD="17">
 																	<span class="circle">17</span>
 																	<span class="status">予約可</span>
 																</button>
 															</td>
 															<td date="20220918">
-																<button type="button" class="soldout">
+																<button type="button" class="soldout" dateY="2022" dateM="09" dateD="18">
 																	<span class="circle">18</span>
 																	<span class="status">空席なし</span>
 																</button>
@@ -350,16 +356,16 @@
 														<tr>
 															<td date="20220919"><p class="date strike">19</p></td>
 															<td date="20220920">
-																<button type="button" class="soldout"><span class="circle">20</span><span class="status">空席なし</span></button>
+																<button type="button" class="soldout" dateY="2022" dateM="09" dateD="20"><span class="circle">20</span><span class="status">空席なし</span></button>
 															</td>
 															<td date="20220921"><p class="date strike">21</p></td>
 															<td date="20220922"><p class="date strike">22</p></td>
 															<td date="20220923"><p class="date strike">23</p></td>
 															<td date="20220924">
-																<button type="button"><span class="circle">24</span><span class="status">予約可</span></button>
+																<button type="button" dateY="2022" dateM="09" dateD="24"><span class="circle">24</span><span class="status">予約可</span></button>
 															</td>
 															<td date="20220925">
-																<button type="button"><span class="circle">25</span><span class="status">予約可</span></button>
+																<button type="button" dateY="2022" dateM="09" dateD="25"><span class="circle">25</span><span class="status">予約可</span></button>
 															</td>
 														</tr>
 														<tr>
@@ -368,11 +374,117 @@
 															<td date="20220928"><p class="date strike">28</p></td>
 															<td date="20220929"><p class="date strike">29</p></td>
 															<td date="20220930"><p class="date strike">30</p></td>
-															<td date="20220931">
-																<button type="button"><span class="circle">31</span><span class="status">予約可</span></button>
-															</td>
 															<td date="20221001">
-																<button type="button"><span class="circle">1</span><span class="status">予約可</span></button>
+																<button type="button" dateY="2022" dateM="10" dateD="01"><span class="circle">1</span><span class="status">予約可</span></button>
+															</td>
+															<td date="20221002">
+																<button type="button" dateY="2022" dateM="10" dateD="02"><span class="circle">2</span><span class="status">予約可</span></button>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div><!-- caledar_inner -->
+											<div id="table202210" class="caledar_inner disnone">
+												<table>
+													<thead>
+	        									<tr>
+	                      			<th><p class="weekDay">月</p></th>
+	                      			<th><p class="weekDay">火</p></th>
+	                      			<th><p class="weekDay">水</p></th>
+	                      			<th><p class="weekDay">木</p></th>
+	                      			<th><p class="weekDay">金</p></th>
+	                      			<th><p class="weekDay" style="color: rgb(0, 50, 159);">土</p></th>
+	                      			<th><p class="weekDay" style="color: rgb(181, 60, 60);">日</p></th>
+	                  				</tr>
+	      									</thead>
+													<tbody>
+														<tr>
+															<td date="20220926"><p class="date strike">26</p></td>
+															<td date="20220927"><p class="date strike">27</p></td>
+															<td date="20220928"><p class="date strike">28</p></td>
+															<td date="20220929"><p class="date strike">29</p></td>
+															<td date="20220930"><p class="date strike">30</p></td>
+															<td date="20221001">
+																<button type="button" date="20221002" dateY="2022" dateM="10" dateD="01"><span class="circle">1</span><span class="status">予約可</span></button>
+															</td>
+															<td date="20221002">
+																<button type="button" date="20221002" dateY="2022" dateM="10" dateD="02"><span class="circle">2</span><span class="status">予約可</span></button>
+															</td>
+														</tr>
+														<tr>
+															<td date="20221003"><p class="date strike">3</p></td>
+															<td date="20221004"><p class="date strike">4</p></td>
+															<td date="20221005"><p class="date strike">5</p></td>
+															<td date="20221006"><p class="date strike">6</p></td>
+															<td date="20221007"><p class="date strike">7</p></td>
+															<td date="20221008">
+																<button type="button" date="20221002" dateY="2022" dateM="10" dateD="08">
+																	<span class="circle">8</span>
+																	<span class="status">予約可</span>
+																</button>
+															</td>
+															<td date="20221009">
+																<button type="button" date="20221002" dateY="2022" dateM="10" dateD="09">
+																	<span class="circle">9</span>
+																	<span class="status">予約可</span>
+																</button>
+															</td>
+														</tr>
+														<tr>
+															<td date="20221010"><p class="date strike">10</p></td>
+															<td date="20221011"><p class="date strike">11</p></td>
+															<td date="20221012"><p class="date strike">12</p></td>
+															<td date="20221013"><p class="date strike">13</p></td>
+															<td date="20221014"><p class="date strike">14</p></td>
+															<td date="20221015">
+																<button type="button" dateY="2022" dateM="10" dateD="15">
+																	<span class="circle">15</span>
+																	<span class="status">予約可</span>
+																</button>
+															</td>
+															<td date="20221016">
+																<button type="button" dateY="2022" dateM="10" dateD="16">
+																	<span class="circle">16</span>
+																	<span class="status">予約可</span>
+																</button>
+															</td>
+														</tr>
+														<tr>
+															<td date="20221017"><p class="date strike">17</p></td>
+															<td date="20221018"><p class="date strike">18</p></td>
+															<td date="20221019"><p class="date strike">19</p></td>
+															<td date="20221020"><p class="date strike">20</p></td>
+															<td date="20221021"><p class="date strike">21</p></td>
+															<td date="20221022">
+																<button type="button" dateY="2022" dateM="10" dateD="22">
+																	<span class="circle">22</span>
+																	<span class="status">予約可</span>
+																</button>
+															</td>
+															<td date="20221023">
+																<button type="button" dateY="2022" dateM="10" dateD="23">
+																	<span class="circle">23</span>
+																	<span class="status">予約可</span>
+																</button>
+															</td>
+														</tr>
+														<tr>
+															<td date="20221024"><p class="date strike">24</p></td>
+															<td date="20221025"><p class="date strike">25</p></td>
+															<td date="20221026"><p class="date strike">26</p></td>
+															<td date="20221027"><p class="date strike">27</p></td>
+															<td date="20221028"><p class="date strike">28</p></td>
+															<td date="20221029">
+																<button type="button" dateY="2022" dateM="10" dateD="29">
+																	<span class="circle">29</span>
+																	<span class="status">予約可</span>
+																</button>
+															</td>
+															<td date="20221030">
+																<button type="button" dateY="2022" dateM="10" dateD="30">
+																	<span class="circle">30</span>
+																	<span class="status">予約可</span>
+																</button>
 															</td>
 														</tr>
 													</tbody>
@@ -382,12 +494,12 @@
 									</div><!-- comp-calendar-wrap -->
 									<div class="selected_date">
 										<span class="title">予約日程</span>
-										<p class="date">2022年9月24日(木)</p>
+										<p id="dateDisplay" class="date">未選択</p>
 									</div>
 									<div class="submit_wrap">
 										<div class="amount_wrap">
 											<span class="title">小計</span>
-											<p class="price">7,500円(税込)</p>
+											<p id="amountPrice" class="price">0円(税込)</p>
 										</div>
 										<div class="submit_button">
 											<button type="submit" class="submit_button">お支払いに進む</button>
@@ -401,11 +513,11 @@
 			</div>
 		</div><!-- contents_wrapper -->
 	</article>
-	<!-- <div id="fixedButton" class="comp-fixed-button display">
+	<div id="fixedButton" class="comp-fixed-button display">
   	<div class="cart_inner">
 			<button class="fixed_cart_button"><span>レストランを予約する</span></button>
 		</div>
-	</div> --> <!-- comp-fixed-cart-wrap -->
+	</div><!-- comp-fixed-cart-wrap -->
 	<footer>
 		<div class="footer_inner">
 			<nav class="footer_nav">

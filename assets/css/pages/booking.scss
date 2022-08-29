@@ -27,12 +27,18 @@
     }
     .contents_booking{
       position: fixed;
-      top:0;
+      top: 100vh;
       left:0;
       right:0;
       width: 100%;
       height: 100vh;
       background: #fff;
+      transition: top .3s;
+      will-change: top;
+      z-index: 200;
+      &.display{
+        top:0;
+      }
       .form_inner{
         overflow: scroll;
         height: 100vh;

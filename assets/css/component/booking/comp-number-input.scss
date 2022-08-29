@@ -29,7 +29,7 @@
         background-image: url(../img/common/plus_button.svg);
       }
     }
-    input[type=number]{
+    input[type=text]{
       display: block;
       width: 100%;
       border: none;
@@ -40,6 +40,8 @@
       height: 21px;
       line-height: 21px;
       text-align: center;
+      pointer-events: none;
+      user-select: none;
     }
   }
 }

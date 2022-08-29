@@ -350,12 +350,6 @@ button {
   padding: 0;
 }
 
-article {
-  position: relative;
-  z-index: 100;
-  -webkit-transition: opacity 0.5s;
-  transition: opacity 0.5s;
-}
 article .section_inner {
   width: 88vw;
   margin-left: auto;
@@ -507,12 +501,19 @@ footer .footer_inner .footer_nav ul li a {
 }
 .page-booking .contents_wrapper .contents_booking {
   position: fixed;
-  top: 0;
+  top: 100vh;
   left: 0;
   right: 0;
   width: 100%;
   height: 100vh;
   background: #fff;
+  -webkit-transition: top 0.3s;
+  transition: top 0.3s;
+  will-change: top;
+  z-index: 200;
+}
+.page-booking .contents_wrapper .contents_booking.display {
+  top: 0;
 }
 .page-booking .contents_wrapper .contents_booking .form_inner {
   overflow: scroll;
@@ -949,7 +950,7 @@ footer .footer_inner .footer_nav ul li a {
   right: 0;
   background-image: url(../img/common/plus_button.svg);
 }
-.comp-number-input .number_wrap input[type=number] {
+.comp-number-input .number_wrap input[type=text] {
   display: block;
   width: 100%;
   border: none;
@@ -960,6 +961,11 @@ footer .footer_inner .footer_nav ul li a {
   height: 21px;
   line-height: 21px;
   text-align: center;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .comp-menu-list {
@@ -1030,6 +1036,17 @@ footer .footer_inner .footer_nav ul li a {
       -ms-flex-pack: justify;
           justify-content: space-between;
   font-family: inherit;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  will-change: opacity;
+}
+.comp-calendar-wrap .calendar_header .button.disable {
+  opacity: 0.3;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .comp-calendar-wrap .calendar_header .button .circle {
   width: 25px;
@@ -1054,6 +1071,21 @@ footer .footer_inner .footer_nav ul li a {
 }
 .comp-calendar-wrap .calendar_header .month_display {
   font-size: 1.6rem;
+}
+.comp-calendar-wrap .calendar_table {
+  height: 338px;
+  overflow: hidden;
+  position: relative;
+}
+.comp-calendar-wrap .calendar_table .caledar_inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.comp-calendar-wrap .calendar_table .caledar_inner.disnone {
+  display: none;
 }
 .comp-calendar-wrap .calendar_table .caledar_inner thead, .comp-calendar-wrap .calendar_table .caledar_inner tbody, .comp-calendar-wrap .calendar_table .caledar_inner table, .comp-calendar-wrap .calendar_table .caledar_inner tr, .comp-calendar-wrap .calendar_table .caledar_inner td {
   display: block;
@@ -1089,13 +1121,20 @@ footer .footer_inner .footer_nav ul li a {
   background-color: #363636;
   border-radius: 50%;
   font-size: 1.2rem;
+  font-weight: bold;
   text-align: center;
   line-height: 26px;
   color: #fff;
   margin: 0 auto 3px;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+  will-change: background;
 }
 .comp-calendar-wrap .calendar_table .caledar_inner table tr th button .status, .comp-calendar-wrap .calendar_table .caledar_inner table tr td button .status {
   font-size: 1rem;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+  will-change: color;
 }
 .comp-calendar-wrap .calendar_table .caledar_inner table tr th button.soldout, .comp-calendar-wrap .calendar_table .caledar_inner table tr td button.soldout {
   pointer-events: none;
@@ -1104,4 +1143,10 @@ footer .footer_inner .footer_nav ul li a {
       -ms-user-select: none;
           user-select: none;
   opacity: 0.4;
+}
+.comp-calendar-wrap .calendar_table .caledar_inner table tr th button.selected_date_button .circle, .comp-calendar-wrap .calendar_table .caledar_inner table tr td button.selected_date_button .circle {
+  background-color: #FEC32D;
+}
+.comp-calendar-wrap .calendar_table .caledar_inner table tr th button.selected_date_button .status, .comp-calendar-wrap .calendar_table .caledar_inner table tr td button.selected_date_button .status {
+  color: #FEC32D;
 }

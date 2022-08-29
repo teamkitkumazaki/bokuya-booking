@@ -80,7 +80,6 @@ $(function() {
       }
 
       function slideChange(e) {
-        console.log('number:' + number + '/' + 'e:' + e);
         setTimeout(function() {
           $('.main0').css({'opacity': '0'});
           $('.display_slide').removeClass('display_slide').addClass('display_slide2');
@@ -113,108 +112,6 @@ $(function() {
 
     mainSliderShow($('#mainSlider01'), 0);
     mainSliderShow($('#mainSlider02'), 1);
-
-
-    function locationSlideShow(target, number){
-      var duration = 1000;
-      var sliderLength = target.find('li').length;
-      var current = -1;
-
-      function changeState() {
-        if (current < sliderLength - 1) {
-          current++;
-        } else {
-          current = 0;
-        }
-
-        slideChange(current)
-      }
-
-      function backState() {
-        if (current != 0) {
-          current--;
-        } else {
-          current = sliderLength - 1;
-        }
-
-        slideChange(current)
-      }
-
-      function clickTn(num) {
-        if (num == 1) {
-          changeState();
-        } else {
-          backState();
-        }
-      }
-
-      function slideChange(e) {
-        setTimeout(function() {
-          $('.slideshow0').css({'opacity': '0'});
-          $('.display_slideshow').removeClass('display_slideshow').addClass('display_slideshow2');
-          $('.slideshow' + e).addClass('display_slideshow');
-          current = e;
-          setTimeout(function() {
-            $('.display_slideshow2').removeClass('display_slideshow2');
-          }, 500);
-          $('body').animate({
-            'opacity': 1
-          }, duration, function() {
-            clickTn(1);
-          });
-        }, 5);
-      };
-
-      function init() {
-        target.find('li').each(function(index) {
-          if (index == 0) {
-            $(this).addClass('display_slideshow');
-          }
-          $(this).addClass('slideshow' + index);
-        });
-        changeState();
-      };
-
-      init();
-    }
-
-    locationSlideShow($('#locationSlider'), 2);
-
-
-    //アンカーリンク
-    function hummenuAnker(target){
-      var scrollObj = [];
-      var scrollHref = [];
-
-      function windowMove(e) {
-        var w = $(window).width();
-        var scrollHeight = $(scrollHref[e]).offset().top;
-        if (w > 1100) {
-          var adScroll = scrollHeight - 60;
-        } else {
-          var adScroll = scrollHeight - 60;
-        }
-        $("html, body").stop().animate({scrollTop: adScroll}, 400);
-      }
-
-      function init() {
-        $.each(target.find('button'), function(index) {
-          scrollObj[index] = $(this);
-          scrollHref[index] = $(this).attr("scrollhref");
-          scrollObj[index].on({
-            'click': function() {
-              windowMove(index);
-            }
-          });
-        });
-      }
-
-      init();
-
-    }
-
-    hummenuAnker($('#mainNavigation'));
-
 
 
     //FAQの、トグル制御
@@ -300,6 +197,151 @@ $(function() {
     if (document.getElementById('faqWrap')) {
       faqToggle($('body'));
     }
+
+    // 予約フォームの開閉
+
+    function displaySpBookingForm(){
+      var contentsBooking = $('#contentsBooking');
+      var fixedButton = $('#fixedButton').find('button');
+      var bookingClose = $('#bookingClose');
+
+      function init(){
+        fixedButton.on({
+          'click': function() {
+            contentsBooking.addClass('display');
+          }
+        });
+        bookingClose.on({
+          'click': function() {
+            contentsBooking.removeClass('display');
+          }
+        });
+      }
+
+      init()
+
+    }
+
+    displaySpBookingForm();
+
+
+    // 商品詳細ページ 数量インプットの操作
+    function controllBuyingQuantity(){
+      var minusButton = [];
+      var plusButton = [];
+      var quantityInput = [];
+      var quantityNum;
+      var curryNum = $('#curryNum');
+      var stewNum = $('#stewNum');
+      var amountPrice = $('#amountPrice');
+
+      function controllQuantity(vactor,num){
+        quantityNum = quantityInput[num].val();
+        if(vactor == 1){
+          quantityInput[num].attr('value', Number(quantityNum) + 1);
+        }else{
+          if(quantityNum != 0){
+            quantityInput[num].attr('value', Number(quantityNum) - 1);
+          }
+        }
+        var amountNum = Number(curryNum.val()) + Number(stewNum.val());
+        var amountNum = amountNum * 2500;
+        amountPrice.html(amountNum.toLocaleString() + '円(税込)');
+      }
+
+      function init(){
+
+        $('article').find('.comp-number-input').each(function(index) {
+          minusButton[index] = $(this).find('.minus');
+          plusButton[index] = $(this).find('.plus');
+          quantityInput[index] = $(this).find('input[type=text]');
+
+          minusButton[index].on({
+            'click': function() {
+              event.preventDefault();
+              controllQuantity(-1,index);
+            }
+          });
+
+          plusButton[index].on({
+            'click': function() {
+              event.preventDefault();
+              controllQuantity(1,index);
+            }
+          });
+
+        });
+      }
+
+      init();
+
+    }
+
+    controllBuyingQuantity();
+
+    //予約カレンダーの制御
+    function calendarControll(){
+      var calendarState = 0;
+      var prevButton = $('#prevButton');
+      var nextButton = $('#nextButton');
+      var calendarTable = $('#calendarTable');
+      var dateDisplay = $('#dateDisplay');
+      var monthDisplay = $('#monthDisplay');
+      var dateButton = [];
+      var dateY = [];
+      var dateM = [];
+      var dateD = [];
+
+      function calendarShifter(vector){
+        if(vector == 1){
+          $('#table202210').removeClass('disnone');
+          $('#table202209').addClass('disnone');
+          nextButton.addClass('disable');
+          prevButton.removeClass('disable');
+          monthDisplay.html('2022年10月');
+        }else{
+          $('#table202210').addClass('disnone');
+          $('#table202209').removeClass('disnone');
+          nextButton.removeClass('disable');
+          prevButton.addClass('disable');
+          monthDisplay.html('2022年9月');
+        }
+      }
+
+      function init(){
+        calendarTable.find('button').each(function(index) {
+          dateButton[index] = $(this);
+          dateY[index] = $(this).attr('dateY');
+          dateM[index] = $(this).attr('dateM');
+          dateD[index] = $(this).attr('dateD');
+          dateButton[index].on({
+            'click': function() {
+              dateDisplay.html(dateY[index] + '年' + dateM[index] + '月' + dateD[index] + '日');
+              $('.selected_date_button').removeClass('selected_date_button');
+              $(this).addClass('selected_date_button');
+            }
+          });
+        });
+
+        prevButton.on({
+          'click': function() {
+            calendarShifter(-1);
+          }
+        });
+
+        nextButton.on({
+          'click': function() {
+            calendarShifter(1);
+          }
+        });
+
+      }
+
+
+      init();
+    }
+
+    calendarControll();
 
   }
 
