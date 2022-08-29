@@ -318,7 +318,8 @@ body {
   letter-spacing: 0.07em;
   color: #363636;
   font-family: noto-sans-cjk-jp, 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
-  font-weight: 500;
+  font-family: 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-weight: normal;
   letter-spacing: 0.03em;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
@@ -404,6 +405,31 @@ header .header_inner .back_button .text {
   margin-bottom: 2px;
 }
 
+@media screen and (min-width: 1000px) {
+  header .header_inner {
+    width: 88vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px 0;
+  }
+}
+@media screen and (min-width: 1000px) and (min-width: 981px) {
+  header .header_inner {
+    width: 86vw;
+  }
+}
+@media screen and (min-width: 1000px) and (min-width: 1101px) {
+  header .header_inner {
+    max-width: 1400px;
+    width: 86vw;
+  }
+}
+@media screen and (min-width: 1000px) {
+  header .header_inner .back_button .text {
+    font-size: 1.6rem;
+    margin-bottom: 2px;
+  }
+}
 footer {
   border-top: 1px solid #363636;
 }
@@ -589,9 +615,11 @@ footer .footer_inner .footer_nav ul li a {
 }
 .page-booking .contents_wrapper .contents_booking .form_inner .section-form .selected_date .title {
   font-size: 1.6rem;
+  font-weight: bold;
 }
 .page-booking .contents_wrapper .contents_booking .form_inner .section-form .selected_date .date {
   font-size: 1.6rem;
+  font-weight: bold;
 }
 .page-booking .contents_wrapper .contents_booking .form_inner .section-form .submit_wrap {
   margin-top: 30px;
@@ -608,6 +636,7 @@ footer .footer_inner .footer_nav ul li a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-weight: bold;
   margin-bottom: 30px;
 }
 .page-booking .contents_wrapper .contents_booking .form_inner .section-form .submit_wrap .amount_wrap .title {
@@ -675,12 +704,178 @@ footer .footer_inner .footer_nav ul li a {
     font-size: 1.8rem;
   }
 }
+@media screen and (min-width: 1000px) {
+  .page-booking {
+    margin-bottom: 60px;
+  }
+  .page-booking .contents_wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 88vw;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+@media screen and (min-width: 1000px) and (min-width: 981px) {
+  .page-booking .contents_wrapper {
+    width: 86vw;
+  }
+}
+@media screen and (min-width: 1000px) and (min-width: 1101px) {
+  .page-booking .contents_wrapper {
+    max-width: 1400px;
+    width: 86vw;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .page-booking .contents_wrapper .contents_detail {
+    width: 55%;
+  }
+  .page-booking .contents_wrapper .contents_detail .section-main {
+    margin-bottom: 60px;
+  }
+  .page-booking .contents_wrapper .contents_detail .section-main .main_desc {
+    width: 100%;
+    margin-top: 50px;
+  }
+  .page-booking .contents_wrapper .contents_detail .section-main .desc_wrap {
+    margin-bottom: 30px;
+  }
+  .page-booking .contents_wrapper .contents_detail .section-main .desc_wrap p {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+  .page-booking .contents_wrapper .contents_detail .section-main .desc_wrap p:nth-last-of-type(1) {
+    margin-bottom: 0;
+  }
+}
+@media screen and (min-width: 1000px) and (min-width: 1100px) {
+  .page-booking .contents_wrapper .contents_detail .section-main .desc_wrap p {
+    line-height: 2;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .page-booking .contents_wrapper .contents_detail .section-cancel {
+    margin-bottom: 60px;
+  }
+  .page-booking .contents_wrapper .contents_detail .section-cancel .section_inner {
+    width: 100%;
+  }
+  .page-booking .contents_wrapper .contents_detail .section-cancel .comp-detail-list {
+    margin-top: 25px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .page-booking .contents_wrapper .contents_detail .section-faq .section_inner {
+    width: 100%;
+  }
+  .page-booking .contents_wrapper .contents_detail .section-faq .comp-faq-contents {
+    margin-top: 30px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .page-booking .contents_wrapper .contents_booking {
+    position: static;
+    width: 40%;
+    height: auto;
+    -webkit-box-shadow: 0 5px 10px 3px rgba(0, 0, 0, 0.09);
+            box-shadow: 0 5px 10px 3px rgba(0, 0, 0, 0.09);
+  }
+  .page-booking .contents_wrapper .contents_booking .form_inner {
+    overflow: unset;
+    height: auto;
+  }
+  .page-booking .contents_wrapper .contents_booking .form_inner .title_wrap {
+    display: block;
+    padding: 25px;
+  }
+  .page-booking .contents_wrapper .contents_booking .form_inner .title_wrap .booking_ttl {
+    width: 100%;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  .page-booking .contents_wrapper .contents_booking .form_inner .title_wrap .close_button {
+    display: none;
+  }
+  .page-booking .contents_wrapper .contents_booking .form_inner .section-form .selected_date {
+    border: 1px solid #363636;
+    border-top: 0px;
+    padding: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .page-booking .contents_wrapper .contents_booking .form_inner .section-form .selected_date .title {
+    font-size: 1.6rem;
+  }
+  .page-booking .contents_wrapper .contents_booking .form_inner .section-form .selected_date .date {
+    font-size: 1.6rem;
+  }
+  .page-booking .contents_wrapper .contents_booking .form_inner .section-form .submit_wrap {
+    margin-top: 30px;
+  }
+  .page-booking .contents_wrapper .contents_booking .form_inner .section-form .submit_wrap .amount_wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 30px;
+  }
+  .page-booking .contents_wrapper .contents_booking .form_inner .section-form .submit_wrap .amount_wrap .title {
+    font-size: 1.8rem;
+  }
+  .page-booking .contents_wrapper .contents_booking .form_inner .section-form .submit_wrap .amount_wrap .price {
+    font-size: 1.8rem;
+  }
+  .page-booking .contents_wrapper .contents_booking .form_inner .section-form .submit_wrap .submit_button .submit_button {
+    display: block;
+    width: 100%;
+    background-color: #0b4e2c;
+    padding: 15px 0 17px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    font-family: inherit;
+    color: #fff;
+  }
+}
 /*########## コンポーネント ##########*/
 .comp-bokking-title {
-  font-weight: inherit;
+  /*font-weight: inherit;*/
   text-align: center;
   font-size: 2.4rem;
   margin-bottom: 30px;
+}
+@media screen and (min-width: 1000px) {
+  .comp-bokking-title {
+    text-align: left;
+    margin-bottom: 20px;
+  }
 }
 
 .comp-detail-list .list_item {
@@ -693,7 +888,7 @@ footer .footer_inner .footer_nav ul li a {
 }
 .comp-detail-list .list_item .item_ttl {
   font-size: 1.8rem;
-  font-weight: inherit;
+  /*font-weight: inherit;*/
   margin-bottom: 15px;
 }
 .comp-detail-list .list_item .item_ttl.flex {
@@ -875,7 +1070,6 @@ footer .footer_inner .footer_nav ul li a {
 }
 @media screen and (min-width: 980px) {
   .comp-faq-contents {
-    max-width: 580px;
     margin: 60px auto 0;
   }
   .comp-faq-contents .toggle_item:nth-last-of-type(1) {
@@ -958,6 +1152,7 @@ footer .footer_inner .footer_nav ul li a {
 .comp-form-wrap .form_item .form_ttl {
   display: block;
   font-size: 2rem;
+  font-weight: bold;
   margin-bottom: 20px;
 }
 .comp-form-wrap .form_item .form_ttl .small {
@@ -1008,6 +1203,36 @@ footer .footer_inner .footer_nav ul li a {
             justify-content: space-between;
   }
 }
+@media screen and (min-width: 1000px) {
+  .comp-form-wrap .form_item {
+    width: calc(100% - 60px);
+    margin: 0 auto;
+    padding: 40px 0px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    border-bottom: 1px dotted #363636;
+  }
+  .comp-form-wrap .form_item:nth-last-of-type(1) {
+    border-bottom: 0px solid #363636;
+  }
+  .comp-form-wrap .form_item .form_ttl {
+    display: block;
+    margin-bottom: 20px;
+  }
+  .comp-form-wrap .form_item .label_desc {
+    margin-bottom: 20px;
+  }
+  .comp-form-wrap .form_item.item01 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
 .comp-number-input {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1041,6 +1266,8 @@ footer .footer_inner .footer_nav ul li a {
   border-radius: 50%;
   position: absolute;
   top: 0;
+  background-size: 10px;
+  background-position: top 8px left 8px;
 }
 .comp-number-input .number_wrap .button.minus {
   left: 0;
@@ -1093,10 +1320,12 @@ footer .footer_inner .footer_nav ul li a {
   .comp-number-input .number_wrap .button {
     width: 30px;
     height: 30px;
+    background-size: 13px;
+    background-position: top 9px left 9px;
   }
   .comp-number-input .number_wrap input[type=text] {
-    height: 25px;
-    line-height: 25px;
+    height: 30px;
+    line-height: 30px;
   }
 }
 .comp-menu-list {
@@ -1169,6 +1398,27 @@ footer .footer_inner .footer_nav ul li a {
     margin-bottom: 30px;
   }
 }
+@media screen and (min-width: 1000px) {
+  .comp-menu-list {
+    margin-top: 25px;
+  }
+  .comp-menu-list .menu_item .img_wrap {
+    margin-bottom: 20px;
+  }
+  .comp-menu-list .menu_item .txt_wrap .menu_name {
+    font-size: 1.8rem;
+    font-weight: inherit;
+    margin-bottom: 15px;
+  }
+  .comp-menu-list .menu_item .txt_wrap .menu_desc {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+  .comp-menu-list .menu_item .txt_wrap .price {
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+  }
+}
 .comp-calendar-wrap {
   border: 1px solid #363636;
   padding: 20px 10px 10px;
@@ -1238,6 +1488,7 @@ footer .footer_inner .footer_nav ul li a {
 }
 .comp-calendar-wrap .calendar_header .month_display {
   font-size: 1.6rem;
+  font-weight: bold;
 }
 .comp-calendar-wrap .calendar_table {
   height: 338px;
@@ -1380,6 +1631,57 @@ footer .footer_inner .footer_nav ul li a {
     font-size: 1.2rem;
   }
 }
+@media screen and (min-width: 1000px) {
+  .comp-calendar-wrap {
+    padding: 25px 10px 20px;
+    margin-top: 25px;
+  }
+  .comp-calendar-wrap .calendar_header {
+    padding: 0 15px;
+    margin-bottom: 20px;
+  }
+  .comp-calendar-wrap .calendar_header .button .circle {
+    width: 30px;
+    height: 30px;
+  }
+  .comp-calendar-wrap .calendar_header .button .circle.prev {
+    margin-right: 12px;
+  }
+  .comp-calendar-wrap .calendar_header .button .circle.next {
+    margin-left: 12px;
+  }
+  .comp-calendar-wrap .calendar_header .button .txt {
+    margin-bottom: 2px;
+    font-size: 1.6rem;
+  }
+  .comp-calendar-wrap .calendar_header .month_display {
+    font-size: 1.6rem;
+  }
+  .comp-calendar-wrap .calendar_table {
+    height: 400px;
+  }
+  .comp-calendar-wrap .calendar_table .caledar_inner table tr th, .comp-calendar-wrap .calendar_table .caledar_inner table tr td {
+    padding: 10px 0;
+  }
+  .comp-calendar-wrap .calendar_table .caledar_inner table tr th .weekDay, .comp-calendar-wrap .calendar_table .caledar_inner table tr td .weekDay {
+    font-size: 1.3rem;
+  }
+  .comp-calendar-wrap .calendar_table .caledar_inner table tr th p.date, .comp-calendar-wrap .calendar_table .caledar_inner table tr td p.date {
+    font-size: 1.3rem;
+    line-height: 30px;
+  }
+  .comp-calendar-wrap .calendar_table .caledar_inner table tr th button .circle, .comp-calendar-wrap .calendar_table .caledar_inner table tr td button .circle {
+    display: block;
+    width: 30px;
+    height: 30px;
+    font-size: 1.3rem;
+    line-height: 30px;
+    margin: 0 auto 5px;
+  }
+  .comp-calendar-wrap .calendar_table .caledar_inner table tr th button .status, .comp-calendar-wrap .calendar_table .caledar_inner table tr td button .status {
+    font-size: 1.2rem;
+  }
+}
 .comp-main-slider {
   position: relative;
 }
@@ -1444,4 +1746,53 @@ footer .footer_inner .footer_nav ul li a {
 }
 .comp-main-slider .thumb_list {
   display: none;
+}
+
+@media screen and (min-width: 1000px) {
+  .comp-main-slider {
+    position: relative;
+  }
+  .comp-main-slider .thumb_number {
+    display: none;
+    position: absolute;
+    top: 3vw;
+    right: 3vw;
+    width: 45px;
+    height: 45px;
+    background-color: rgba(34, 34, 34, 0.8);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 11px;
+    text-align: center;
+    line-height: 45px;
+    letter-spacing: 0;
+    z-index: 10;
+  }
+  .comp-main-slider .thumb_number .current::after {
+    display: inline-block;
+    content: "/";
+    padding-left: 0.15em;
+    margin-right: -0.1em;
+  }
+  .comp-main-slider .slide_caret {
+    display: none;
+  }
+  .comp-main-slider .slide_wrap {
+    height: 27vw;
+    overflow: hidden;
+  }
+  .comp-main-slider .thumb_list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-top: 7px;
+  }
+  .comp-main-slider .thumb_list button {
+    width: calc(20% - 5px);
+  }
 }

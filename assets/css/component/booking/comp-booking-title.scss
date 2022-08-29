@@ -1,6 +1,10 @@
 .comp-bokking-title{
-  font-weight: inherit;
+  /*font-weight: inherit;*/
   text-align: center;
   font-size: 2.4rem;
   margin-bottom: 30px;
+  @media screen and (min-width: 1000px){
+    text-align: left;
+    margin-bottom: 20px;
+  }
 }

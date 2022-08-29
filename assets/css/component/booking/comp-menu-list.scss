@@ -60,3 +60,29 @@
     }
   }
 }
+
+@media screen and (min-width: 1000px){
+  .comp-menu-list{
+    margin-top: 25px;
+    .menu_item{
+      .img_wrap{
+        margin-bottom: 20px;
+      }
+      .txt_wrap{
+        .menu_name{
+          font-size: 1.8rem;
+          font-weight: inherit;
+          margin-bottom: 15px;
+        }
+        .menu_desc{
+          font-size: 1.4rem;
+          margin-bottom: 15px;
+        }
+        .price{
+          font-size: 1.4rem;
+          margin-bottom: 25px;
+        }
+      }
+    }
+  }
+}

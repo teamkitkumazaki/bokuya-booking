@@ -42,6 +42,7 @@
     }
     .month_display{
       font-size: 1.6rem;
+      font-weight: bold;
     }
   }
   .calendar_table{
@@ -153,6 +154,68 @@
     }
     .calendar_table{
       height: 410px;
+      .caledar_inner{
+        table{
+          tr{
+            th, td{
+              padding: 10px 0;
+              .weekDay{
+                font-size: 1.3rem;
+              }
+              p.date{
+                font-size: 1.3rem;
+                line-height: 30px;
+              }
+              button{
+                .circle{
+                  display: block;
+                  width: 30px;
+                  height: 30px;
+                  font-size: 1.3rem;
+                  line-height: 30px;
+                  margin: 0 auto 5px;
+                }
+                .status{
+                  font-size: 1.2rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1000px){
+  .comp-calendar-wrap{
+    padding: 25px 10px 20px;
+    margin-top: 25px;
+    .calendar_header{
+      padding: 0 15px;
+      margin-bottom: 20px;
+      .button{
+        .circle{
+          width: 30px;
+          height: 30px;
+          &.prev{
+            margin-right: 12px;
+          }
+          &.next{
+            margin-left: 12px;
+          }
+        }
+        .txt{
+          margin-bottom: 2px;
+          font-size: 1.6rem;
+        }
+      }
+      .month_display{
+        font-size: 1.6rem;
+      }
+    }
+    .calendar_table{
+      height: 400px;
       .caledar_inner{
         table{
           tr{

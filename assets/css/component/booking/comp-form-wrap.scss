@@ -8,6 +8,7 @@
     .form_ttl{
       display: block;
       font-size: 2.0rem;
+      font-weight: bold;
       margin-bottom: 20px;
       .small{
         display: inline-block;
@@ -44,6 +45,34 @@
       .label_desc{
         font-size: 1.4rem;
         margin-bottom: 25px;
+      }
+      &.item01{
+        @include flexSet;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1000px){
+  .comp-form-wrap{
+    .form_item{
+      width: calc(100% - 60px);
+      margin: 0 auto;
+      padding: 40px 0px;
+      box-sizing: border-box;
+      border-bottom: 1px dotted $keyColor;
+      &:nth-last-of-type(1){
+        border-bottom: 0px solid $keyColor;
+      }
+    }
+    .form_item{
+      .form_ttl{
+        display: block;
+        margin-bottom: 20px;
+      }
+      .label_desc{
+        margin-bottom: 20px;
       }
       &.item01{
         @include flexSet;

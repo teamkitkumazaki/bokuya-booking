@@ -24,3 +24,19 @@ header{
     }
   }
 }
+
+@media screen and (min-width: 1000px){
+  header{
+    .header_inner{
+      @include wrapper;
+      padding: 40px 0;
+      .back_button{
+        .text{
+          font-size: 1.6rem;
+          margin-bottom: 2px;
+        }
+      }
+    }
+  }
+
+}

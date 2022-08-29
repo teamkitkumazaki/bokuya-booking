@@ -21,6 +21,8 @@
       border-radius: 50%;
       position: absolute;
       top:0;
+      background-size: 10px;
+      background-position: top 8px left 8px;
       &.minus{
         left:0;
         background-image: url(../img/common/minus_button.svg);
@@ -64,10 +66,12 @@
       .button{
         width: 30px;
         height: 30px;
+        background-size: 13px;
+        background-position: top 9px left 9px;
       }
       input[type=text]{
-        height: 25px;
-        line-height: 25px;
+        height: 30px;
+        line-height: 30px;
       }
     }
   }

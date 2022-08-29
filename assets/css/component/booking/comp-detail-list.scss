@@ -8,7 +8,7 @@
     }
     .item_ttl{
       font-size: 1.8rem;
-      font-weight: inherit;
+      /*font-weight: inherit;*/
       margin-bottom: 15px;
       &.flex{
         @include flexSet;
