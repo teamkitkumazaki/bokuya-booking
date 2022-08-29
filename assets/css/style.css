@@ -1150,3 +1150,63 @@ footer .footer_inner .footer_nav ul li a {
 .comp-calendar-wrap .calendar_table .caledar_inner table tr th button.selected_date_button .status, .comp-calendar-wrap .calendar_table .caledar_inner table tr td button.selected_date_button .status {
   color: #FEC32D;
 }
+
+.comp-main-slider {
+  position: relative;
+}
+.comp-main-slider .thumb_number {
+  display: none;
+  position: absolute;
+  top: 3vw;
+  right: 3vw;
+  width: 45px;
+  height: 45px;
+  background-color: rgba(34, 34, 34, 0.8);
+  border-radius: 50%;
+  color: #fff;
+  font-size: 11px;
+  text-align: center;
+  line-height: 45px;
+  letter-spacing: 0;
+  z-index: 10;
+}
+.comp-main-slider .thumb_number .current::after {
+  display: inline-block;
+  content: "/";
+  padding-left: 0.15em;
+  margin-right: -0.1em;
+}
+.comp-main-slider .slide_caret {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-color: #363636;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 10;
+  display: block;
+  line-height: 0;
+  font-size: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 1px solid #fff;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+.comp-main-slider .slide_caret.slide_next {
+  right: 3vw;
+  background-image: url(../img/common/caret_right.svg);
+}
+.comp-main-slider .slide_caret.slide_prev {
+  left: 3vw;
+  background-image: url(../img/common/caret_left.svg);
+}
+.comp-main-slider .slide_wrap {
+  height: 63vw;
+  overflow: hidden;
+}
+.comp-main-slider .thumb_list {
+  display: none;
+}

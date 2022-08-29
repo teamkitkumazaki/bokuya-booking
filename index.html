@@ -46,11 +46,24 @@
 		<div class="contents_wrapper">
 			<div class="contents_detail">
 				<section class="section-main">
-					<div id="mainSlider" class="comp-main-slider">
-						<ul>
-							<li><img src="assets/img/booking/slider/image01.jpg"></li>
-						</ul>
-					</div>
+					<div id="imgthumb" class="comp-main-slider">
+						<div class="thumb_number">
+            	<span id="currentThumb" class="current">1</span>
+            	<span id="allThumb">10</span>
+          	</div>
+						<button id="slideNext" class="slide_caret slide_next"></button>
+						<button id="slidePrev" class="slide_caret slide_prev"></button>
+						<div id="slideWrap" class="slide_wrap">
+							<img id="thumbBox" src="assets/img/booking/slider/image01.jpg">
+						</div>
+						<div id="thumbList" class="thumb_list">
+							<button class="active_thumb"><img src="assets/img/booking/slider/image01.jpg"></button>
+							<button class="active_thumb"><img src="assets/img/booking/slider/image02.jpg"></button>
+							<button class="active_thumb"><img src="assets/img/booking/slider/image03.jpg"></button>
+							<button class="active_thumb"><img src="assets/img/booking/slider/image04.jpg"></button>
+							<button class="active_thumb"><img src="assets/img/booking/slider/image05.jpg"></button>
+						</div>
+					</div><!-- comp-main-slider -->
 					<div class="main_desc">
 						<h1 class="comp-bokking-title">bokuyaレストラン</h1>
 						<div class="desc_wrap">

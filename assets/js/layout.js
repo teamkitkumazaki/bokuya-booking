@@ -343,6 +343,125 @@ $(function() {
 
     calendarControll();
 
+    function itemDetailThumbnail(target) {
+      var thumbBox = $('#thumbBox');
+      var caption = $('#caption');
+      var imgthumb = $('#imgthumb');
+      var currentThumb = $('#currentThumb');
+      var allThumb = $('#allThumb');
+      var slideNextButton = $('#slideNext');
+      var slidePrevButton = $('#slidePrev');
+      var thumbButton = [];
+      var currentSlide = 0;
+      var imgObj = [];
+      var time = 300;
+      var thumbLength = target.children("button").length;
+
+      function thumbChange(num){
+        thumbBox.stop().animate({ opacity: 0 }, time, function() {
+          thumbBox.attr('src', imgObj[num]);
+          $('.active_thumb').removeClass('active_thumb');
+          thumbButton[num].addClass('active_thumb');
+          currentThumb.text(num + 1);
+          currentSlide = num;
+          thumbBox.stop().animate({ opacity: 1 }, time);
+      });
+    }
+
+    function slideChange() {
+      targetSlide = target.find('.slide' + currentSlide);
+      target.find('.active_slide').removeClass('active_slide');
+      targetSlide.addClass('active_slide');
+      target.find('.current').text(currentSlide);
+    };
+
+    function slideNext(){
+      if (currentSlide < thumbLength - 1) {
+        currentSlide = currentSlide + 1;
+      } else {
+        currentSlide = 0;
+      }
+      thumbChange(currentSlide);
+    };
+
+    function slidePrev(){
+      if (currentSlide == 0) {
+        currentSlide = thumbLength - 1;
+      } else {
+        currentSlide = currentSlide - 1;
+      }
+      thumbChange(currentSlide);
+    };
+
+    function tabTouch(){
+      if(startTouchX - endTouchX > 50){
+        slideNext();
+      }else if(startTouchX - endTouchX < - 50){
+        slidePrev();
+      }
+    };
+
+    function windowDrag() {
+      if (startDragX - endDragX > 100) {
+        slideNext();
+      } else if (startDragX - endDragX < -100) {
+        slidePrev();
+      }
+    };
+
+      function init(){
+        allThumb.text(thumbLength);
+        $.each(target.find('button'), function(index) {
+          thumbButton[index] = $(this);
+          imgObj[index] = $(this).children('img').attr("src");
+
+          thumbButton[index].on({
+            'click': function() {
+              thumbChange(index);
+            }
+          });
+
+        });
+
+        slideNextButton.on({
+          'click': function() {
+            slideNext();
+          }
+        });
+
+        slidePrevButton.on({
+          'click': function() {
+            slidePrev();
+          }
+        });
+
+        imgthumb.on({
+          'dragstart': function(e) {
+            startDragX = event.pageX;
+          },
+          'dragend': function(e) {
+            endDragX = event.pageX;
+            windowDrag();
+          }
+        });
+
+        imgthumb.on({
+          'touchstart' : function(e){
+            startTouchX = event.changedTouches[0].pageX;
+          },
+          'touchend' : function(e){
+            endTouchX = event.changedTouches[0].pageX;
+            tabTouch();
+          }
+        });
+
+      }
+
+      init();
+    }
+
+    itemDetailThumbnail($('#thumbList'));
+
   }
 
   preSetScript();
