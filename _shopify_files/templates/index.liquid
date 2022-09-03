@@ -1,256 +1,205 @@
-{%- comment -%}
-{{ content_for_index }}
-{%- endcomment -%}
-<script>
-  (function() {
-    function removeScriptTags() {
-      var srcs = [];
-      var entry = document.getElementsByTagName('script')[0];
-      srcs.forEach(function(src) {
-        var script = document.createElement('script');
-        script.type = 'text/javascript';
-        script.src = src;
-        script.async = false;
-        entry.parentNode.insertBefore(script, entry);
-      })
-    }
-    window.addEventListener('load', removeScriptTags, false);
-  })();
-</script>
-<div id="loading">
-  <div class="load_inner">
-    <div class="main_txt">
-      <div class="main_img"><img width="145" height="32" src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/common/h_logo_nwjm8r.png"></div>
-      <h1 class="main_ttl">毎日の家事を、心地よい時間に。</h1>
-      <p id="loadingBar"><span></span></p>
-    </div>
-  </div>
-</div>
-<article id="index">
-<section id="main">
-<div class="main_inner">
-  <div class="slide_fil"></div>
-  <div class="main_logo"></div>
-  <div id="slideShow">
-    <ul>
-      <li class="slide0"></li>
-      <li class="slide1">
-        <img class="first_view" width="2640" height="1534" src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/main_slide01_piirph.jpg" srcset="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/main_slide01_piirph.jpg 1440w, https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/main_slide01_sp_dzdwrd.jpg 768w, https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/main_slide01_piirph.jpg 2048w">
-      </li>
-    </ul>
-  </div>
-  <div id="sliderBtn">
-    <ul>
-      <li value="slide1" number="0"><a href="javascript:void(0)"></a></li>
-      <li class="active" value="slide2" number="1" class=""><a href="javascript:void(0)"></a></li>
-    </ul>
-  </div>
-</div>
-</section>
-<!-- <section class="section-information comp-section-information">
-	<div class="section_inner">
-		<div class="info_flex">
-			<span class="title_en">Information</span>
-			<a class="content" href="https://journal.komons-japan.com/archives/1263"><span>GW配送休業のご案内</a>
-		</div>
-	</div>
-</section> -->
-  <section id="topConcept">
-    <div id="headerRolled" class="concept_wrap">
-        <div id="headerRolledSp" class="txt_wrap">
-          <h2>毎日の家事を、<span>心地よい時間に。</span></h2>
-          <p>掃除、洗濯、食器洗い。<span class="sp_block">家事は時に面倒で、余計なものに思えます。</span></p>
-          <p><span>だけど、それらがより楽しく、</span><span>幸せな時間に変わるとしたら、</span><span>毎日も人生もより豊かなものになるはずです。</span></p>
-          <p><span>Komonsはマイナスだった家事を</span><span>プラスな時間に変えるためにつくった</span><span>ホームケアブランドです。</span></p>
-            <p><span class="sp_block">天然素材にこだわること。</span><span class="sp_block">国産にこだわること。</span><span class="sp_block">そして香りに徹底的にこだわること。</span><span>Komonsは「Crafted in Japan」にこだわり、</span><span>ただただ丁寧に作りました。</span>
-          </p>
-          <p class="last">
-            <span class="sp_block">使う度に、豊かな気持ちになるように、</span><span>Komonsは、日常に小さな幸せを届けます。</span></p>
-          <div class="button_wrap">
-            <a href="/pages/concept"><span class="txt_wrap">もっと詳しくみる<span class="caret"></span></span></a>
+<article id="index" class="page-index">
+  <section id="sectionMain" class="section-main">
+    <div class="section_inner">
+      <div class="main_flex_wrapper">
+        <div id="mainSlider01" class="comp-main-slider slider01">
+          <ul>
+            <li style="opacity: 1;"><img src="https://cdn.shopify.com/s/files/1/0551/0794/4503/files/slide01_01.jpg?v=1662225304"></li>
+            <li><img src="https://cdn.shopify.com/s/files/1/0551/0794/4503/files/slide02_01.jpg?v=1662225305"></li>
+            <li><img src="https://cdn.shopify.com/s/files/1/0551/0794/4503/files/slide03_01.jpg?v=1662225307"></li>
+          </ul>
+        </div><!-- comp-main-slider -->
+        <nav id="mainNavigation" class="main_nav">
+          <ul>
+            <li><button scrollhref="#sectionAbout">ABOUT</button></li>
+            <li><button scrollhref="#sectionLocation">LOCATION</button></li>
+            <!--<li><button scrollhref="#sectionMenu">MENU</button></li> -->
+            <li><button scrollhref="#sectionNews">NEWS</button></li>
+            <li><button scrollhref="#sectionFaq">Q&A</button></li>
+            <li><a href="#aaaa">CONTACT</a></li>
+            <li><a href="#aaaa">INSTAGRAM</a></li>
+          </ul>
+        </nav>
+        <div id="mainSlider02" class="comp-main-slider slider02">
+          <ul>
+            <li style="opacity: 1;"><img src="https://cdn.shopify.com/s/files/1/0551/0794/4503/files/slide01_02.jpg?v=1662225374"></li>
+            <li><img src="https://cdn.shopify.com/s/files/1/0551/0794/4503/files/slide02_02.jpg?v=1662225378"></li>
+            <li><img src="https://cdn.shopify.com/s/files/1/0551/0794/4503/files/slide03_02.jpg?v=1662225374"></li>
+          </ul>
+        </div><!-- comp-main-slider -->
+        <div id="scrollingText" class="comp-scrolling-text">
+          <div class="simply-scroll simply-scroll-container">
+            <div class="simply-scroll-list">
+              <ul>
+                <li>HELLO,OUR RESTAURANT IS NOW OPEN.</li>
+                <li>HELLO,OUR RESTAURANT IS NOW OPEN.</li>
+                <li>HELLO,OUR RESTAURANT IS NOW OPEN.</li>
+              </ul>
+              <ul>
+                <li>HELLO,OUR RESTAURANT IS NOW OPEN.</li>
+                <li>HELLO,OUR RESTAURANT IS NOW OPEN.</li>
+                <li>HELLO,OUR RESTAURANT IS NOW OPEN.</li>
+              </ul>
+            </div>
           </div>
-        </div>
-    </div>
+        </div><!-- comp-scrolling-text -->
+      </div><!-- main_flex_wrapper -->
+    </div><!-- section_inner -->
   </section>
-  <section class="section-pickup">
-    <div class="section_inner_new">
-      <div class="section_ttl">
-        <h2><span>Pickup</span><font>ピックアップ商品</font></h2>
+  <section id="sectionAbout" class="section-about">
+    <div class="section_inner">
+      <h2 class="comp-section-title">ABOUT</h2>
+      <div class="desc_wrap">
+        <p>bokuyaとは、標高1400ｍの野辺山高原にある完全予約制の野外高原レストラン。<br>雄大な八ヶ岳を見上げながら、自然の中で楽しむランチタイムを提供します。</p>
+        <p>bokuyaとは、草原にタープを張っただけで、自然を体感するレストラン。<br>時には野鳥や動物の鳴き声も聞こえ、時には風が吹き、雨が降ることもあります。<br>天気の都合で前日にキャンセルになることもあります。</p>
+        <p>bokuyaとは、野辺山のほうれん草農家が作った自由な遊び場。<br>音楽イベントや焚火、BBQやキャンプの会場としてもよく使っています。</p>
+        <p>八ヶ岳の麓、野辺山高原を誰かと共有したい。<br>そんな思いからbokuyaは始まりました。</p>
       </div>
-      <div class="comp-product-list">
-        <ul class="item_wrapper">
-				{% for collection in collections %}
-				{%- if collection.title == "pickup" -%}
-				{% paginate collection.products by 4 %}
-				{% for product in collection.products %}
-          {%- include 'all-item-card' -%}
-				{% endfor %}
-				{% endpaginate %}
-				{%- endif -%}
-				{% endfor %}
+    </div><!-- section_inner -->
+  </section>
+  <section id="sectionLocation" class="section-location">
+    <div class="section_inner">
+      <h2 class="comp-section-title">LOCATION</h2>
+      <div id="locationSlider" class="comp-location-slider">
+        <ul>
+          <li style="opacity: 1;"><img src="https://cdn.shopify.com/s/files/1/0551/0794/4503/files/slide01_03.jpg?v=1662225474"></li>
+          <li><img src="https://cdn.shopify.com/s/files/1/0551/0794/4503/files/slide02_03.jpg?v=1662225468"></li>
+          <li><img src="https://cdn.shopify.com/s/files/1/0551/0794/4503/files/slide03_03.jpg?v=1662225472"></li>
+          <li><img src="https://cdn.shopify.com/s/files/1/0551/0794/4503/files/slide04_03.jpg?v=1662225476"></li>
         </ul>
+      </div><!-- comp-location-slider -->
+      <div class="desc_wrap wrap2">
+        <p>bokuyaのある野辺山高原は長野山梨に連なる八ヶ岳連峰の東側にある高原で、<br>レタスなどの葉物の産地、JRの最高地点や星の名所三選としても有名です。
+        <p>都心から車で約2時間半という立地の良さで避暑地としても毎年、多くの方が別荘地やアウトドアなどを楽しみに来られます。</p>
+        <p>bokuyaはそんな野辺山高原のどこかでひっそりとオープンしています。<br>場所は予約していただいた方のみにお伝えさせていただきます。<p>
       </div>
-    </div>
+    </div><!-- section_inner -->
   </section>
-  <div id="product_wrap">
-    <div class="section_ttl">
-      <h2><span>Products</span><font>Komonsの商品</font></h2>
-    </div>
-    <section id="product01" class="product_section comp-index-product-section">
-      <div id="bgMist" class="productBg">
-        <a class="product_caret" href="https://komons-japan.myshopify.com/products/k0002">
-          <img loading="lazy" class="sp_image" width="490" height="250" src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product02_sp_ejieo8.jpg">
-          <span class="caret"></span>
-        </a>
-        <div class="txt_wrapper">
-          <div class="txt_block">
-            <h4>除菌消臭ミスト</h4>
-            <h3>Free as a Bird</h3>
-            <p>ソファーやベッド、お気に入りの衣類に。
-              <span>思わず深呼吸をしたくなるような、やさしい空気を届けます。</span>
-              <span>ひと吹き、ふた吹き、鳥が戯れる木々の香りにつつまれる、</span>
-              <span>除菌消臭ミスト。</span></p>
-            <div class="link_button">
-              <a href="https://komons-japan.myshopify.com/products/k0002">詳しく見る<span></span></a>
-            </div>
-          </div>
-          <div class="height_adjuster"></div>
+  <section id="sectionNews" class="section-news">
+    <div class="section_inner">
+      <h2 class="comp-section-title">NEWS</h2>
+      <div class="comp-news-list">
+        <div class="news_item">
+          <a href="#aaaa">
+            <span class="date">2022.07.10</span>
+            <span class="title">ニュースはテキストだけでシンプルにアップしてください。画像掲載機能はなし</span>
+          </a>
         </div>
-      </div>
-    </section>
-    <section id="product02" class="product_section comp-index-product-section">
-      <div id="bgMulti" class="productBg">
-        <a class="product_caret" href="https://komons-japan.myshopify.com/products/k0004">
-          <img loading="lazy" class="sp_image" width="490" height="250" src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product04_sp_wvauxn.jpg">
-          <span class="caret"></span>
-        </a>
-        <div class="txt_wrapper reverse">
-          <div class="txt_block">
-            <h4>マルチクリーナー</h4>
-            <h3>In a silent way</h3>
-            <p>
-              <span>暮らす場所は、いつも清潔であってほしい。</span>
-              <span>キッチンや洗面台、テーブルやフローリングや窓。</span>
-              <span>清々しく、静かに、暮らしを支えてくれるものたちに。</span>
-              <span>ほんのり香りが漂う、マルチクリーナーをつくりました。</span>
-            </p>
-            <div class="link_button">
-              <a href="https://komons-japan.myshopify.com/products/k0004">詳しく見る<span></span></a>
-            </div>
-          </div>
-          <div class="height_adjuster"></div>
+        <div class="news_item">
+          <a href="#aaaa">
+            <span class="date">2022.07.10</span>
+            <span class="title">ニュースはテキストだけでシンプルにアップしてください。画像掲載機能はなし</span>
+          </a>
         </div>
-      </div>
-    </section>
-    <section id="product03" class="product_section comp-index-product-section">
-      <div id="bgDish" class="productBg">
-        <a class="product_caret" href="https://komons-japan.myshopify.com/products/k0001">
-          <img loading="lazy" class="sp_image" width="490" height="250" src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product01_sp_jx2008.jpg">
-          <span class="caret"></span>
-        </a>
-        <div class="txt_wrapper">
-          <div class="txt_block">
-            <h4>食器用洗剤</h4>
-            <h3>Don't Look Back in Anger</h3>
-            <p>ちょっと面倒な、食事のあとの食器洗い。
-              <span>誰がやるかでおしつけあったりもするこの時間を、</span>
-              <span>もっと「プラスの時間」に変えられたら。</span>
-              <span>そんな思いでつくった、</span>
-              <span>使うたびに豊かな香りが部屋中に広がる手にも優しい洗剤です。</span></p>
-            <div class="link_button">
-              <a href="https://komons-japan.myshopify.com/products/k0001">詳しく見る<span></span></a>
-            </div>
-          </div>
-          <div class="height_adjuster"></div>
+        <div class="news_item">
+          <a href="#aaaa">
+            <span class="date">2022.07.10</span>
+            <span class="title">ニュースはテキストだけでシンプルにアップしてください。画像掲載機能はなし</span>
+          </a>
         </div>
-      </div>
-    </section>
-    <section id="product04" class="product_section comp-index-product-section">
-      <div id="bgHand" class="productBg">
-        <a class="product_caret" href="https://komons-japan.myshopify.com/products/k0003">
-          <img loading="lazy" class="sp_image" width="490" height="250" src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product06_sp_ol3fru.jpg">
-          <span class="caret"></span>
-        </a>
-        <div class="txt_wrapper">
-          <div class="txt_block">
-            <h4>ハンドソープ</h4>
-            <h3>I can hear music</h3>
-            <p>
-              <span>家に帰り、いちばん最初にする「手を洗う」という行為は、心も体もONからOFFへと切替えるスイッチ。</span>
-              <span>手を洗うたびに気持ちの良いメロディが流れるかような香りと手触りのハンドソープを作りました</span></p>
-            <div class="link_button">
-              <a href="https://komons-japan.myshopify.com/products/k0003">詳しく見る<span></span></a>
-            </div>
-          </div>
-          <div class="height_adjuster"></div>
+        <div class="news_item">
+          <a href="#aaaa">
+            <span class="date">2022.07.10</span>
+            <span class="title">ニュースはテキストだけでシンプルにアップしてください。画像掲載機能はなし</span>
+          </a>
         </div>
-      </div>
-    </section>
-    <section id="product05" class="product_section comp-index-product-section">
-      <div id="bgBath" class="productBg">
-        <a class="product_caret" href="https://komons-japan.myshopify.com/products/k0005">
-          <img loading="lazy" class="sp_image" width="490" height="250" src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product05_sp_klwgtl.jpg">
-          <span class="caret"></span>
-        </a>
-        <div class="txt_wrapper reverse">
-          <div class="txt_block">
-            <h4>バスクリーナー</h4>
-            <h3>What a Wonderful World</h3>
-            <p>
-              <span>お風呂という場所は、世界でもっとも素晴らしい場所だと</span><span>思いませんか。心も体もリフレッシュする、とても大切な時間です。</span>
-              <span>いつも清潔で美しいお風呂場のために。</span>
-              <span>お風呂掃除がもっと楽しくなる、ほのかな香りが残る洗剤を。</span></p>
-            <div class="link_button">
-              <a href="https://komons-japan.myshopify.com/products/k0005">詳しく見る<span></span></a>
-            </div>
-          </div>
-          <div class="height_adjuster"></div>
+        <div class="news_item">
+          <a href="#aaaa">
+            <span class="date">2022.07.10</span>
+            <span class="title">ニュースはテキストだけでシンプルにアップしてください。画像掲載機能はなしにしてください</span>
+          </a>
         </div>
-      </div>
-    </section>
-    <section id="product06" class="product_section comp-index-product-section">
-      <div id="bgToilet" class="productBg">
-        <a class="product_caret" href="https://komons-japan.myshopify.com/products/k0006">
-          <img loading="lazy" class="sp_image" width="490" height="250" src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/product03_sp_pgjppz.jpg">
-          <span class="caret"></span>
-        </a>
-        <div class="txt_wrapper">
-          <div class="txt_block">
-            <h4>トイレクリーナー</h4>
-            <h3>Shelter From The Storm</h3>
-            <p>せわしない社会の中で、本当に「ひとり」になれる場所は、
-              <span>とても少ないものです。トイレはきっと、そのひとつ。</span>
-              <span>狭いけれど、とても静かで、とても落ち着く場所。</span>
-              <span>トイレをもっと豊かで、より気持ちのいい空間にします。</span></p>
-            <div class="link_button">
-              <a href="https://komons-japan.myshopify.com/products/k0006">詳しく見る<span></span></a>
-            </div>
-          </div>
-          <div class="height_adjuster"></div>
+        <div class="news_item">
+          <a href="#aaaa">
+            <span class="date">2022.07.10</span>
+            <span class="title">ニュースはテキストだけでシンプルにアップしてください。画像掲載機能はなしにしてください</span>
+          </a>
         </div>
-      </div>
-    </section>
-    <div class="product_link">
-      <a href="/collections/all-products"><span class="txt_wrap">商品をもっとみる<span class="caret"></span></span></a>
-    </div>
-  </div>
-  <section id="topGift" class="bn_section">
-    <div class="section_ttl">
-      <h2><span>Gift</span><font>贈り物セット一覧</font></h2>
-    </div>
-    <div class="img_wrap">
-      <a class="cover_link" href="/collections/gift">
-        <span class="caret"></span>
-      </a>
-      <img loading="lazy" width="450" height="230" src="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/gift_img_lim2gn.png" srcset="https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/gift_img_lim2gn.png 1440w, https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/gift_img_sp_hofq71.png 768w, https://res.cloudinary.com/dbwqcy0op/image/upload/f_auto,q_auto/v1583750620/index/gift_img_lim2gn.png 2048w">
-      <div class="txt_block">
-        <h3><span>Komonsのギフトセット</span></h3>
-        <h4>毎日の家事を心地よい時間に変える<span>Komonsのギフトセットを、大切な人への贈り物に。</span></h4>
-      </div>
-    </div>
+      </div><!-- comp-news-list -->
+    </div><!-- section_inner -->
   </section>
-  {% section 'journal-list' %}
-  {% section 'instagram' %}
+  <section id="sectionFaq" class="section-faq">
+    <div class="section_inner">
+      <h2 class="comp-section-title">Q&A</h2>
+      <div id="faqWrap" class="comp-faq-contents">
+        <div class="toggle_item">
+          <button class="toggle_button">
+            <span class="txt">料理や飲み物の持ち込みはOKですか？</span>
+            <span class="caret"></span>
+          </button>
+          <div class="toggle_contents">
+            <div class="contents_inner">
+              <p>料理、お飲み物の持ち込みはご遠慮ください。乳幼児のお子様用については問題ありません。</p>
+            </div>
+          </div>
+        </div>
+        <div class="toggle_item">
+          <button class="toggle_button">
+            <span class="txt">雨など天気が悪いときはどうなりますか？</span>
+            <span class="caret"></span>
+          </button>
+          <div class="toggle_contents">
+            <div class="contents_inner">
+              <p>基本的に雨、風等荒天でオープンできないとこちらで判断した場合、前日にメールとSMSにてご連絡いたします。当日の急な天候不順については、その場で判断し、ご連絡します。</p>
+            </div>
+          </div>
+        </div>
+        <div class="toggle_item">
+          <button class="toggle_button">
+            <span class="txt">予約なしで行ってもいいですか？</span>
+            <span class="caret"></span>
+          </button>
+          <div class="toggle_contents">
+            <div class="contents_inner">
+              <p>bokuyaはフードロスの観点から食材を無駄にしないため、また地域農家さんへの配慮として予約なしでのご来店をお断りしております。</p>
+            </div>
+          </div>
+        </div>
+        <div class="toggle_item">
+          <button class="toggle_button">
+            <span class="txt">場所はどこですか？</span>
+            <span class="caret"></span>
+          </button>
+          <div class="toggle_contents">
+            <div class="contents_inner">
+              <p>ご予約いただいたお客様にのみ、位置情報をお伝え致します。</p>
+            </div>
+          </div>
+        </div>
+        <div class="toggle_item">
+          <button class="toggle_button">
+            <span class="txt">レストランにトイレはありますか？</span>
+            <span class="caret"></span>
+          </button>
+          <div class="toggle_contents">
+            <div class="contents_inner">
+              <p>仮設のトイレ・手洗いがございます。</p>
+            </div>
+          </div>
+        </div>
+        <div class="toggle_item">
+          <button class="toggle_button">
+            <span class="txt">キャンプ泊やBBQは出来ますか？</span>
+            <span class="caret"></span>
+          </button>
+          <div class="toggle_contents">
+            <div class="contents_inner">
+              <p>高原レストランオープン時は個別のテント張りやBBQは出来ません。その他の時間でご希望がある場合、お問い合わせください。</p>
+            </div>
+          </div>
+        </div>
+        <div class="toggle_item">
+          <button class="toggle_button">
+            <span class="txt">bokuyaの貸し切りやイベントは可能ですか？</span>
+            <span class="caret"></span>
+          </button>
+          <div class="toggle_contents">
+            <div class="contents_inner">
+              <p>可能です。会場レンタルやキッチンカーの出張も受け付けます。お早めにお問い合わせください。</p>
+            </div>
+          </div>
+        </div>
+      </div><!-- comp-faq-contents -->
+    </div><!-- section_inner -->
+  </section>
 </article>
-
-<!--PERZONALIZATION-START Do not modify or delete this comment--><div id="perzonalization" class="perzonalization"></div><script type='text/javascript'>var productDetailsForPrz = {{ product | json }};var basketDetailsForPrz = {{ cart | json }};var filterDetailsForPrz = {{ collection | json }};var detailsForPrz = { userId: '{{ customer.id }}', language: '{{ shop.locale }}', currency:'{{ shop.currency }}' };var searchDetailsForPrz = {{ search.results | json }};if(productDetailsForPrz) { productDetailsForPrz.collections = []; }{% for collection in product.collections %}   if(productDetailsForPrz) { productDetailsForPrz.collections.push("{{ collection.title }}") }{% endfor %}if (filterDetailsForPrz) { filterDetailsForPrz.products = []; }{% for product in collection.products %}   if(filterDetailsForPrz) { filterDetailsForPrz.products.push({ id:"{{ product.id }}", handle:"{{ product.handle }}" }) }{% endfor %}</script><!--Do not modify or delete this comment PERZONALIZATION-END-->

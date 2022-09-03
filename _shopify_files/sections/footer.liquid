@@ -1,205 +1,21 @@
-{%- assign social_icons = false -%}
-{%- assign inline_list = false -%}
-{%- assign locale_selector = false -%}
-{%- assign currency_selector = false -%}
-{%- assign show_payment_icons = false -%}
-{%- assign show_selectors = false -%}
-
-{%- if section.settings.show_currency_selector and shop.enabled_currencies.size > 1 -%}
-  {%- assign currency_selector = true -%}
-{%- endif -%}
-
-{%- if section.settings.show_locale_selector and shop.published_locales.size > 1 -%}
-  {%- assign locale_selector = true -%}
-{%- endif -%}
-
-{%- if section.settings.show_payment_icons -%}
-  {%- unless shop.enabled_payment_types == empty -%}
-    {%- assign show_payment_icons = true -%}
-  {%- endunless -%}
-{%- endif -%}
-
-{%- if currency_selector or locale_selector -%}
-  {%- assign show_selectors = true -%}
-{%- endif -%}
-
-{%- if
-  settings.social_twitter_link != blank
-  or settings.social_facebook_link != blank
-  or settings.social_pinterest_link != blank
-  or settings.social_instagram_link != blank
-  or settings.social_tumblr_link != blank
-  or settings.social_snapchat_link != blank
-  or settings.social_youtube_link != blank
-  or settings.social_vimeo_link != blank
-  or request.page_type == 'article'
-  or request.page_type == 'blog'
--%}
-  {%- assign social_icons = true -%}
-{%- endif -%}
-
-{%- assign payment_width_class = "one-half" -%}
-{%- if show_selectors -%}
-  {%- unless social_icons -%}
-    {%- assign payment_width_class = "" -%}
-  {%- endunless -%}
-{%- endif -%}
-
-{%- assign copyright_show_class = "medium-up--hide" -%}
-{%- if social_icons -%}
-  {%- unless show_selectors -%}
-    {%- assign copyright_show_class = "" -%}
-  {%- endunless -%}
-{%- endif -%}
-
-{%- case section.blocks.size -%}
-  {%- when 1 -%}
-    {%- assign footer_item = 'site-footer__item--full-width' -%}
-    {%- assign inline_list = true -%}
-  {%- when 2 -%}
-    {%- assign footer_item = 'site-footer__item--one-half' -%}
-    {%- assign inline_list = true -%}
-  {%- when 3 -%}
-    {%- assign footer_item = 'site-footer__item--one-third' -%}
-    {%- for block in section.blocks -%}
-      {%- if block.type == 'newsletter' -%}
-        {%- assign footer_item = 'site-footer__item--one-quarter' -%}
-        {%- break -%}
-      {%- endif -%}
-    {%- endfor -%}
-  {%- when 4 -%}
-    {%- assign footer_item = 'site-footer__item--one-quarter' -%}
-  {%- when 5 -%}
-    {%- assign footer_item = 'site-footer__item--one-fifth' -%}
-{%- endcase -%}
-
-{% comment %} Create an appropriate hover color based on text color and brightness {% endcomment %}
-{%- assign footer_text_color = section.settings.color_footer_text -%}
-{%- assign footer_text_color_brightness = section.settings.color_footer_text | color_brightness -%}
-{%- if footer_text_color_brightness <= 26 -%}
-  {%- assign footer_text_color_hover = footer_text_color | color_lighten: 25 -%}
-{%- elsif footer_text_color_brightness <= 65 -%}
-  {%- assign footer_text_color_hover = footer_text_color | color_lighten: 15 -%}
+{%- if request.page_type contains 'index' -%}
+<footer>
+  <p>Copyright bokuya All Rights Reserved.</p>
+</footer>
 {%- else -%}
-  {%- assign footer_text_color_hover = footer_text_color | color_darken: 10 -%}
-{%- endif -%}
-
-<style>
-  .site-footer__hr {
-    border-bottom: 1px solid {{ section.settings.color_footer_bg | color_darken: 10 }};
-  }
-
-  .site-footer p,
-  .site-footer__linklist-item a,
-  .site-footer__rte a,
-  .site-footer h4,
-  .site-footer small,
-  .site-footer__copyright-content a,
-  .site-footer__newsletter-error,
-  .site-footer__social-icons .social-icons__link {
-    color: {{ section.settings.color_footer_text }};
-  }
-
-  .site-footer {
-    color: {{ section.settings.color_footer_text }};
-    background-color: {{ section.settings.color_footer_bg }};
-  }
-
-  .site-footer__rte a {
-    border-bottom: 1px solid {{ section.settings.color_footer_text }};
-  }
-
-  .site-footer__rte a:hover,
-  .site-footer__linklist-item a:hover,
-  .site-footer__copyright-content a:hover {
-    color: {{ footer_text_color_hover }};
-    border-bottom: 1px solid {{ footer_text_color_hover }};
-  }
-
-  .site-footer__social-icons .social-icons__link:hover {
-    color: {{ footer_text_color_hover }};
-  }
-</style>
-
-
-{%- capture payment_icon_markup -%}
-  {%- if show_payment_icons -%}
-    <div class="grid__item site-footer__payment-icons">
-      <span class="visually-hidden">{{ 'general.payment.method' | t }}</span>
-      <ul class="payment-icons list--inline site-footer__icon-list">
-        {%- for type in shop.enabled_payment_types -%}
-          <li class="payment-icon">
-            {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
-          </li>
-        {%- endfor -%}
+<footer>
+  <div class="footer_inner">
+    <nav class="footer_nav">
+      <ul>
+        <li><a href="#aaaa">プライバシーポリシー</a></li>
+        <li><a href="#aaaa">特定商取引法に基づく表示</a></li>
+        <li><a href="#aaaa">運営会社</a></li>
       </ul>
-    </div>
-  {%- endif -%}
-{%- endcapture -%}
-
-<footer class="footer">
-  <div class="footer_wrap">
-    <div class="footer_menu">
-      <div class="fmenu01 fmenu">
-        <ul>
-          <li><a href="https://komons-japan.com/pages/concept">コンセプト</a></li>
-          <li><a href="https://komons-japan.com/collections/all-products">通常商品一覧</a></li>
-          <li><a href="https://komons-japan.com/collections/gift">ギフト商品一覧</a></li>
-          <li><a href="https://komons-japan.com/pages/gift-service">ギフトサービス</a></li>
-          <li><a href="https://journal.komons-japan.com/shoplist">ショップリスト</a></li>
-          <li><a href="https://journal.komons-japan.com/">ジャーナル</a></li>
-        </ul>
-      </div>
-
-      <div class="fmenu02 fmenu">
-        <ul><li><a href="https://komons-japan.myshopify.com/pages/faq#fqProduct" jump="#fqProduct">製品について</a></li>
-          <li><a href="https://komons-japan.myshopify.com/pages/faq#fqPurchase" jump="#fqPurchase">ご購入に際して</a></li>
-          <li><a href="https://komons-japan.myshopify.com/pages/faq#fqGift" jump="#fqGift">ギフトについて</a></li>
-          <li><a href="https://komons-japan.myshopify.com/pages/faq#fqDelivery" jump="#fqDelivery">配送について</a></li>
-          <li><a href="https://komons-japan.myshopify.com/pages/faq#fqCancel" jump="#fqCancel">キャンセルポリシー</a></li>
-      </ul></div>
-
-      <div class="fmenu03 fmenu">
-        <ul>
-					<li><a href="/account/login">ログイン</a></li>
-					<li><a href="/cart">カートを見る</a></li>
-          <li><a href="https://komons-japan.myshopify.com/pages/privacy-policy">プライバシーポリシー</a></li>
-          <li><a href="https://komons-japan.myshopify.com/pages/faq">FAQ</a></li>
-          <li><a href="https://komons-japan.myshopify.com/pages/trade-law">特定商取引法に基づく表記</a></li>
-          <li><a href="https://unsungs-web.com/" target="_blank">運営会社</a></li>
-          <li><a href="https://journal.komons-japan.com/contact">お問い合わせ</a></li>
-        </ul>
-      </div>
-
-    </div>
-    <div class="footer_sns">
-      <div class="img_wrap">
-        <a href="https://komons-japan.com/"><img loading="lazy" width="360" height="48" src="https://cdn.shopify.com/s/files/1/0536/9544/7234/files/footer_logo.svg?v=1623513820" alt="komons"></a>
-      </div>
-      <div class="mailmag_wrap">
-        <span class="mm_title">メールマガジンの登録</span>
-        <p class="mm_desc">商品についての情報や、新商品の販売などの最新情報をお届けしています。</p>
-        <div class="form_wrap">
-          <div class="klaviyo-form-U2xsBP"></div>
-        </div>
-      </div>
-      <div class="sns_wrap">
-        <ul>
-          <li>
-            <a class="fb" href="https://business.facebook.com/komons.japan/" target="_blank"><img loading="lazy" src="https://res.cloudinary.com/dbwqcy0op/image/upload/v1653407017/common/icon_fb_ml5tc7.svg"></a>
-          </li>
-          <li>
-            <a class="ig" href="https://www.instagram.com/komons.jp/" target="_blank"><img loading="lazy" src="https://res.cloudinary.com/dbwqcy0op/image/upload/v1653407017/common/icon_ig_ylonpv.svg"></a>
-          </li>
-          <li>
-            <a class="line" href="https://line.me/R/ti/p/%40266mlpqk" target="_blank"><img loading="lazy" src="https://res.cloudinary.com/dbwqcy0op/image/upload/v1653407017/common/icon_line_okuz3i.svg"></a>
-          </li>
-        </ul>
-        <p class="copy_right">&#169; 2018-2021 Komons.</p>
-      </div>
-    </div>
+    </nav>
+    <p class="copyright">Copyright bokuya All Rights Reserved.</p>
   </div>
 </footer>
+{%- endif -%}
 
 
 

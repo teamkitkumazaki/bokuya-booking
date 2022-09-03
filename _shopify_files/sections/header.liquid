@@ -1,44 +1,22 @@
-<header class="header_new">
-  {%- if request.page_type contains 'account' -%}
-  <div class="header_inner" style="background: transparent;">
-  {%- else -%}
-  <div class="header_inner">
-  {%- endif -%}
-    <div class="header_left">
-      <div id="hLogo" class="header_logo">
-        <a href="/"></a>
-      </div>
-      <nav class="header_navigation">
-        <ul>
-          <li><a href="/pages/concept">About</a></li>
-          <li><a href="/collections/all-products">Products</a></li>
-          <li><a href="/collections/gift">Gift</a></li>
-          <li><a href="/pages/gift-service">Wrapping</a></li>
-          <li><a href="/pages/faq">FAQ</a></li>
-        </ul>
-      </nav>
-    </div>
-    <div class="header_right">
-      <div id="hNavi" class="header_guide">
-        <div id="hLogin" class="nav_item h_login">
-          {% if customer %}
-          <a href="{{ routes.account_url }}">マイページ</a>
-          {% else %}
-          <a href="{{ routes.account_login_url }}">ログイン</a>
-          {% endif %}
-        </div>
-        <div id="hCart" class="nav_item h_cart">
-          <a href="/cart">
-            <span class="text">カート</span>
-            {%- if cart.item_count > 0 -%}
-            <span id="cartItemNum" class="cart_item_num">{{ cart.item_count }}</span>
-            {%- endif -%}
-          </a>
-        </div>
-      </div>
-      <div id="humMenu" class="header_menu">
-        <a href="javascript:void(0);"></a>
-      </div>
-    </div>
-  </div><!-- header_inner -->
+{%- if request.page_type contains 'index' -%}
+<header>
+	<div class="header_inner">
+		<div class="header_logo">
+			<h1><a href="/"><img src="https://cdn.shopify.com/s/files/1/0551/0794/4503/files/logo.svg?v=1662224810" alt="bokuya"></a></h1>
+		</div>
+		<div class="h_navigation">
+			<a href="/products/booking">RESERVATION</a>
+			<a target="_blank" href="https://nobeyama.base.shop/">STORE</a>
+		</div>
+	</div><!-- header_inner -->
 </header>
+{%- else -%}
+<header>
+	<div class="header_inner">
+		<a class="back_button" href="/">
+			<span class="caret"></span>
+			<span class="text">トップに戻る</span>
+		</a>
+	</div><!-- header_inner -->
+</header>
+{%- endif -%}
