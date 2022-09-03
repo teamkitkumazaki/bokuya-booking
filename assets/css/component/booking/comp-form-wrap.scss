@@ -20,6 +20,12 @@
       font-size: 1.4rem;
       margin-bottom: 25px;
     }
+    .note_desc{
+      margin: 35px auto -10px;
+      font-size: 1.3rem;
+      line-height: 1.8;
+      color: #686868;
+    }
     &.item01{
       @include flexSet;
       justify-content: space-between;

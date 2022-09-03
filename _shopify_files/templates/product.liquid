@@ -1,0 +1,86 @@
+{% comment %}
+  The contents of the product.liquid template can be found in /sections/product-template.liquid
+{% endcomment %}
+{%- assign thumbIndex = 0 -%}
+{%- assign thumbIndex2 = 0 -%}
+
+<article id="itemDetailNew" class="page-item-detail-new">
+  {% section 'product-main' %}
+  {% section 'product-relation' %}
+  <section class="section-item-list">
+    <div class="section_inner_new">
+      <div class="comp-detail-title">
+        <hgroup>
+          <span class="title_en">Item List</span>
+          <h2 class="title_ja">商品リスト</h2>
+        </hgroup>
+      </div>
+      <div class="comp-list-link">
+        <div class="link_item">
+          <a href="/collections/all-products">
+            <img loading="lazy" width="563" height="320" src="https://cdn.shopify.com/s/files/1/0608/6233/3116/files/link01.jpg?v=1646131299" srcset="https://cdn.shopify.com/s/files/1/0608/6233/3116/files/link01.jpg?v=1646131299 1440w, https://cdn.shopify.com/s/files/1/0536/9544/7234/files/link01_sp.jpg?v=1653318586 768w, https://cdn.shopify.com/s/files/1/0608/6233/3116/files/link01.jpg?v=1646131299 2048w">
+            <span class="txt_wrap">
+              <span class="txt_en">Product List</span>
+              <span class="txt_ja">通常商品一覧</span>
+            </span>
+          </a>
+        </div>
+        <div class="link_item">
+          <a href="/collections/gift">
+            <img loading="lazy" width="563" height="320" src="https://cdn.shopify.com/s/files/1/0608/6233/3116/files/link02.jpg?v=1646131298" srcset="https://cdn.shopify.com/s/files/1/0608/6233/3116/files/link02.jpg?v=1646131298 1440w, https://cdn.shopify.com/s/files/1/0536/9544/7234/files/link02_sp.jpg?v=1653318586 768w, https://cdn.shopify.com/s/files/1/0608/6233/3116/files/link02.jpg?v=1646131298 2048w">
+            <span class="txt_wrap">
+              <span class="txt_en">Gift Set</span>
+              <span class="txt_ja">ギフトセット一覧</span>
+            </span>
+          </a>
+        </div>
+      </div><!-- comp-list-link -->
+    </div><!-- section_inner_new -->
+  </section>
+</article>
+
+{%- if product.type != "archive" and product.type != "upcoming" -%}
+{% section 'fixed-cart-wrap' %}
+{%- endif -%}
+
+{% if product.metafields.custom_fields["subscription_check"] == 1 %}
+  {% include 'product-sub-modal' %}
+{% endif %}
+
+{%- if product.type == "gift" and product.handle != "k0026" and product.handle != "k0050" and product.handle != 'k0057' -%}
+{% section 'gift-option-field' %}
+{%- endif -%}
+
+
+<script src="{{ 'detail.js' | asset_url }}" defer="defer"></script>
+
+
+{% assign current_variant = product.selected_or_first_available_variant %}
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org/",
+  "@type": "Product",
+  "name": {{ product.title | json }},
+  "url": {{ shop.url | append: product.url | json }},
+  "image": {{ product.media[2] | img_url: 'master' | json }},
+  "description": {{ product.metafields.custom_fields["product_outline"] | strip_html | json }},
+  "brand": {
+    "@type": "Thing",
+    "name": {{ product.vendor | json }}
+  },
+  "offers": [
+      {
+        "@type" : "Offer",
+        "sku": {{ product.handle | json }},
+        "description": {{ product.metafields.custom_fields["product_outline"] | strip_html | strip_newlines | json }},
+        {% if product.available %}"availability": "InStock",{% else %}"availability": "OutOfStock",{% endif %}
+        "price" : {{ product.price | remove:',' | json }},
+        "priceCurrency" : {{ cart.currency.iso_code | json }},
+        "priceValidUntil": "2024-12-31",
+        "itemCondition": "NewCondition",
+        "url" : "https://komons-japan.com/products/{{ product.handle }}"
+      }
+  ]
+}
+</script>

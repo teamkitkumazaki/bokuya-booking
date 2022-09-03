@@ -1,7 +1,7 @@
 .comp-faq-contents{
   .toggle_item{
     position: relative;
-    border: 1px solid $bgGreen;
+    background: #f4f4f4;
     height: 66px;
     transition: height .3s;
     will-change: height;
@@ -119,6 +119,7 @@
     max-width: 75vw;
     margin: 60px auto 0;
     .toggle_item{
+      background: #f8f8f8;
       &:nth-last-of-type(1){
         margin-bottom: 0px;
       }
@@ -138,11 +139,38 @@
   .comp-faq-contents{
     margin: 60px auto 0;
     .toggle_item{
-      &:nth-last-of-type(1){
-        margin-bottom: 0px;
-      }
+      background: #f8f8f8;
+      background: #fff;
+      border-bottom: 1px dotted #363636;
       .toggle_button{
         font-size: 1.5rem;
+        padding: 15px 0;
+      }
+      .toggle_contents{
+        background: #fff;
+        .contents_inner{
+          padding: 0px 0px 15px 25px;
+          &::before{
+            top: 5px;
+            left:0;
+          }
+        }
+      }
+      &.active{
+        .toggle_button{
+          background: #f8f8f8;
+          background: #fff;
+          color: $keyColor;
+          font-size: 1.5rem;
+          .txt{
+            color: $keyColor;
+          }
+          .status{
+            &::before,&::after{
+              background: $keyColor;
+            }
+          }
+        }
       }
     }
   }

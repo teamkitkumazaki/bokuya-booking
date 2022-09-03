@@ -7,15 +7,16 @@ header{
       @include flexSet;
       align-items: center;
       color: inherit;
+      transform: translate(-5px, 0);
       .caret{
         display: block;
         width: 30px;
         height: 30px;
         @include bgSet;
         background-image: url(../img/common/caret_left.svg);
-        background-color: $bgGreen;
         border-radius: 50%;
-        margin-right: 10px;
+        margin-right: 0px;
+        filter: invert(1);
       }
       .text{
         font-size: 1.4rem;

@@ -48,7 +48,7 @@
           justify-content: space-between;
           padding: 20px 6vw;
           box-sizing: border-box;
-          background: $bgGreen;
+          background: #646464;
           .booking_ttl{
             font-size: 1.8rem;
             color: #fff;
@@ -105,6 +105,7 @@
                 font-weight: bold;
                 font-family: inherit;
                 color: #fff;
+                @include hover;
               }
             }
           }
@@ -220,7 +221,7 @@
         position: static;
         width: 40%;
         height: auto;
-        box-shadow: 0 5px 10px 3px rgba(0, 0, 0, 0.09);
+        background: #f8f8f8;
         .form_inner{
           overflow: unset;
           height: auto;
@@ -239,12 +240,10 @@
           }
           .section-form{
             .selected_date{
-              border: 1px solid $keyColor;
+              border: 1px solid #646464;
               border-top: 0px;
               padding: 20px;
-              @include flexSet;
-              justify-content: space-between;
-              align-items: center;
+              background: #fff;
               .title{
                 font-size: 1.6rem;
               }

@@ -387,6 +387,8 @@ header .header_inner .back_button {
       -ms-flex-align: center;
           align-items: center;
   color: inherit;
+  -webkit-transform: translate(-5px, 0);
+          transform: translate(-5px, 0);
 }
 header .header_inner .back_button .caret {
   display: block;
@@ -396,9 +398,10 @@ header .header_inner .back_button .caret {
   background-position: center center;
   background-size: contain;
   background-image: url(../img/common/caret_left.svg);
-  background-color: #0b4e2c;
   border-radius: 50%;
-  margin-right: 10px;
+  margin-right: 0px;
+  -webkit-filter: invert(1);
+          filter: invert(1);
 }
 header .header_inner .back_button .text {
   font-size: 1.4rem;
@@ -580,7 +583,7 @@ footer .footer_inner .footer_nav ul li a {
   padding: 20px 6vw;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background: #0b4e2c;
+  background: #646464;
 }
 .page-booking .contents_wrapper .contents_booking .form_inner .title_wrap .booking_ttl {
   font-size: 1.8rem;
@@ -654,6 +657,11 @@ footer .footer_inner .footer_nav ul li a {
   font-weight: bold;
   font-family: inherit;
   color: #fff;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+.page-booking .contents_wrapper .contents_booking .form_inner .section-form .submit_wrap .submit_button .submit_button:hover {
+  opacity: 0.75;
 }
 
 @media screen and (min-width: 720px) {
@@ -788,8 +796,7 @@ footer .footer_inner .footer_nav ul li a {
     position: static;
     width: 40%;
     height: auto;
-    -webkit-box-shadow: 0 5px 10px 3px rgba(0, 0, 0, 0.09);
-            box-shadow: 0 5px 10px 3px rgba(0, 0, 0, 0.09);
+    background: #f8f8f8;
   }
   .page-booking .contents_wrapper .contents_booking .form_inner {
     overflow: unset;
@@ -809,20 +816,10 @@ footer .footer_inner .footer_nav ul li a {
     display: none;
   }
   .page-booking .contents_wrapper .contents_booking .form_inner .section-form .selected_date {
-    border: 1px solid #363636;
+    border: 1px solid #646464;
     border-top: 0px;
     padding: 20px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    background: #fff;
   }
   .page-booking .contents_wrapper .contents_booking .form_inner .section-form .selected_date .title {
     font-size: 1.6rem;
@@ -932,7 +929,7 @@ footer .footer_inner .footer_nav ul li a {
 
 .comp-faq-contents .toggle_item {
   position: relative;
-  border: 1px solid #0b4e2c;
+  background: #f4f4f4;
   height: 66px;
   -webkit-transition: height 0.3s;
   transition: height 0.3s;
@@ -1058,6 +1055,9 @@ footer .footer_inner .footer_nav ul li a {
     max-width: 75vw;
     margin: 60px auto 0;
   }
+  .comp-faq-contents .toggle_item {
+    background: #f8f8f8;
+  }
   .comp-faq-contents .toggle_item:nth-last-of-type(1) {
     margin-bottom: 0px;
   }
@@ -1072,11 +1072,36 @@ footer .footer_inner .footer_nav ul li a {
   .comp-faq-contents {
     margin: 60px auto 0;
   }
-  .comp-faq-contents .toggle_item:nth-last-of-type(1) {
-    margin-bottom: 0px;
+  .comp-faq-contents .toggle_item {
+    background: #f8f8f8;
+    background: #fff;
+    border-bottom: 1px dotted #363636;
   }
   .comp-faq-contents .toggle_item .toggle_button {
     font-size: 1.5rem;
+    padding: 15px 0;
+  }
+  .comp-faq-contents .toggle_item .toggle_contents {
+    background: #fff;
+  }
+  .comp-faq-contents .toggle_item .toggle_contents .contents_inner {
+    padding: 0px 0px 15px 25px;
+  }
+  .comp-faq-contents .toggle_item .toggle_contents .contents_inner::before {
+    top: 5px;
+    left: 0;
+  }
+  .comp-faq-contents .toggle_item.active .toggle_button {
+    background: #f8f8f8;
+    background: #fff;
+    color: #363636;
+    font-size: 1.5rem;
+  }
+  .comp-faq-contents .toggle_item.active .toggle_button .txt {
+    color: #363636;
+  }
+  .comp-faq-contents .toggle_item.active .toggle_button .status::before, .comp-faq-contents .toggle_item.active .toggle_button .status::after {
+    background: #363636;
   }
 }
 .comp-fixed-button {
@@ -1163,6 +1188,12 @@ footer .footer_inner .footer_nav ul li a {
 .comp-form-wrap .form_item .label_desc {
   font-size: 1.4rem;
   margin-bottom: 25px;
+}
+.comp-form-wrap .form_item .note_desc {
+  margin: 35px auto -10px;
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: #686868;
 }
 .comp-form-wrap .form_item.item01 {
   display: -webkit-box;
@@ -1262,7 +1293,7 @@ footer .footer_inner .footer_nav ul li a {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
-  background-color: #363636;
+  background-color: #646464;
   border-radius: 50%;
   position: absolute;
   top: 0;
@@ -1293,6 +1324,7 @@ footer .footer_inner .footer_nav ul li a {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  background: transparent;
 }
 
 @media screen and (min-width: 720px) {
@@ -1420,7 +1452,7 @@ footer .footer_inner .footer_nav ul li a {
   }
 }
 .comp-calendar-wrap {
-  border: 1px solid #363636;
+  border: 1px solid #646464;
   padding: 20px 10px 10px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -1437,7 +1469,7 @@ footer .footer_inner .footer_nav ul li a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 0 10px;
+  padding: 0 5px;
   margin-bottom: 15px;
 }
 .comp-calendar-wrap .calendar_header .button {
@@ -1468,19 +1500,20 @@ footer .footer_inner .footer_nav ul li a {
 .comp-calendar-wrap .calendar_header .button .circle {
   width: 25px;
   height: 25px;
-  background-color: #363636;
   border-radius: 50%;
+  -webkit-filter: invert(1);
+          filter: invert(1);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
 }
 .comp-calendar-wrap .calendar_header .button .circle.prev {
   background-image: url(../img/common/caret_left.svg);
-  margin-right: 7px;
+  margin-right: 0px;
 }
 .comp-calendar-wrap .calendar_header .button .circle.next {
   background-image: url(../img/common/caret_right.svg);
-  margin-left: 7px;
+  margin-left: 0px;
 }
 .comp-calendar-wrap .calendar_header .button .txt {
   margin-bottom: 2px;
@@ -1536,13 +1569,14 @@ footer .footer_inner .footer_nav ul li a {
   display: block;
   width: 26px;
   height: 26px;
-  background-color: #363636;
+  background: #fff;
+  border: 1px solid #646464;
   border-radius: 50%;
   font-size: 1.2rem;
   font-weight: bold;
   text-align: center;
   line-height: 26px;
-  color: #fff;
+  color: #646464;
   margin: 0 auto 3px;
   -webkit-transition: background 0.3s;
   transition: background 0.3s;
@@ -1550,9 +1584,14 @@ footer .footer_inner .footer_nav ul li a {
 }
 .comp-calendar-wrap .calendar_table .caledar_inner table tr th button .status, .comp-calendar-wrap .calendar_table .caledar_inner table tr td button .status {
   font-size: 1rem;
+  font-weight: bold;
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
   will-change: color;
+}
+.comp-calendar-wrap .calendar_table .caledar_inner table tr th button .status::before, .comp-calendar-wrap .calendar_table .caledar_inner table tr td button .status::before {
+  display: inline;
+  content: "予約可";
 }
 .comp-calendar-wrap .calendar_table .caledar_inner table tr th button.soldout, .comp-calendar-wrap .calendar_table .caledar_inner table tr td button.soldout {
   pointer-events: none;
@@ -1560,13 +1599,23 @@ footer .footer_inner .footer_nav ul li a {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  opacity: 0.4;
+  opacity: 0.2;
+}
+.comp-calendar-wrap .calendar_table .caledar_inner table tr th button.soldout .status::before, .comp-calendar-wrap .calendar_table .caledar_inner table tr td button.soldout .status::before {
+  display: inline;
+  content: "空席なし";
 }
 .comp-calendar-wrap .calendar_table .caledar_inner table tr th button.selected_date_button .circle, .comp-calendar-wrap .calendar_table .caledar_inner table tr td button.selected_date_button .circle {
-  background-color: #FEC32D;
+  background-color: #646464;
+  border: 1px solid #646464;
+  color: #fff;
 }
 .comp-calendar-wrap .calendar_table .caledar_inner table tr th button.selected_date_button .status, .comp-calendar-wrap .calendar_table .caledar_inner table tr td button.selected_date_button .status {
-  color: #FEC32D;
+  color: #646464;
+}
+.comp-calendar-wrap .calendar_table .caledar_inner table tr th button.selected_date_button .status::before, .comp-calendar-wrap .calendar_table .caledar_inner table tr td button.selected_date_button .status::before {
+  display: inline;
+  content: "選択中";
 }
 
 @media screen and (min-width: 720px) {
@@ -1586,18 +1635,12 @@ footer .footer_inner .footer_nav ul li a {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    padding: 0 30px;
+    padding: 0 5px;
     margin-bottom: 25px;
   }
   .comp-calendar-wrap .calendar_header .button .circle {
     width: 30px;
     height: 30px;
-  }
-  .comp-calendar-wrap .calendar_header .button .circle.prev {
-    margin-right: 12px;
-  }
-  .comp-calendar-wrap .calendar_header .button .circle.next {
-    margin-left: 12px;
   }
   .comp-calendar-wrap .calendar_header .button .txt {
     margin-bottom: 2px;
@@ -1634,21 +1677,16 @@ footer .footer_inner .footer_nav ul li a {
 @media screen and (min-width: 1000px) {
   .comp-calendar-wrap {
     padding: 25px 10px 20px;
+    background: #fff;
     margin-top: 25px;
   }
   .comp-calendar-wrap .calendar_header {
-    padding: 0 15px;
+    padding: 0 5px;
     margin-bottom: 20px;
   }
   .comp-calendar-wrap .calendar_header .button .circle {
     width: 30px;
     height: 30px;
-  }
-  .comp-calendar-wrap .calendar_header .button .circle.prev {
-    margin-right: 12px;
-  }
-  .comp-calendar-wrap .calendar_header .button .circle.next {
-    margin-left: 12px;
   }
   .comp-calendar-wrap .calendar_header .button .txt {
     margin-bottom: 2px;
@@ -1658,7 +1696,7 @@ footer .footer_inner .footer_nav ul li a {
     font-size: 1.6rem;
   }
   .comp-calendar-wrap .calendar_table {
-    height: 400px;
+    height: 410px;
   }
   .comp-calendar-wrap .calendar_table .caledar_inner table tr th, .comp-calendar-wrap .calendar_table .caledar_inner table tr td {
     padding: 10px 0;

@@ -17,7 +17,7 @@
       width: 25px;
       height: 25px;
       @include bgSet;
-      background-color: $keyColor;
+      background-color: #646464;
       border-radius: 50%;
       position: absolute;
       top:0;
@@ -45,6 +45,7 @@
       text-align: center;
       pointer-events: none;
       user-select: none;
+      background: transparent;
     }
   }
 }
