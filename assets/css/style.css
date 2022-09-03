@@ -318,7 +318,7 @@ body {
   letter-spacing: 0.07em;
   color: #363636;
   font-family: noto-sans-cjk-jp, 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
-  font-family: 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  /*font-family: 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;*/
   font-weight: normal;
   letter-spacing: 0.03em;
   -webkit-font-smoothing: antialiased;
@@ -397,7 +397,7 @@ header .header_inner .back_button .caret {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
-  background-image: url(../img/common/caret_left.svg);
+  background-image: url(https://cdn.shopify.com/s/files/1/0551/0794/4503/files/caret_left.svg?v=1662227345);
   border-radius: 50%;
   margin-right: 0px;
   -webkit-filter: invert(1);
@@ -598,7 +598,7 @@ footer .footer_inner .footer_nav ul li a {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
-  background-image: url(../img/common/close.svg);
+  background-image: url(https://cdn.shopify.com/s/files/1/0551/0794/4503/files/close.svg?v=1662227345);
 }
 .page-booking .contents_wrapper .contents_booking .form_inner .section-form .selected_date {
   border: 1px solid #363636;
@@ -1302,11 +1302,11 @@ footer .footer_inner .footer_nav ul li a {
 }
 .comp-number-input .number_wrap .button.minus {
   left: 0;
-  background-image: url(../img/common/minus_button.svg);
+  background-image: url(https://cdn.shopify.com/s/files/1/0551/0794/4503/files/minus_button.svg?v=1662227345);
 }
 .comp-number-input .number_wrap .button.plus {
   right: 0;
-  background-image: url(../img/common/plus_button.svg);
+  background-image: url(https://cdn.shopify.com/s/files/1/0551/0794/4503/files/plus_button.svg?v=1662227345);
 }
 .comp-number-input .number_wrap input[type=text] {
   display: block;
@@ -1508,11 +1508,11 @@ footer .footer_inner .footer_nav ul li a {
   background-size: contain;
 }
 .comp-calendar-wrap .calendar_header .button .circle.prev {
-  background-image: url(../img/common/caret_left.svg);
+  background-image: url(https://cdn.shopify.com/s/files/1/0551/0794/4503/files/caret_left.svg?v=1662227345);
   margin-right: 0px;
 }
 .comp-calendar-wrap .calendar_header .button .circle.next {
-  background-image: url(../img/common/caret_right.svg);
+  background-image: url(https://cdn.shopify.com/s/files/1/0551/0794/4503/files/caret_right.svg?v=1662227348);
   margin-left: 0px;
 }
 .comp-calendar-wrap .calendar_header .button .txt {
@@ -1772,11 +1772,11 @@ footer .footer_inner .footer_nav ul li a {
 }
 .comp-main-slider .slide_caret.slide_next {
   right: 3vw;
-  background-image: url(../img/common/caret_right.svg);
+  background-image: url(https://cdn.shopify.com/s/files/1/0551/0794/4503/files/caret_right.svg?v=1662227348);
 }
 .comp-main-slider .slide_caret.slide_prev {
   left: 3vw;
-  background-image: url(../img/common/caret_left.svg);
+  background-image: url(https://cdn.shopify.com/s/files/1/0551/0794/4503/files/caret_left.svg?v=1662227345);
 }
 .comp-main-slider .slide_wrap {
   height: 63vw;

@@ -11,6 +11,16 @@
 	{{ 'index.css' | asset_url | stylesheet_tag }}
 	{%- else -%}
 	{{ 'style.css' | asset_url | stylesheet_tag }}
+	<script>
+	(function(d) {
+		var config = {
+			kitId: 'zfw7pnf',
+			scriptTimeout: 3000,
+			async: true
+		},
+		h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+	})(document);
+</script>
 	{%- endif -%}
   {%- capture seo_title -%}
     {%- if request.page_type == 'search' and search.performed == true -%}
@@ -56,7 +66,6 @@
 	{{content_for_layout}}
 	{% section 'footer' %}
 </body>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB+Garamond:400,500">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanmp.min.css">
 <!-- Global site tag (gtag.js) - Google Ads -->
 <script type="text/javascript" src="//cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/jquery-3.3.1.min.js" charset="UTF-8"></script>

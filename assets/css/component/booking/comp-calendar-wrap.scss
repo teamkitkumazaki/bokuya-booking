@@ -27,11 +27,11 @@
         filter: invert(1);
         @include bgSet;
         &.prev{
-          background-image: url(../img/common/caret_left.svg);
+          background-image: url(https://cdn.shopify.com/s/files/1/0551/0794/4503/files/caret_left.svg?v=1662227345);
           margin-right: 0px;
         }
         &.next{
-          background-image: url(../img/common/caret_right.svg);
+          background-image: url(https://cdn.shopify.com/s/files/1/0551/0794/4503/files/caret_right.svg?v=1662227348);
           margin-left: 0px;
         }
       }
