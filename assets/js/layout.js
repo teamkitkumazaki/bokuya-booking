@@ -1,5 +1,9 @@
 $(function() {
   var amountNum = 0;
+  var dateVariation = [];
+  var selectedVariation;
+  var curryNumDisplay = 0;
+  var stewNumDisplay = 0;
 
   var current_scrollY_start = $(window).scrollTop();
 
@@ -246,6 +250,8 @@ $(function() {
           }
         }
         amountNum = Number(curryNum.val()) + Number(stewNum.val());
+        curryNumDisplay = Number(curryNum.val());
+        stewNumDisplay = Number(stewNum.val());
         var displayPrice = amountNum * 2500;
         amountPrice.html(displayPrice.toLocaleString() + '円(税込)');
       }
@@ -312,6 +318,7 @@ $(function() {
       function init(){
         calendarTable.find('button').each(function(index) {
           dateButton[index] = $(this);
+          dateVariation[index] = $(this).attr('value');
           dateY[index] = $(this).attr('dateY');
           dateM[index] = $(this).attr('dateM');
           dateD[index] = $(this).attr('dateD');
@@ -320,6 +327,8 @@ $(function() {
               dateDisplay.html(dateY[index] + '年' + dateM[index] + '月' + dateD[index] + '日');
               $('.selected_date_button').removeClass('selected_date_button');
               $(this).addClass('selected_date_button');
+              selectedVariation = dateVariation[index];
+              console.log('variation:' + selectedVariation);
             }
           });
         });
@@ -469,7 +478,7 @@ $(function() {
 
       function checkoutProcess(){
         console.log('submit!');
-        location.href = 'https://bokuya.jp/cart/39906116632631:'+ amountNum +'?attributes[カレー]=2セット&[シチュー]=1セット';
+        location.href = 'https://bokuya.jp/cart/'+ selectedVariation +':'+ amountNum +'?attributes[カレー]=' + curryNumDisplay +'セット&[シチュー]=' + stewNumDisplay + 'セット';
       }
 
       function init(){

@@ -1591,6 +1591,7 @@ footer .footer_inner .footer_nav ul li a {
 .comp-calendar-wrap .calendar_table .caledar_inner table tr th button .status::before, .comp-calendar-wrap .calendar_table .caledar_inner table tr td button .status::before {
   display: inline;
   content: "予約可";
+  color: #646464;
 }
 .comp-calendar-wrap .calendar_table .caledar_inner table tr th button.soldout, .comp-calendar-wrap .calendar_table .caledar_inner table tr td button.soldout {
   pointer-events: none;
@@ -1603,6 +1604,7 @@ footer .footer_inner .footer_nav ul li a {
 .comp-calendar-wrap .calendar_table .caledar_inner table tr th button.soldout .status::before, .comp-calendar-wrap .calendar_table .caledar_inner table tr td button.soldout .status::before {
   display: inline;
   content: "空席なし";
+  color: #646464;
 }
 .comp-calendar-wrap .calendar_table .caledar_inner table tr th button.selected_date_button .circle, .comp-calendar-wrap .calendar_table .caledar_inner table tr td button.selected_date_button .circle {
   background-color: #646464;

@@ -105,6 +105,7 @@
                 &::before{
                   display: inline;
                   content: "予約可";
+                  color: #646464;
                 }
               }
               &.soldout{
@@ -115,6 +116,7 @@
                   &::before{
                     display: inline;
                     content: "空席なし";
+                    color: #646464;
                   }
                 }
               }
