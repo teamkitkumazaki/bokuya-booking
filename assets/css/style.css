@@ -1382,7 +1382,7 @@ footer .footer_inner .footer_nav ul li a {
 }
 .comp-menu-list .menu_item .txt_wrap .menu_name {
   font-size: 1.8rem;
-  font-weight: inherit;
+  font-weight: bold;
   margin-bottom: 15px;
 }
 .comp-menu-list .menu_item .txt_wrap .menu_desc {
@@ -1439,7 +1439,6 @@ footer .footer_inner .footer_nav ul li a {
   }
   .comp-menu-list .menu_item .txt_wrap .menu_name {
     font-size: 1.8rem;
-    font-weight: inherit;
     margin-bottom: 15px;
   }
   .comp-menu-list .menu_item .txt_wrap .menu_desc {

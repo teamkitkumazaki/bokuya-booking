@@ -1,4 +1,5 @@
 $(function() {
+  var amountNum = 0;
 
   var current_scrollY_start = $(window).scrollTop();
 
@@ -244,9 +245,9 @@ $(function() {
             quantityInput[num].attr('value', Number(quantityNum) - 1);
           }
         }
-        var amountNum = Number(curryNum.val()) + Number(stewNum.val());
-        var amountNum = amountNum * 2500;
-        amountPrice.html(amountNum.toLocaleString() + '円(税込)');
+        amountNum = Number(curryNum.val()) + Number(stewNum.val());
+        var displayPrice = amountNum * 2500;
+        amountPrice.html(displayPrice.toLocaleString() + '円(税込)');
       }
 
       function init(){
@@ -461,6 +462,29 @@ $(function() {
     }
 
     itemDetailThumbnail($('#thumbList'));
+
+
+    function bookingSubmit(){
+      var submitButton = $('#submitButton');
+
+      function checkoutProcess(){
+        console.log('submit!');
+        location.href = 'https://bokuya.jp/cart/39906116632631:'+ amountNum +'?attributes[カレー]=2セット&[シチュー]=1セット';
+      }
+
+      function init(){
+        submitButton.on({
+          'click': function() {
+            checkoutProcess();
+          }
+        });
+      }
+
+      init();
+    }
+
+    bookingSubmit();
+
 
   }
 
