@@ -14,6 +14,9 @@
 
 
 /*########## コンポーネント ##########*/
+@import 'component/common/comp-underpage-section.scss';
+@import 'component/common/comp-privacy-txt.scss';
+
 @import 'component/booking/comp-booking-title.scss';
 @import 'component/booking/comp-detail-list.scss';
 @import 'component/booking/comp-faq-contents.scss';
