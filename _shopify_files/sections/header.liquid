@@ -5,7 +5,7 @@
 			<h1><a href="/"><img src="https://cdn.shopify.com/s/files/1/0551/0794/4503/files/logo.svg?v=1662224810" alt="bokuya"></a></h1>
 		</div>
 		<div class="h_navigation">
-			<a href="/products/booking">RESERVATION</a>
+			<a href="/products/reservation">RESERVATION</a>
 			<a target="_blank" href="https://nobeyama.base.shop/">STORE</a>
 		</div>
 	</div><!-- header_inner -->
@@ -13,10 +13,17 @@
 {%- else -%}
 <header>
 	<div class="header_inner">
+		{%- if product.handle == 'booking' or product.handle == 'reservation' -%}
 		<a class="back_button" href="/">
 			<span class="caret"></span>
 			<span class="text">トップに戻る</span>
 		</a>
+		{%- else -%}
+		<a class="back_button" href="/products/reservation">
+			<span class="caret"></span>
+			<span class="text">予約に戻る</span>
+		</a>
+		{%- endif -%}
 	</div><!-- header_inner -->
 </header>
 {%- endif -%}
