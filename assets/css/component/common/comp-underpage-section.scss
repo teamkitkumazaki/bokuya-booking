@@ -9,6 +9,14 @@
     font-size: 2.2rem;
     margin-bottom: 30px;
   }
+  .lead_desc{
+    @include basicP;
+    p{
+      br{
+        display: none;
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 720px){

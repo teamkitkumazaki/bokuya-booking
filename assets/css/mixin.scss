@@ -53,7 +53,8 @@ $bgBlack: #363636;
     &:nth-last-of-type(1){
       margin-bottom: 0;
     }
-    @media screen and (min-width: 1100px){
+    @media screen and (min-width: 980px){
+      font-size: 1.6rem;
       line-height: 2;
     }
   }

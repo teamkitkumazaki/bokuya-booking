@@ -1,0 +1,114 @@
+<!doctype html>
+<html style="--wHeight:100vh; --wHeightPx:100vh; --scroll:0; --wHeightFixedPx:100vh;">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="canonical" href="https://demo.agestream.jp/bokuya-booking-booking/">
+	<title>bokuya予約フォーム</title>
+	<meta name="description" content="bokuya-booking">
+	<link href="assets/img/icon/icon.png" rel="apple-touch-icon" sizes="200x200">
+	<link rel="shortcut icon" type="image/x-icon" href="assets/img/icon/icon.png">
+	<meta property="og:type" content="article">
+	<meta property="og:image" content="assets/img/ogp/ogp.jpg">
+	<meta property="og:url" content="https://demo.agestream.jp/bokuya-booking-booking/">
+	<meta property="og:locale" content="ja_JP">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="bokuya-booking">
+	<meta property="og:description" content="bokuya-booking">
+	<meta property="og:url" content="https://demo.agestream.jp/bokuya-booking-booking/">
+	<meta property="og:site_name" content="bokuya-booking">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:description" content="bokuya-booking">
+	<meta name="twitter:title" content="bokuya-booking">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanjp.min.css">
+	<link rel="stylesheet" href="assets/css/style.css?ver220723_3x">
+	<script>
+  (function(d) {
+    var config = {
+      kitId: 'zfw7pnf',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
+</head>
+<header>
+	<div class="header_inner">
+		<a class="back_button" href="#aaaa">
+			<span class="caret"></span>
+			<span class="text">トップに戻る</span>
+		</a>
+	</div><!-- header_inner -->
+</header>
+<body>
+	<article id="contact" class="page-contact">
+		<section class="section-privacy comp-underpage-section">
+			<div class="section_inner center">
+				<div class="underpage_ttl">
+					<h1 class="ttl">お問い合わせ</h1>
+				</div>
+				<div class="lead_desc">
+					<p>お問い合わせは、下記メールフォームにて承ります。<br>担当者より2〜3営業日以内にメールでご連絡させていただきます。</p>
+					<p>携帯電話のメールアドレスを設定のお客様は、<br>｢メールの受信拒否、ドメイン指定受信、迷惑メール防止機能」などを設定している場合、<br>受信ができない場合があります。</p>
+				</div>
+				<div id="contactWrap" class="comp-contact-form">
+        	<div class="form_item">
+          	<label>お名前</label>
+          	<div class="form_box">
+            	<input type="text" name="username" placeholder="山田 太郎">
+          	</div>
+        	</div>
+        	<div class="form_item">
+          	<label>メールアドレス</label>
+          	<div class="form_box">
+            	<input type="email" name="useremail" placeholder="hello@horeboreshiga.com">
+          	</div>
+        	</div>
+        	<div class="form_item">
+          	<label>お問い合わせ種別</label>
+          	<div class="form_box">
+            	<select name="category" class="comp-select-box">
+              	<option value="製品・サービスについて">製品・サービスについて</option>
+              	<option value="提携・協業に関するお問合せ">提携・協業に関するお問合せ</option>
+              	<option value="採用について">採用について</option>
+              	<option value="その他">その他</option>
+            	</select>
+          	</div>
+        	</div>
+        	<div class="form_item b_none">
+          	<label>お問い合わせ内容</label>
+          	<div class="form_box">
+            	<textarea name="content" placeholder="内容を記入してください。"></textarea>
+          	</div>
+        	</div>
+        	<div id="ajaxLoader" class="ajax_loader">
+          	<span class="loading"></span>
+        	</div>
+        	<div id="statusMessage" class="status_message hidden"></div>
+        	<div id="submitButton" class="submit_wrap">
+          	<span class="text_wrap">
+            	<span class="ja">送信する</span>
+            	<input type="button" value="送信" class="disabled">
+          	</span>
+        	</div>
+      	</div>
+			</div><!-- section_inner -->
+		</section>
+	</article>
+	<footer>
+		<div class="footer_inner">
+			<nav class="footer_nav">
+				<ul>
+					<li><a href="#aaaa">プライバシーポリシー</a></li>
+					<li><a href="#aaaa">特定商取引法に基づく表示</a></li>
+					<li><a href="#aaaa">運営会社</a></li>
+				</ul>
+			</nav>
+			<p class="copyright">Copyright bokuya All Rights Reserved.</p>
+		</div>
+	</footer>
+</body>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="assets/js/layout.js"></script>
+</html>

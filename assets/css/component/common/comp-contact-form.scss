@@ -1,0 +1,276 @@
+.comp-contact-form{
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  .attention{
+    width: 100%;
+    display: block;
+    font-size: 1.2rem;
+    padding: 10px 0 0;
+    color: red;
+  }
+  .form_item{
+    &:not(:last-of-type) {
+      margin-bottom: 25px;
+    }
+    label{
+      display: block;
+      font-size: 1.4rem;
+      color: $keyColor;
+      margin-bottom: 15px;
+    }
+    .form_box{
+      input[type=text],
+      input[type=email],
+      input[type=password]{
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        border: 1px solid #e6e6e6;
+        background: #f8f8f8;
+        border-radius: 0px;
+        padding: 10px 12px;
+        font-family: inherit;
+        @media screen and (min-width: 1100px){
+          padding: 11px 12px;
+        }
+      }
+      textarea{
+        display: block;
+        width: 100%;
+        height: 250px;
+        box-sizing: border-box;
+        border: 1px solid #e6e6e6;
+        background-color: #f8f8f8;
+        border-radius: 0px;
+        padding: 10px 12px;
+        font-family: inherit;
+        @media screen and (min-width: 1100px){
+          padding: 11px 12px;
+        }
+      }
+      .comp-select-box{
+        width: 100%;
+        font-family: inherit;
+        color: $keyColor;
+        padding: 10px 12px;
+        border: 1px solid #e6e6e6;
+        background-color: #f8f8f8;
+        font-weight: normal;
+        border-radius: 0px;
+        padding: 10px 12px;
+        @media screen and (min-width: 1100px){
+          padding: 18px 12px;
+        }
+      }
+      .reset_password{
+        width: 100%;
+        text-align: right;
+        margin-top: 5px;
+        color: $keyColor;
+        font-size: 1.2rem;
+        cursor: pointer;
+      }
+    }
+    .checkbox{
+      margin: 20px 0 -15px;
+      @media screen and (min-width: 720px){
+        margin: 30px 0 -20px;
+      }
+      label{
+        @include flexSet;
+        justify-content: center;
+        align-items: center;
+        font-weight: normal;
+        input[type="checkbox"]{
+          display: none;
+        }
+        @media screen and (min-width: 720px){
+          cursor: pointer;
+        }
+        .radio_checker{
+          width: 13px;
+          height: 13px;
+          border: 1px solid #979797;
+          background: #fff;
+          border-radius: 50%;
+          margin-right: 7px;
+          position: relative;
+          &::before{
+            display: block;
+            content: "";
+            position: absolute;
+            top: -1px;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 0px;
+            height: 0px;
+            border-radius: 50%;
+            background: $keyColor;
+            transition: width .2s, height .2s;
+          }
+        }
+        input[type=checkbox]:checked + .radio_checker{
+          &::before{
+            width: 7px;
+            height: 7px;
+          }
+        }
+        .name{
+          font-size: 1.4rem;
+          line-height: 1.6;
+          margin-bottom: 2px;
+        }
+      }
+    }
+  }
+  .ajax_loader{
+    width: 100%;
+    height: 0px;
+    overflow: hidden;
+    transition: height .2s;
+    &.loading{
+      height: 100px;
+      @include flexSet;
+      align-items: center;
+      justify-content: center
+    }
+    .loading{
+      display: block;
+      width: 100%;
+      height: 70px;
+      margin-bottom: 20px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 30px;
+      background-image: url(https://cdn.shopify.com/s/files/1/0550/4715/9859/t/1/assets/loading.svg);
+    }
+  }
+  .status_message{
+    height: 0;
+    overflow: hidden;
+    text-align: left;
+    font-weight: normal;
+    font-size: 1.4rem;
+    transition: height .2s;
+    .text{
+      display: block;
+      background: #f4f4f4;
+      padding: 15px;
+      line-height: 1.6;
+    }
+    &.complete{
+      height: 80px;
+      margin-bottom: 0px;
+    }
+    &.error{
+      height: 100px;
+      margin-bottom: 0px;
+      .text{
+        color: #D62538;
+        border: 1px solid #D62538;
+      }
+    }
+  }
+  .submit_wrap{
+    margin: 0 auto;
+    position: relative;
+    cursor: pointer;
+    background: $keyColor;
+    color: #fff;
+    font-size: 1.9rem;
+    line-height: 1;
+    padding: 20px 0;
+    border-radius: 0px;
+    cursor: pointer;
+    transition: color .3s, background-color .3s, border-color .3s;
+    will-change: color, background-color, border-color;
+    &:hover{
+      background-color: $keyColor;
+    }
+    &.completed{
+      pointer-events: none;
+      user-select: none;
+      background: #f8f8f8;
+      color: #fff;
+    }
+    &.account{
+      margin-top: 40px;
+      @media screen and (min-width: 1100px){
+        margin-top: 60px;
+      }
+    }
+    .text_wrap{
+      text-align: center;
+      .ja{
+        display: block;
+        letter-spacing: 0.7px;
+        pointer-events: none;
+        span{
+          position: relative;
+          padding-right: 17px;
+          &::after{
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            display: block;
+            content: "";
+            top: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            border-top: 2px solid #fff;
+            border-right: 2px solid #fff;
+            transform: rotate(45deg);
+            transition: border 0.2s;
+            will-change: border;
+          }
+        }
+      }
+      input[type="button"],
+      input[type="submit"]{
+        position: absolute;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+        margin: auto;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        z-index: 10;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 720px){
+  .comp-contact-form{
+    margin-top: 50px;
+    .form_item{
+      &:not(:last-of-type) {
+        margin-bottom: 18px;
+      }
+      .form_box{
+        .comp-select-box{
+          width: 100%;
+          font-size: 1.4rem;
+        }
+      }
+    }
+    .status_message{
+      text-align: center;
+      font-size: 1.6rem;
+    }
+    .submit_wrap{
+      max-width: 320px;
+      padding: ((72 - 19) * 0.5em / 19) 0;
+      margin-top: 22px;
+      border-radius: 100px;
+    }
+  }
+}
