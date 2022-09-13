@@ -115,8 +115,10 @@ $(function() {
 
     }
 
-    mainSliderShow($('#mainSlider01'), 0);
-    mainSliderShow($('#mainSlider02'), 1);
+    if (document.getElementById('booking')) {
+      mainSliderShow($('#mainSlider01'), 0);
+      mainSliderShow($('#mainSlider02'), 1);
+    }
 
 
     //FAQの、トグル制御
@@ -227,7 +229,9 @@ $(function() {
 
     }
 
-    displaySpBookingForm();
+    if (document.getElementById('booking')) {
+      displaySpBookingForm();
+    }
 
 
     // 商品詳細ページ 数量インプットの操作
@@ -235,25 +239,50 @@ $(function() {
       var minusButton = [];
       var plusButton = [];
       var quantityInput = [];
+      var quantityMin = [];
+      var quantityMax = [];
       var quantityNum;
+      var adlutNum = $('#adlutNum');
+      var childNum = $('#childNum');
       var curryNum = $('#curryNum');
       var stewNum = $('#stewNum');
       var amountPrice = $('#amountPrice');
+      var calendarStock = [];
+
 
       function controllQuantity(vactor,num){
         quantityNum = quantityInput[num].val();
         if(vactor == 1){
-          quantityInput[num].attr('value', Number(quantityNum) + 1);
+          console.log('Max:' + quantityMax[num]);
+          if(quantityNum < quantityMax[num]){
+            quantityInput[num].attr('value', Number(quantityNum) + 1);
+          }
         }else{
-          if(quantityNum != 0){
+          if(quantityNum != quantityMin[num]){
             quantityInput[num].attr('value', Number(quantityNum) - 1);
           }
         }
+        if(Number(adlutNum.val()) > 1){
+          $('#alert01').remove();
+        }
         amountNum = Number(curryNum.val()) + Number(stewNum.val());
+        amountPeople = Number(adlutNum.val()) + Number(childNum.val());
         curryNumDisplay = Number(curryNum.val());
         stewNumDisplay = Number(stewNum.val());
         var displayPrice = amountNum * 2500;
         amountPrice.html(displayPrice.toLocaleString() + '円(税込)');
+        if(amountNum >= Number(adlutNum.val())){
+          $('#alert02').remove();
+        }
+
+        $('#calendarTable').find('button').each(function(index) {
+          calendarStock[index] = Number($(this).attr('stock'));
+          if(calendarStock[index] < amountPeople){
+            $(this).addClass('soldout');
+          }else{
+            $(this).removeClass('soldout');
+          }
+        });
       }
 
       function init(){
@@ -262,7 +291,8 @@ $(function() {
           minusButton[index] = $(this).find('.minus');
           plusButton[index] = $(this).find('.plus');
           quantityInput[index] = $(this).find('input[type=text]');
-
+          quantityMin[index] = Number(quantityInput[index].attr('min'));
+          quantityMax[index] = Number(quantityInput[index].attr('max'));
           minusButton[index].on({
             'click': function() {
               event.preventDefault();
@@ -284,7 +314,9 @@ $(function() {
 
     }
 
-    controllBuyingQuantity();
+    if (document.getElementById('booking')) {
+      controllBuyingQuantity();
+    }
 
     //予約カレンダーの制御
     function calendarControll(){
@@ -328,7 +360,7 @@ $(function() {
               $('.selected_date_button').removeClass('selected_date_button');
               $(this).addClass('selected_date_button');
               selectedVariation = dateVariation[index];
-              console.log('variation:' + selectedVariation);
+              $('#alert03').remove();
             }
           });
         });
@@ -351,7 +383,10 @@ $(function() {
       init();
     }
 
-    calendarControll();
+    if (document.getElementById('booking')) {
+      calendarControll();
+    }
+
 
     function itemDetailThumbnail(target) {
       var thumbBox = $('#thumbBox');
@@ -470,15 +505,51 @@ $(function() {
       init();
     }
 
-    itemDetailThumbnail($('#thumbList'));
+    if (document.getElementById('booking')) {
+      itemDetailThumbnail($('#thumbList'));
+    }
 
 
     function bookingSubmit(){
       var submitButton = $('#submitButton');
+      var errorCount = 0;
+      var errorMessage = '';
 
       function checkoutProcess(){
-        console.log('submit!');
-        location.href = 'https://bokuya.jp/cart/'+ selectedVariation +':'+ amountNum +'?attributes[カレー]=' + curryNumDisplay +'セット&[シチュー]=' + stewNumDisplay + 'セット';
+        errorCount = 0;
+        errorMessage = '';
+        $('#alert01').remove();
+        $('#alert02').remove();
+        $('#alert03').remove();
+        var adlutNum =  Number($('#adlutNum').val());
+        var childNum =  Number($('#childNum').val());
+        var selectDate = $('#dateDisplay').text();
+        var amuountPeople = adlutNum + childNum;
+        console.log('amuountPeople:' + amuountPeople);
+        if(amuountPeople < 2){
+          errorCount = errorCount + 1;
+          errorMessage = errorMessage + '\n・2名以上でご予約ください。'
+          $('#formItem01').append('<p id="alert01" class="alert">2名以上でご予約ください。</p>');
+        }
+        if(amountNum < adlutNum){
+          errorCount = errorCount + 1;
+          errorMessage = errorMessage + '\n・大人お一人につき、お一つ以上ご注文下さい。'
+          $('#formItem02').append('<p id="alert02" class="alert">大人お一人につき、お一つ以上ご注文下さい。</p>');
+        }
+
+        if(selectDate == '未選択'){
+          errorCount = errorCount + 1;
+          errorMessage = errorMessage + '\n・予約日時を選択してください。'
+          $('#formItem03').append('<p id="alert03" class="alert">※予約日時を選択してください。</p>');
+        }
+
+        if(errorCount == 0){
+          location.href = 'https://bokuya.jp/cart/'+ selectedVariation +':'+ amountNum +'?attributes[カレー]=' + curryNumDisplay +'セット&[シチュー]=' + stewNumDisplay + 'セット';
+        }else{
+          alert('予約内容に不備があります。お手数ですが、予約内容をご確認ください。' + errorMessage);
+          $("#contentsBooking .form_inner").animate({scrollTop: 0});
+          window.scroll({top: 0, behavior: 'smooth'});
+        }
       }
 
       function init(){
@@ -492,7 +563,13 @@ $(function() {
       init();
     }
 
-    bookingSubmit();
+
+    if (document.getElementById('booking')) {
+      bookingSubmit();
+    }
+
+
+
 
 
   }

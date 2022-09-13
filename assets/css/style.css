@@ -652,7 +652,7 @@ footer .footer_inner .footer_nav ul li a {
 .page-booking .contents_wrapper .contents_booking .form_inner .section-form .submit_wrap .submit_button .submit_button {
   display: block;
   width: 100%;
-  background-color: #0b4e2c;
+  background-color: #588C88;
   padding: 15px 0 17px;
   font-size: 1.8rem;
   font-weight: bold;
@@ -855,7 +855,7 @@ footer .footer_inner .footer_nav ul li a {
   .page-booking .contents_wrapper .contents_booking .form_inner .section-form .submit_wrap .submit_button .submit_button {
     display: block;
     width: 100%;
-    background-color: #0b4e2c;
+    background-color: #588C88;
     padding: 15px 0 17px;
     font-size: 1.8rem;
     font-weight: bold;
@@ -1585,7 +1585,7 @@ footer .footer_inner .footer_nav ul li a {
   text-decoration: underline;
 }
 .comp-faq-contents .toggle_item.active .toggle_button {
-  background: #0b4e2c;
+  background: #588C88;
   color: #fff;
 }
 .comp-faq-contents .toggle_item.active .toggle_button .txt {
@@ -1685,7 +1685,7 @@ footer .footer_inner .footer_nav ul li a {
   }
 }
 .comp-fixed-button .cart_inner .fixed_cart_button {
-  background: #0b4e2c;
+  background: #588C88;
   border: none;
   width: 100%;
   padding: 15px 0;
@@ -1722,6 +1722,17 @@ footer .footer_inner .footer_nav ul li a {
           box-sizing: border-box;
   border-bottom: 1px solid #363636;
 }
+.comp-form-wrap .form_item .alert {
+  display: block;
+  padding-top: 15px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #B70E0E;
+}
+.comp-form-wrap .form_item.item03 {
+  padding-bottom: 0;
+  border-bottom: 0px solid #363636;
+}
 .comp-form-wrap .form_item .form_ttl {
   display: block;
   font-size: 2rem;
@@ -1738,7 +1749,7 @@ footer .footer_inner .footer_nav ul li a {
   margin-bottom: 25px;
 }
 .comp-form-wrap .form_item .note_desc {
-  margin: 35px auto -10px;
+  margin: 25px auto -10px;
   font-size: 1.3rem;
   line-height: 1.8;
   color: #686868;
@@ -1752,6 +1763,9 @@ footer .footer_inner .footer_nav ul li a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+.comp-form-wrap .submit_wrap {
+  padding: 0 6vw 6vw;
 }
 
 @media screen and (min-width: 720px) {
@@ -1810,6 +1824,9 @@ footer .footer_inner .footer_nav ul li a {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+  }
+  .comp-form-wrap .submit_wrap {
+    padding: 0 30px 40px;
   }
 }
 .comp-number-input {
@@ -1998,6 +2015,114 @@ footer .footer_inner .footer_nav ul li a {
     margin-bottom: 25px;
   }
 }
+.comp-menu-list-temp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.comp-menu-list-temp .menu_item {
+  width: 100%;
+  margin-bottom: 0px;
+}
+.comp-menu-list-temp .menu_item:nth-last-of-type(1) {
+  margin-bottom: 0;
+}
+.comp-menu-list-temp .menu_item .img_wrap {
+  margin-bottom: 20px;
+}
+.comp-menu-list-temp .menu_item .txt_wrap .menu_name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.comp-menu-list-temp .menu_item .txt_wrap .menu_desc {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+.comp-menu-list-temp .menu_item .txt_wrap .price {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 720px) {
+  .comp-menu-list-temp {
+    margin-top: 40px;
+  }
+  .comp-menu-list-temp .menu_item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 0px;
+  }
+  .comp-menu-list-temp .menu_item:nth-last-of-type(1) {
+    margin-bottom: 0;
+  }
+  .comp-menu-list-temp .menu_item .img_wrap {
+    width: 50%;
+    margin-bottom: 0px;
+  }
+  .comp-menu-list-temp .menu_item .txt_wrap {
+    width: 45%;
+  }
+  .comp-menu-list-temp .menu_item .txt_wrap .menu_name {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  .comp-menu-list-temp .menu_item .txt_wrap .menu_desc {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  .comp-menu-list-temp .menu_item .txt_wrap .price {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .comp-menu-list-temp {
+    margin-top: 35px;
+  }
+  .comp-menu-list-temp .menu_item .img_wrap {
+    width: 195px;
+    margin-right: 25px;
+    margin-bottom: 0px;
+    overflow: hidden;
+  }
+  .comp-menu-list-temp .menu_item .img_wrap img {
+    max-width: unset;
+    height: 180px;
+    margin: 0 -40px;
+  }
+  .comp-menu-list-temp .menu_item .txt_wrap {
+    width: calc(100% - 220px);
+  }
+  .comp-menu-list-temp .menu_item .txt_wrap .menu_name {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+  .comp-menu-list-temp .menu_item .txt_wrap .menu_desc {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+  .comp-menu-list-temp .menu_item .txt_wrap .price {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+  }
+}
+/* カレーのみのメニューレイアウト */
 .comp-calendar-wrap {
   border: 1px solid #646464;
   padding: 20px 10px 10px;

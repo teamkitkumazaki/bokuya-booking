@@ -3,6 +3,17 @@
     padding: 30px 6vw;
     box-sizing: border-box;
     border-bottom: 1px solid $keyColor;
+    .alert{
+      display: block;
+      padding-top: 15px;
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #B70E0E;
+    }
+    &.item03{
+      padding-bottom: 0;
+      border-bottom: 0px solid $keyColor;
+    }
   }
   .form_item{
     .form_ttl{
@@ -21,7 +32,7 @@
       margin-bottom: 25px;
     }
     .note_desc{
-      margin: 35px auto -10px;
+      margin: 25px auto -10px;
       font-size: 1.3rem;
       line-height: 1.8;
       color: #686868;
@@ -30,6 +41,9 @@
       @include flexSet;
       justify-content: space-between;
     }
+  }
+  .submit_wrap{
+    padding: 0 6vw 6vw;
   }
 }
 
@@ -84,6 +98,9 @@
         @include flexSet;
         justify-content: space-between;
       }
+    }
+    .submit_wrap{
+      padding: 0 30px 40px;
     }
   }
 }
