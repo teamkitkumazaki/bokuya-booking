@@ -542,9 +542,9 @@ $(function() {
           errorMessage = errorMessage + '\n・予約日時を選択してください。'
           $('#formItem03').append('<p id="alert03" class="alert">※予約日時を選択してください。</p>');
         }
-
+        console.log('https://bokuya.jp/cart/'+ selectedVariation +':'+ amountNum +'?attributes[来店人数:]=' + '大人' + adlutNum +'人 / 子供' + childNum + '人');
         if(errorCount == 0){
-          location.href = 'https://bokuya.jp/cart/'+ selectedVariation +':'+ amountNum +'?attributes[カレー]=' + curryNumDisplay +'セット&[シチュー]=' + stewNumDisplay + 'セット';
+          location.href = 'https://bokuya.jp/cart/'+ selectedVariation +':'+ amountNum +'?attributes[来店人数:]=' + '大人' + adlutNum +'人 / 子供' + childNum + '人';
         }else{
           alert('予約内容に不備があります。お手数ですが、予約内容をご確認ください。' + errorMessage);
           $("#contentsBooking .form_inner").animate({scrollTop: 0});

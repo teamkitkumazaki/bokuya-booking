@@ -1,0 +1,256 @@
+<style>
+.icon-svg{display: none;}
+.map{display: none;}
+.display-table .content-box__row{border-top: 0px;}
+.sns_wrap ul{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+.sns_wrap ul li{
+  width: 49%;
+  margin-bottom: 10px;
+}
+.sns_wrap ul li:nth-last-of-type(1){
+  margin-right: 0px;
+}
+.sns_wrap ul li a{
+  transition: opacity .3s;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  transition: hover .2s;
+}
+.sns_wrap ul li a:hover{
+  opacity: 0.85;
+}
+.sns_wrap ul li a .icon{
+  display: block;
+  height: 18px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  filter: brightness(100);
+}
+.sns_wrap ul li a .text{
+  display: block;
+  font-size: 14px;
+  line-height: normal;
+  letter-spacing: 0.5px;
+  margin-left: 10px;
+}
+.sns_wrap ul li a.tw{
+  background-color: #1da1f2;
+}
+.sns_wrap ul li a.tw .icon{
+  width: 17px;
+}
+.sns_wrap ul li a.fb{
+  background-color: #195eb8;
+}
+.sns_wrap ul li a.fb .icon{
+  width: 14px;
+}
+.sns_wrap ul li a.ig{
+   background-image: linear-gradient(100deg, rgba(193, 53, 132, 0.99), #f77737 100%);
+}
+.sns_wrap ul li a.ig .icon{
+  width: 15px;
+}
+.sns_wrap ul li a.line{
+  background-color: #00c300;
+}
+.sns_wrap ul li a.line .icon{
+  width: 18px;
+}
+.instagram{
+  margin: 40px 0 60px;
+}
+.instagram .title_wrap{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5px;
+  margin-bottom: 30px;
+}
+.instagram .title_wrap .ttl_box{
+  max-width: 145px;
+}
+.instagram .title_wrap .link_wrap{
+  max-width: 165px;
+}
+.instagram .title_wrap .link_wrap a{
+  display: block;
+  transition: opacity .2s;
+}
+.instagram .title_wrap .link_wrap a:hover{
+  opacity: 0.8;
+}
+.instagram .insta_wrap{
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 1px solid #d8d8d8;
+  border-right: 1px solid #d8d8d8;
+}
+
+.instagram .insta_wrap a{
+  display: block;
+  width: 25%;
+  box-sizing: border-box;
+  border-left: 1px solid #d8d8d8;
+  border-bottom: 1px solid #d8d8d8;
+  transition: opacity .2s;
+}
+.instagram .insta_wrap a:hover{
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 720px){
+  .sns_wrap ul li{
+    width: 100%;
+    margin-bottom: 7px;
+  }
+  .instagram{
+    margin: 40px 0 60px;
+  }
+  .instagram .title_wrap{
+    margin-bottom: 20px;
+  }
+  .instagram .title_wrap .ttl_box{
+    max-width: 120px;
+  }
+  .instagram .title_wrap .link_wrap{
+    max-width: 120px;
+  }
+}
+</style>
+<script type="text/javascript" src="https://cdn.shopify.com/s/files/1/0536/9544/7234/t/2/assets/jquery-3.3.1.min.js" charset="UTF-8"></script>
+<script>
+$(function() {
+    function checkoutSet(){
+      var i = 0;
+      var attributeBox = [];
+      var checkoutNote;
+      var cartAttribute;
+      var note = `{{ checkout.note }}`;
+      var paymentMethod = $('.payment-method-list__item__info').text();
+      var attributeLength = 0;
+      var totelPrice = '{{ checkout.total_price | money_without_currency }}';
+      var taxPrice = '{{ checkout.tax_price | money_without_currency }}'
+      $('#main-header').html('ご予約ありがとうございます。');
+
+      $('body').find('h2').each(function(index) {
+        if($(this).text() == 'ご注文が確認されました' || $(this).text() == '注文をアップデート'){
+          $(this).parent('div').parent('div').remove();
+        }
+      });
+
+      function addCODPrice(){
+        var plusCOD = Number(totelPrice.replace(/,/g, '')) + Number(330);
+        var plusCODTax = Number(taxPrice.replace(/,/g, '')) + Number(30);
+        $('.total-line-table__tbody').append('<tr class="total-line total-line--shipping"><th class="total-line__name" scope="row"><span>代引手数料</span></th><td class="total-line__price"><span class="skeleton-while-loading order-summary__emphasis" data-checkout-total-shipping-target="66000">￥330</span></td></tr>');
+        $('.payment-due__price').text('¥' + plusCOD.toLocaleString());
+        $('.payment-due-label__taxes span').text('¥' + plusCODTax.toLocaleString());
+      }
+
+      function addCartNoteDisplay(){
+        $('.step__sections').append('<div class="content-box display"><div class="content-box__row content-box__row--no-border"><h2>備考</h2></div><!-- content-box --><div class="content-box__row"><div class="section__content"><p style="white-space: pre-line;">' + note + '</p></div><!-- section__content --></div><!-- content-box__row --></div><!-- content-box -->');
+      }
+
+      function addCartAttributeDisplay(e, num){
+        var splitText = e.split(':')
+        console.log('text:' + splitText + '/ num:' + num);
+        if(num == 0){
+          cartAttribute.append('<h3 class="heading-3">' + splitText[0] + '</h3><p style="white-space: pre-line; margin-bottom: 20px;">' + splitText[1] + '</p>');
+        }else if(num == 1){
+          cartAttribute2.append('<h3 class="heading-3">' + splitText[0] + '</h3><p style="white-space: pre-line; margin-bottom: 20px;">' + splitText[1] + '</p>');
+        }else if(num == 2){
+          giftAttribute.append('<h3 class="heading-3">' + splitText[0] + '</h3><p style="white-space: pre-line; margin-bottom: 20px;">' + splitText[1] + '</p>');
+        }else if(num == 3){
+          giftAttribute2.append('<h3 class="heading-3">' + splitText[0] + '</h3><p style="white-space: pre-line; margin-bottom: 20px;">' + splitText[1] + '</p>');
+        }else{
+          giftAttribute3.append('<h3 class="heading-3">' + splitText[0] + '</h3><p style="white-space: pre-line; margin-bottom: 20px;">' + splitText[1] + '</p>');
+        }
+      }
+
+      function setContactLink(){
+        var checkoutNote = note;
+        var targetLink = $('.step__footer__info').find('a');
+        targetLink.attr('href', 'https://bokuya.jp/pages/contact');
+        targetLink.attr('target', '_blank');
+      }
+
+      function init(){
+        {% for item in checkout.attributes %}
+          attributeLength = attributeLength + 1;
+        {% endfor %}
+        setContactLink();
+        $('.step__sections').append(`
+          <div class="content-box display">
+            <div class="content-box__row content-box__row--no-border">
+              <h2>来店人数</h2>
+            </div>
+            <div class="content-box__row">
+              <div class="section__content">
+                <div class="section__content__column" style="width: 100%">
+                  <div id="cartAttribute01" class="text-container"></div>
+                </div><!-- section__content__column -->
+                <div class="section__content__column" style="width: 100%">
+                  <div id="cartAttribute02" class="text-container"></div>
+                </div>
+                <!-- section__content__column -->
+              </div><!-- section__content -->
+              <div class="section__content__column" style="width: 100%">
+                <div id="giftAttribute01" class="text-container"></div>
+              </div>
+              <!-- section__content__column -->
+              <div class="section__content__column" style="width: 100%">
+                <div id="giftAttribute02" class="text-container"></div>
+              </div>
+              <!-- section__content__column -->
+              <div class="section__content__column" style="width: 100%">
+                <div id="giftAttribute03" class="text-container"></div>
+              </div>
+              <!-- section__content__column -->
+            </div><!-- section__content -->
+            </div><!-- content-box__row -->
+          </div><!-- content-box -->`);
+        cartAttribute = $('#cartAttribute01');
+        cartAttribute2 = $('#cartAttribute02');
+        giftAttribute = $('#giftAttribute01');
+        giftAttribute2 = $('#giftAttribute02');
+        giftAttribute3 = $('#giftAttribute03');
+        commentMemo = $('#commentMemo');
+        var i = 0;
+        {% for item in checkout.attributes %}
+          attributeBox[i] = `{{ item }}`;
+          addCartAttributeDisplay(attributeBox[i], i);
+          i = i + 1;
+        {% endfor %}
+
+        if(note != undefined && note.length > 1){
+          addCartNoteDisplay();
+        }
+
+        if(paymentMethod == '代金引換'){
+          addCODPrice();
+        }
+      }
+
+      init();
+
+    }
+
+    checkoutSet();
+
+  });
+</script>
