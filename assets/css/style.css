@@ -567,7 +567,12 @@ footer .footer_inner .footer_nav ul li a {
 }
 .page-booking .contents_wrapper .contents_booking .form_inner {
   overflow: scroll;
-  height: 100vh;
+  height: var(--wHeightPx);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.page-booking .contents_wrapper .contents_booking .form_inner::-webkit-scrollbar {
+  display: none;
 }
 .page-booking .contents_wrapper .contents_booking .form_inner .title_wrap {
   display: -webkit-box;
@@ -2277,6 +2282,19 @@ footer .footer_inner .footer_nav ul li a {
 .comp-calendar-wrap .calendar_table .caledar_inner table tr th button.soldout .status::before, .comp-calendar-wrap .calendar_table .caledar_inner table tr td button.soldout .status::before {
   display: inline;
   content: "空席なし";
+  color: #646464;
+}
+.comp-calendar-wrap .calendar_table .caledar_inner table tr th button.end, .comp-calendar-wrap .calendar_table .caledar_inner table tr td button.end {
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  opacity: 0.2;
+}
+.comp-calendar-wrap .calendar_table .caledar_inner table tr th button.end .status::before, .comp-calendar-wrap .calendar_table .caledar_inner table tr td button.end .status::before {
+  display: inline;
+  content: "受付終了";
   color: #646464;
 }
 .comp-calendar-wrap .calendar_table .caledar_inner table tr th button.selected_date_button .circle, .comp-calendar-wrap .calendar_table .caledar_inner table tr td button.selected_date_button .circle {

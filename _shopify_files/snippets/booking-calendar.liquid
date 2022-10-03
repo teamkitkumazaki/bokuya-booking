@@ -1,75 +1,5 @@
-<div id="table202209" class="caledar_inner">
-  {% assign startDateUnix = 1661698800 %}
-  {% assign startDate = 1661698800 | date: "%Y%m%d" %}
-  <table>
-    <thead>
-      <tr>
-        <th><p class="weekDay">月</p></th>
-        <th><p class="weekDay">火</p></th>
-        <th><p class="weekDay">水</p></th>
-        <th><p class="weekDay">木</p></th>
-        <th><p class="weekDay">金</p></th>
-        <th><p class="weekDay" style="color: rgb(0, 50, 159);">土</p></th>
-        <th><p class="weekDay" style="color: rgb(181, 60, 60);">日</p></th>
-      </tr>
-    </thead>
-    <tbody>
-    {% for num in (0..4) %}
-      {% assign indexNumberStart = 7 | times:num %}
-      {% assign indexNumberEnd = indexNumberStart | plus:6 %}
-      <tr>
-        {% for i in (indexNumberStart..indexNumberEnd) %}
-        {% assign seconds = i | times: 24 | times: 60 | times: 60 %}
-        {% assign dateValue = startDateUnix | date: '%s' | plus: seconds | date: '%Y%m%d' %}
-        {% assign dateValueY = startDateUnix | date: '%s' | plus: seconds | date: '%y' %}
-        {% assign dateValueM = startDateUnix | date: '%s' | plus: seconds | date: '%m' %}
-        {% assign dateValueD = startDateUnix | date: '%s' | plus: seconds | date: '%d' %}
-        {% assign dateActive = 0 | plus: 0 %}
-        {% assign dValue = dateValue | plus: 0 %}
-        {% for variant in product.variants %}
-        {% assign sku = variant.sku | plus: 0 %}
-          {% if sku == dValue  %}
-            {% assign dateActive = dateActive | plus: 1 %}
-            {% assign inputValue = variant.id %}
-            {% assign stockNum = variant.inventory_quantity | plus: 0 %}
-            <script>
-            console.log('バリエーションあり');
-            console.log('dateValue:{{dateValue}}');
-            </script>
-          {% else %}
-            <script>
-              console.log('sku:{{sku}}');
-              console.log('dateValue:{{dateValue}}');
-            </script>
-          {% endif %}
-        {% endfor %}
-        <script>
-        console.log('dateActive:{{dateActive}}');
-        </script>
-        <td class="table{{dateValue}}">
-        {% if dateActive != 0 %}
-          {% if stockNum > 0 %}
-            <button type="button" value="{{inputValue}}" dateY="20{{dateValueY}}" dateM="{{dateValueM}}" dateD="{{dateValueD}}" stock="{{stockNum}}">
-              <span class="circle">{{dateValueD}}</span>
-              <span class="status"></span>
-            </button>
-          {% else %}
-          <button class="soldout" type="button" value="{{inputValue}}" dateY="20{{dateValueY}}" dateM="{{dateValueM}}" dateD="{{dateValueD}}" stock="{{stockNum}}">
-            <span class="circle">{{dateValueD}}</span>
-            <span class="status"></span>
-          </button>
-          {% endif %}
-          {% else %}
-          <p class="date strike">{{dateValueD}}</p>
-          {% endif %}
-        </td>
-        {% endfor %}
-      </tr>
-    {% endfor %}
-    </tbody>
-  </table>
-</div><!-- caledar_inner -->
-<div id="table202210" class="caledar_inner disnone">
+{% assign todayDate = "today" | date: '%s' | plus: 0 | date: '%Y%m%d' | plus: 1 %}
+<div id="table202210" class="caledar_inner">
   {% assign startDateUnix = 1664118000 %}
   {% assign startDate = 1664118000 | date: "%Y%m%d" %}
   <table>
@@ -91,7 +21,7 @@
       <tr>
         {% for i in (indexNumberStart..indexNumberEnd) %}
         {% assign seconds = i | times: 24 | times: 60 | times: 60 %}
-        {% assign dateValue = startDateUnix | date: '%s' | plus: seconds | date: '%Y%m%d' %}
+        {% assign dateValue = startDateUnix | date: '%s' | plus: seconds | date: '%Y%m%d' | plus: 0 %}
         {% assign dateValueY = startDateUnix | date: '%s' | plus: seconds | date: '%y' %}
         {% assign dateValueM = startDateUnix | date: '%s' | plus: seconds | date: '%m' %}
         {% assign dateValueD = startDateUnix | date: '%s' | plus: seconds | date: '%d' %}
@@ -103,27 +33,24 @@
             {% assign dateActive = dateActive | plus: 1 %}
             {% assign inputValue = variant.id %}
             {% assign stockNum = variant.inventory_quantity | plus: 0 %}
-            <script>
-            console.log('バリエーションあり');
-            console.log('dateValue:{{dateValue}}');
-            </script>
           {% else %}
-            <script>
-              console.log('sku:{{sku}}');
-              console.log('dateValue:{{dateValue}}');
-            </script>
+
           {% endif %}
         {% endfor %}
-        <script>
-        console.log('dateActive:{{dateActive}}');
-        </script>
         <td class="table{{dateValue}}">
         {% if dateActive != 0 %}
           {% if stockNum > 0 %}
+          {% if dateValue > todayDate %}
             <button type="button" value="{{inputValue}}" dateY="20{{dateValueY}}" dateM="{{dateValueM}}" dateD="{{dateValueD}}" stock="{{stockNum}}">
               <span class="circle">{{dateValueD}}</span>
               <span class="status"></span>
             </button>
+          {% else %}
+          <button class="end" type="button" value="{{inputValue}}" dateY="20{{dateValueY}}" dateM="{{dateValueM}}" dateD="{{dateValueD}}" stock="{{stockNum}}">
+            <span class="circle">{{dateValueD}}</span>
+            <span class="status"></span>
+          </button>
+          {% endif %}
           {% else %}
           <button class="soldout" type="button" value="{{inputValue}}" dateY="20{{dateValueY}}" dateM="{{dateValueM}}" dateD="{{dateValueD}}" stock="{{stockNum}}">
             <span class="circle">{{dateValueD}}</span>

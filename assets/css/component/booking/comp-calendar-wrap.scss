@@ -120,6 +120,18 @@
                   }
                 }
               }
+              &.end{
+                pointer-events: none;
+                user-select: none;
+                opacity: 0.2;
+                .status{
+                  &::before{
+                    display: inline;
+                    content: "受付終了";
+                    color: #646464;
+                  }
+                }
+              }
               &.selected_date_button{
                 .circle{
                   background-color: #646464;
